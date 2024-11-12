@@ -11,7 +11,7 @@ import ShadcnLogo from '../images/shadcn.logo.png'
 import NextJSLogo from '../images/nextjs.logo.png'
 import PrismaLogo from '../images/prisma.logo.png'
 import RNELogo from '../images/RNE.logo.png'
-import DrizzleLogo from '../images/drizzle-logo.png'
+//import DrizzleLogo from '../images/drizzle-logo.png'
 import TailwindLogo from '../images/tailwind-logo.png'
 import FirebaseLogo from '../images/firebase-logo.png'
 import ProjectItem from "./ProjectItem/page";
@@ -78,7 +78,7 @@ export default function Home() {
       {
          id: 9,
          name: 'Drizzle',
-         image: DrizzleLogo,
+         image: '',
          description: 'Dizzle é tudo'
       },
       {
