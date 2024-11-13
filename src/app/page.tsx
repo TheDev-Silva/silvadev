@@ -11,7 +11,7 @@ import ShadcnLogo from '../images/shadcn.logo.png'
 import NextJSLogo from '../images/nextjs.logo.png'
 import PrismaLogo from '../images/prisma.logo.png'
 import RNELogo from '../images/RNE.logo.png'
-import DrizzleLogo from '../images/drizlle-ORM.jpeg'
+import DrizzleLogo from '../images/drizlle-logo.png'
 import TailwindLogo from '../images/tailwind-logo.png'
 import FirebaseLogo from '../images/firebase-logo.png'
 import ProjectItem from "./ProjectItem/page";
