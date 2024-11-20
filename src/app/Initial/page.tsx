@@ -18,7 +18,7 @@ export default function Initial() {
 
       <div className='flex w-full md:justify-end justify-center items-center relative'>
         {/* Contêiner com formato de círculo e overflow oculto */}
-        <div className='flex md:h-[380px] md:w-[380px] w-[380px] h-[380px] bg-gradient-to-l from-[#6716cf] to-[#020617] rounded-full overflow-hidden justify-center items-center' style={{ zIndex: 1 }}>
+        <div className='flex md:h-[380px] md:w-[380px] w-[380px] h-[380px] bg-gradient-to-l from-[#6716cf] to-[#020617] rounded-full overflow-hidden justify-center items-center ' style={{ zIndex: 1 }}>
           <Image
             src={'/perfil-1-removebg-preview (1).png'}
             alt={'foto-perfil'}

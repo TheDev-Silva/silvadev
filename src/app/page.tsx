@@ -16,11 +16,6 @@ import TailwindLogo from '../images/tailwind-logo.png'
 import FirebaseLogo from '../images/firebase-logo.png'
 import ProjectItem from "./ProjectItem/page";
 
-import Burger1 from '../../public/imageTheBurgerRock/burger-1.png'
-
-
-
-
 
 export default function Home() {
 

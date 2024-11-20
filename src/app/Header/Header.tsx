@@ -36,7 +36,7 @@ export default function Header() {
             <div className='flex items-center min-w-[50px]'>
                <div className='flex'>
                   <Link href={'/'}>
-                  <h1 className='font-mono text-2xl text-white font-bold text drop-shadow-textsm' >_Silva Dev</h1>
+                  <h1 className='font-mono text-2xl text-white font-bold text drop-shadow-textsm' >_The Silva Dev</h1>
                   </Link>
                   
                </div>
