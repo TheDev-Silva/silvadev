@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation';
-import { BiLoader } from 'react-icons/bi'
+import { AiOutlineLoading } from 'react-icons/ai'
 /* import Router from 'next/navigation'; */
 import React, { useState } from 'react';
 import { Router } from 'next/router';
@@ -145,7 +145,7 @@ export default function Contact() {
                   required
                   className='h-200'
                ></textarea>
-               <button type="submit" className='w-full text-white bg-black p-3 rounded-sm text-center items-center'>{isLoading ? <BiLoader className='animate-spin ease-linear spin-in-45' size={24} /> : 'Enviar Ideia'}</button>
+               <button type="submit" className='w-full text-white bg-black p-3 rounded-sm text-center items-center'>{isLoading ? <AiOutlineLoading className='animate-spin ease-linear spin-in-45' size={24} /> : 'Enviar Ideia'}</button>
             </form>
             {responseMessage && <p className='text-white'> {responseMessage}</p>}
          </div>
