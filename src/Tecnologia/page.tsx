@@ -37,7 +37,7 @@ export default function Tecnologias({ tecnologyItem }: TecnologiasProp) {
                      width={0}
                      height={0}
                      quality={90}
-                     className="object-contain"
+                     className="object-contain hover:top-2"
                      style={{ width: 150 }}
                   />
                   {selectItem?.id === item.id && <div className='flex flex-col w-full h-full absolute bg-[#6716cf]   translate-x-5 duration-300 items-center justify-center' style={{ padding: 10, borderRadius: 10, opacity: .8, borderWidth: 2, borderColor: '#fff' }} onClick={() => setSelectItem(null)} >
