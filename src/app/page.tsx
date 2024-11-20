@@ -73,7 +73,7 @@ export default function Home() {
       {
          id: 9,
          name: 'Drizzle',
-         image: 'DrizzleLogo',
+         image: DrizzleLogo,
          description: 'Dizzle é tudo'
       },
       {
