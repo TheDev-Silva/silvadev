@@ -160,7 +160,7 @@ export default function Home() {
       {
          id: 3,
          name: 'The Dieta',
-         description: 'O The Dieta é um aplicativo de nutrição personalizado que ajuda os usuários a atingir seus objetivos de saúde, como emagrecimento, hipertrofia ou ganho de massa. Ao fornecer dados como nome, peso, altura, idade e meta, a inteligência artificial gera uma dieta equilibrada para a semana, acompanhada de sugestões de exercícios. O app também apresenta gráficos de progresso para monitoramento de ganho ou perda de peso, além de recomendações de suplementos, tornando o processo de acompanhamento mais fácil e eficiente.',
+         description: 'O The Dieta é um aplicativo de dicas nutrição personalizado que ajuda os usuários a atingir seus objetivos de saúde, como emagrecimento, hipertrofia ou ganho de massa muscular. Ao fornecer dados como nome, peso, altura, idade e meta, a inteligência artificial gera uma dieta equilibrada para a semana, acompanhada de sugestões de exercícios. O app também apresenta gráficos de progresso para monitoramento de ganho ou perda de peso, além de recomendações de suplementos, tornando o processo de acompanhamento mais fácil e eficiente.',
          link: '',
          images: [
             {
@@ -227,7 +227,7 @@ export default function Home() {
 
 
    return (
-      <div className="flex-col md:w-full justify-start items-center bg-[#000] ">
+      <div className="flex-col w-fulljustify-start items-center bg-[#000] ">
          <Initial />
          <AboutMe />
 

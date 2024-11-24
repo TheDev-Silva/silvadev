@@ -1,10 +1,11 @@
 'use client'
 
 import { useRouter } from 'next/navigation';
-import { AiOutlineLoading } from 'react-icons/ai'
+import { AiOutlineGithub, AiOutlineLinkedin, AiOutlineLoading } from 'react-icons/ai'
 /* import Router from 'next/navigation'; */
 import React, { useState } from 'react';
-import { Router } from 'next/router';
+import Link from 'next/link';
+import { AiFillInstagram, AiOutlineInstagram } from "react-icons/ai";
 
 export default function Contact() {
 
@@ -35,7 +36,7 @@ export default function Contact() {
          });
 
          if (response.ok) {
-
+            console.log(response);
             setResponseMessage('Cadastro realizado com sucesso! Verifique seu e-mail.');
             setFormData({ name: '', email: '', phone: '', message: '' }) // Limpa o formulário
             setTimeout(() => {
@@ -87,21 +88,31 @@ export default function Contact() {
          <div className='relative z-10 mb-32 md:mb-0'>
             <h1 className='text-white font-mono text-4xl mb-4'>Contato</h1>
             <p className='text-white font-mono mb-2'>Entre em contato conosco!</p>
-            <p className='text-white font-mono mb-2'>Telefone: (84) 99775-9542</p>
+            <p className='text-white font-mono mb-2'>Telefone: (85) 99775-9542</p>
             <p className='text-white font-mono mb-2'>E-mail: silvadeveloper2024@gmail.com</p>
-            <p className='text-white font-mono mb-2'>redes socias </p>
+            <div className='flex flex-col'>
+               <p className='text-white font-mono mb-2'>redes socias </p>
+               <div className='flex gap-10'>
+                  <Link href={'https://www.instagram.com/silva.developer/'}>
+                     <AiOutlineInstagram size={30} color='#ffff' />
+                  </Link>
+                  <Link href={'https://github.com/TheDev-Silva/'}>
+                     <AiOutlineGithub size={30} color='#ffff' />
+                  </Link>
+                  <Link href={'https://www.linkedin.com/in/germano-silva-909372248/'}>
+                     <AiOutlineLinkedin size={30} color='#ffff' />
+                  </Link>
+               </div>
+
+            </div>
 
          </div>
          {/* Conteúdo principal */}
-         <div className='relative z-10 text-center md:w-[400px] p-2 bg-[#6716cf99] rounded-lg shadow-lg ' style={{ borderWidth: 1, borderColor: '#fff', justifyContent: 'center', alignItems: 'center' }}>
+         <div className='relative z-10 text-center md:w-[400px] p-2 bg-[rgba(103,22,207,0.4)] rounded-2xl border-neonGreen shadow-neon' style={{ justifyContent: 'center', alignItems: 'center' }}>
             <div className="backdrop-blur-lg"></div>
-            <p className='text-white font-mono m-4'>Mande sua ideia, que a tornaremos realidade!</p>
-            {/*  <a
-                    href="mailto:exemplo@email.com?subject=Minha Ideia de Projeto&body=Olá, estou entrando em contato para compartilhar uma ideia de projeto..."
-                    className='w-full py-2 bg-[#6716cf] text-white rounded-md hover:bg-purple-700 transition duration-200 block text-center'
-                >
-                    <p className='font-mono'>Envie sua Ideia</p>
-                </a> */}
+            <p className='text-white font-mono m-4 mb-[-20px]'>Mande sua ideia.</p>
+            <p className='text-white font-mono m-4'>vamos criar um projeto incrivel juntos!</p>
+
             <form onSubmit={handleSubmit} className='w-fill flex flex-col gap-5 p-4'>
                <div className='flex flex-col relative z-10'>
                   {/* <label className='absolute left-2 top-2 opacity-45 hover:top-[-4px]'>Nome</label> */}
@@ -114,6 +125,7 @@ export default function Contact() {
                      onChange={handleChange}
                      required
                      className='w-[400px], p-2 rounded-sm'
+
                   />
                </div>
 
@@ -145,7 +157,9 @@ export default function Contact() {
                   required
                   className='h-200'
                ></textarea>
-               <button type="submit" className='w-full text-white bg-black p-3 rounded-sm text-center items-center'>{isLoading ? <AiOutlineLoading className='animate-spin ease-linear spin-in-45' size={24} /> : 'Enviar Ideia'}</button>
+               <button type="submit" className='flex w-full text-white bg-black p-3 rounded-sm text-center items-center justify-center'>
+                  {isLoading ? <AiOutlineLoading className='animate-spin ease-linear spin-in-45' size={24} /> + 'carregando...' : 'Enviar Ideia'}
+               </button>
             </form>
             {responseMessage && <p className='text-white'> {responseMessage}</p>}
          </div>

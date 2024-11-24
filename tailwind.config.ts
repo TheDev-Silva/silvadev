@@ -16,10 +16,17 @@ const config: Config = {
                '100%': { transform: 'translateX(-100%)' } // Ajuste para criar o efeito de scroll
             }
          },
+         boxShadow: {
+            neon: "0 0 10px rgba(103,22,207,0.8), 0 0 20px rgba(103,22,207,0.8)", // Personalize as cores
+         },
+         borderColor: {
+           neon: '#6716cf78' 
+         },
          animation: {
             scroll: 'scroll 20s linear infinite' // Animação infinita e linear
          },
          colors: {
+            neonGreen: "#6716cf",
             background: 'hsl(var(--background))',
             foreground: 'hsl(var(--foreground))',
             card: {

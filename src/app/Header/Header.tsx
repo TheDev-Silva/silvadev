@@ -7,6 +7,7 @@ import Link from 'next/link';
 export default function Header() {
 
    const [isScrolled, setIsScrolled] = useState(false)
+   const [logoText, setLogoText] = useState('_The Silva')
 
    useEffect(() => {
 
@@ -22,6 +23,27 @@ export default function Header() {
 
    }, [])
 
+   useEffect(() => {
+      const handleResize = () => {
+         if (window.innerWidth <= 768) {
+            setLogoText('_TSD');
+         } else {
+            setLogoText('_The Silva');
+         }
+      };
+
+      // Verifica o tamanho inicial da tela
+      handleResize();
+
+      // Adiciona o listener de resize
+      window.addEventListener('resize', handleResize);
+
+      // Remove o listener ao desmontar o componente
+      return () => {
+         window.removeEventListener('resize', handleResize);
+      };
+
+   }, [])
 
 
    return (
@@ -36,16 +58,18 @@ export default function Header() {
             <div className='flex items-center min-w-[50px]'>
                <div className='flex'>
                   <Link href={'/'}>
-                  <h1 className='font-mono text-2xl text-white font-bold text drop-shadow-textsm' >_The Silva Dev</h1>
+                     <div className='flex flex-col justify-items-end'>
+                        <h1 className='flex font-mono text-3xl text-white font-bold text drop-shadow-textsm transition-all duration-300'>{logoText}</h1>
+                        <h1 className="font-mono text-2xl text-white font-bold text drop-shadow-textsm text-right m-[-6px] mr-[3px] transition-all duration-300">{logoText === '_The Silva' ? 'Dev' : ''}</h1></div>
                   </Link>
-                  
+
                </div>
-              
+
             </div>
             <Link href="/Contacts" className='flex items-center gap-2 justify-center'>
 
                <BiCommentDots size={24} color="#fff" />
-               <span className="font-mono uppercase hover:tracking-widest hover:transition-all text-white">contatos</span>
+               <span className="font-mono uppercase hover:tracking-widest hover:transition-all text-white font-bold tracking-widest">contatos</span>
 
             </Link>
          </div>
