@@ -1,9 +1,11 @@
+"use client"
 import React, { useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Carousel } from './Carrosel';
 import { url } from 'inspector';
+import { useRouter } from 'next/navigation';
 
 interface ProjectProp {
    id: number;
@@ -11,6 +13,7 @@ interface ProjectProp {
    description: string;
    link: string;
    images: { id: number; image: StaticImageData | string }[];
+   backgroundImage: string
 }
 
 interface ProjectsProps {
@@ -19,6 +22,25 @@ interface ProjectsProps {
 
 export default function ProjectItem({ project }: ProjectsProps) {
 
+   const [isLoading, setIsLoading] = useState(false)
+
+   const router = useRouter();
+
+   const handleNavigate = (id: number) => {
+
+      setIsLoading(true)
+      try {
+         setTimeout(() => {
+            router.push(`/projectId/${id}`);
+         }, 500);
+      } catch (error) {
+         console.log('Erro ao buscar Projeto')
+      } finally {
+         setIsLoading(false)
+      }
+
+
+   };
 
    return (
       <div className="flex-col w-full justify-center items-center bg-slate-950">
@@ -29,7 +51,7 @@ export default function ProjectItem({ project }: ProjectsProps) {
             <div className="border-white w-full relative z-10 flex flex-col p-[50px] gap-20" >
                {project.map((item) => (
 
-                  <div key={item.id} className="md:flex relative md:w-full md:justify-between justify-center items-center text-white p-5 rounded-lg mb-5 border-l-neonGreen border-b-neonGreen shadow-neon" style={{ borderBottomWidth: 4, borderLeftWidth: 4, backgroundColor: '#6716cf29', boxShadow: '#6716cf', gap: 15}}>
+                  <div key={item.id} className="md:flex relative md:w-full md:justify-between justify-center items-center text-white p-5 rounded-lg mb-5 border-l-neonGreen border-b-neonGreen shadow-neon" style={{ borderBottomWidth: 4, borderLeftWidth: 4, backgroundColor: '#6716cf29', boxShadow: '#6716cf', gap: 15, backgroundImage: `url(${item.backgroundImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
 
                      <div
                         className='absolute z-0 -inset-0 md:w-[200px] md:h-[200px] h-[100px] w-[100px] left-9 top-[30px] rounded-full bg-gradient-to-br to-[#6716cf] from-[#000] transition-all duration-300 blur-md'
@@ -52,15 +74,20 @@ export default function ProjectItem({ project }: ProjectsProps) {
                         className='absolute md:w-[150px] md:h-[150px] max-h-md w-[80px] h-[80px] rounded-full bg-gradient-to-tr to-[#6716cf] from-[#000] right-10 top-52 bottom-[100px] transition-all duration-300 blur-md'
                      //style={{ top: '10%', right: '0%', transform: 'translate(-50%, -50%)' }} // Centraliza o círculo atrás do conteúdo
                      ></div>
+
+
                      <div className='flex-col relative md:w-[45%] p-4'>
                         <h1 className='font-mono uppercase md:text-4xl text-2xl pb-5 tracking-widest'>{item.name}</h1>
-                        <p className='font-mono md:text-base text-[14px]'>{item.description}</p>
+                        <p className='font-mono md:text-base text-[14px]'>{item.description.slice(0, 100)}...</p>
 
-                        <Link href={item.link}>
-                           <button>
-                              <h1 className='font-mono underline'>clique e veja esse</h1>
-                           </button>
-                        </Link>
+                        {/* <Link key={item.id} href={`/ProjectId/${item.id}`}> */}
+                        <button onClick={() => handleNavigate(item.id)}
+                           className='flex w-full text-white hover:bg-[#6716cf] bg-[#6716cf89] transition-all duration-300 p-3 rounded-sm text-center items-center justify-center gap-3 mt-5'
+                        >
+                           <h1 className=''>{isLoading ? 'Carregando...' : 'veja mais aqui'}</h1>
+                        </button>
+
+                        {/* </Link> */}
                      </div>
                      <div className="w-[100%] md:w-[70%] flex justify-center rounded-lg overflow-hidden">
 

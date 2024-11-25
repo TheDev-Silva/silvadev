@@ -37,12 +37,9 @@ export default function Contact() {
 
          if (response.ok) {
             console.log(response);
-            setResponseMessage('Cadastro realizado com sucesso! Verifique seu e-mail.');
+            setResponseMessage('Email enviado com sucesso! Verifique seu e-mail, lixo eletronico ou spam');
             setFormData({ name: '', email: '', phone: '', message: '' }) // Limpa o formulário
             setTimeout(() => {
-               ; // Redireciona para a home
-               // Se quiser apenas recarregar a página atual:
-
                route.push('/')
             }, 3000);
          } else {
@@ -108,10 +105,10 @@ export default function Contact() {
 
          </div>
          {/* Conteúdo principal */}
-         <div className='relative z-10 text-center md:w-[400px] p-2 bg-[rgba(103,22,207,0.4)] rounded-2xl border-neonGreen shadow-neon' style={{ justifyContent: 'center', alignItems: 'center' }}>
+         <div className='relative z-10 text-center md:w-[400px] p-2 bg-[#6716cf29] rounded-2xl border-neonGreen shadow-neon' style={{ justifyContent: 'center', alignItems: 'center' }}>
             <div className="backdrop-blur-lg"></div>
-            <p className='text-white font-mono m-4 mb-[-20px]'>Mande sua ideia.</p>
-            <p className='text-white font-mono m-4'>vamos criar um projeto incrivel juntos!</p>
+            <p className='text-white font-mono m-4 mb-[-20px]'>Vamos criar um projeto incrivel juntos?</p>
+            <p className='text-white font-mono m-4 '>Mande sua ideia.</p>
 
             <form onSubmit={handleSubmit} className='w-fill flex flex-col gap-5 p-4'>
                <div className='flex flex-col relative z-10'>
@@ -157,9 +154,9 @@ export default function Contact() {
                   required
                   className='h-200'
                ></textarea>
-               <button type="submit" className='flex w-full text-white bg-black p-3 rounded-sm text-center items-center justify-center'>
-                  {isLoading ? <AiOutlineLoading className='animate-spin ease-linear spin-in-45' size={24} /> + 'carregando...' : 'Enviar Ideia'}
-               </button>
+                {isLoading ? <button type="submit" className='flex w-full text-white hover:bg-[#6716cf] bg-[#6716cf89] transition-all duration-300 p-3 rounded-sm text-center items-center justify-center gap-3'>
+                <AiOutlineLoading className='animate-spin ease-linear spin-in-45' size={24} /> Enviando ideia...            
+               </button> :  <button type="submit" className='flex w-full text-white hover:bg-[#6716cf] bg-[#6716cf89] transition-all duration-300 p-3 rounded-sm text-center items-center justify-center'>Enviar Ideia</button>}
             </form>
             {responseMessage && <p className='text-white'> {responseMessage}</p>}
          </div>

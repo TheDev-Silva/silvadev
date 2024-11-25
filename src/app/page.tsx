@@ -121,7 +121,8 @@ export default function Home() {
                id: 6,
                image: '/imageSecurityKEy/security-6.jpg'
             }
-         ]
+         ],
+         backgroundImage: '/imageSecurityKEy/bg-keystone.png'
 
       },
       {
@@ -154,7 +155,8 @@ export default function Home() {
                id: 6,
                image: '/imageTheBurgerRock/burger-6.png'
             }
-         ]
+         ],
+         backgroundImage: '/imageTheBurgerRock/bg-rock-burger.png'
 
       },
       {
@@ -187,7 +189,8 @@ export default function Home() {
                id: 6,
                image: '/imageTheDieta/dieta-6.jpg'
             }
-         ]
+         ],
+         backgroundImage: '/imageTheDieta/bg-the-dieta.png'
 
       },
       {
@@ -220,8 +223,8 @@ export default function Home() {
                id: 6,
                image: '/imageLoveCoffe/love-6.jpg'
             }
-         ]
-
+         ],
+         backgroundImage: '/imageLoveCoffe/bg-love-coffe.png'
       }
    ]
 

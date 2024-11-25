@@ -23,17 +23,17 @@ export default function Tecnologias({ tecnologyItem }: TecnologiasProp) {
          {/* Contêiner flexível para scroll infinito */}
 
          <div className='flex-wrap w-full '>
-            <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center uppercase" style={{marginBottom:50}}>Explorando tecnologias e as dominando</h1>
+            <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center uppercase" style={{ marginBottom: 50 }}>Explorando tecnologias e as dominando</h1>
 
             <p className='text-white font-mono italic'>
                <span className='text-xl'>"</span>  Aqui, compartilho algumas das principais tecnologias que utilizo para transformar ideias em soluções completas e eficientes. Minha escolha de ferramentas sempre considera as necessidades específicas de cada projeto, garantindo que as soluções desenvolvidas sejam funcionais, escaláveis e alinhadas aos objetivos do cliente.
                <span className='text-xl'>"</span>
             </p>
-            <div className='text-white font-mono text-lg p-10 mt-10 shadow-lg shadow-white' style={{borderBottomWidth: 4, borderLeftWidth: 4, borderColor: '#6716cf', borderBottomLeftRadius: 30, }}>
-               <h1 className='text-2xl uppercase mb-10'>Minhas Skills...</h1>
+            <div className='text-white font-mono text-lg p-10 mt-10 shadow-lg shadow-white' style={{ borderBottomWidth: 4, borderLeftWidth: 4, borderColor: '#6716cf', borderBottomLeftRadius: 30, }}>
+
                No front-end, o<b className='text-[#6716cf] font-mono italic bg-white w-full'> JavaScript</b>  reina como a base para a criação de experiências ricas e interativas, em conjunto com <b className='text-[#6716cf] font-mono'>React</b>  e <b className='text-[#6716cf] font-mono'>Next.js</b>, que me permitem desenvolver interfaces modernas e de alta performance. Para aplicações mobile, combino a flexibilidade do <b className='text-[#6716cf] font-mono'>React Native</b> com a eficiência do Expo, criando aplicativos que oferecem ótima usabilidade.
 
-               No back-end, <b className='text-[#6716cf] font-mono'>Node.js</b> é minha escolha para construir APIs robustas e escaláveis, enquanto ferramentas como <b className='text-[#6716cf] font-mono'>Prisma</b> e <b className='text-[#6716cf] font-mono'>Drizzle</b> garantem uma manipulação de dados eficaz e segura. Firebase se destaca por permitir integrações em tempo real e autenticação confiável, essencial para muitos projetos modernos.
+               <br className=''></br>No back-end, <b className='text-[#6716cf] font-mono'>Node.js</b> é minha escolha para construir APIs robustas e escaláveis, enquanto ferramentas como <b className='text-[#6716cf] font-mono'>Prisma</b> e <b className='text-[#6716cf] font-mono'>Drizzle</b> garantem uma manipulação de dados eficaz e segura. Firebase se destaca por permitir integrações em tempo real e autenticação confiável, essencial para muitos projetos modernos.
 
                Quanto ao design e estilo, <b className='text-[#6716cf] font-mono'>CSS</b> é a base, complementada pela agilidade do <b className='text-[#6716cf] font-mono'>Tailwind CSS</b> e a elegância dos componentes de <b className='text-[#6716cf] font-mono'>Shadcn-UI</b>, que ajudam a criar interfaces consistentes e atraentes.
 
@@ -41,9 +41,10 @@ export default function Tecnologias({ tecnologyItem }: TecnologiasProp) {
 
 
             </div>
-
+            <h1 className='md:text-2xl text-xl font-bold font-mono text-white text-center uppercase' style={{marginBottom: -62, marginTop: 42}}>Skill do dia-a-dia</h1>
 
          </div>
+         
          <div className="flex w-full items-center m-10" style={{
 
             overflowX: 'scroll',
@@ -52,6 +53,7 @@ export default function Tecnologias({ tecnologyItem }: TecnologiasProp) {
             scrollBehavior: 'smooth', // Rolagem suave
             marginTop: 100,
          }} >
+
             <style jsx>{`div::-webkit-scrollbar {display: none;}`}</style>
             {/* Mapeamento da lista original */}
             {tecnologyItem.map((item) => (
