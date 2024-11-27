@@ -29,7 +29,7 @@ export default function Tecnologias({ tecnologyItem }: TecnologiasProp) {
                <span className='text-xl'>"</span>  Aqui, compartilho algumas das principais tecnologias que utilizo para transformar ideias em soluções completas e eficientes. Minha escolha de ferramentas sempre considera as necessidades específicas de cada projeto, garantindo que as soluções desenvolvidas sejam funcionais, escaláveis e alinhadas aos objetivos do cliente.
                <span className='text-xl'>"</span>
             </p>
-            <div className='text-white font-mono text-lg p-10 mt-10 shadow-lg shadow-white' style={{ borderBottomWidth: 4, borderLeftWidth: 4, borderColor: '#6716cf', borderBottomLeftRadius: 30, }}>
+            <div className='text-white font-mono md:text-lg text-base p-10 mt-10 shadow-lg shadow-white' style={{ borderBottomWidth: 4, borderLeftWidth: 4, borderColor: '#6716cf', borderBottomLeftRadius: 30, }}>
 
                No front-end, o<b className='text-[#6716cf] font-mono italic bg-white w-full'> JavaScript</b>  reina como a base para a criação de experiências ricas e interativas, em conjunto com <b className='text-[#6716cf] font-mono'>React</b>  e <b className='text-[#6716cf] font-mono'>Next.js</b>, que me permitem desenvolver interfaces modernas e de alta performance. Para aplicações mobile, combino a flexibilidade do <b className='text-[#6716cf] font-mono'>React Native</b> com a eficiência do Expo, criando aplicativos que oferecem ótima usabilidade.
 

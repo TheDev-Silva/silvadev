@@ -59,19 +59,29 @@ export default function Header() {
                <div className='flex'>
                   <Link href={'/'}>
                      <div className='flex flex-col justify-items-end'>
-                        <h1 className='flex font-mono text-3xl text-white font-bold text drop-shadow-textsm transition-all duration-300'>{logoText}</h1>
+                        <h1 className='flex font-mono md:text-3xl text-xl text-white font-bold text drop-shadow-textsm transition-all duration-300'>{logoText}</h1>
                         <h1 className="font-mono text-2xl text-white font-bold text drop-shadow-textsm text-right m-[-6px] mr-[3px] transition-all duration-300">{logoText === '_The Silva' ? 'Dev' : ''}</h1></div>
                   </Link>
 
                </div>
 
             </div>
-            <Link href="/Contacts" className='flex items-center gap-2 justify-center'>
+            {window.innerWidth >= 768 ? (
+               <Link href="/Contacts" className='flex items-center gap-2 justify-center'>
 
                <BiCommentDots size={24} color="#fff" />
                <span className="font-mono uppercase hover:tracking-widest hover:transition-all text-white font-bold tracking-widest">contatos</span>
 
             </Link>
+            ) : (
+                  <Link href="/Contacts" className='flex items-center gap-2 justify-center'>
+
+                     <BiCommentDots size={24} color="#fff" />
+                     {/* <span className="font-mono uppercase hover:tracking-widest hover:transition-all text-white font-bold tracking-widest">contatos</span> */}
+
+                  </Link>
+            )}
+            
          </div>
       </div>
    );

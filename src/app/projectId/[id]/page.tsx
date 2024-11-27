@@ -76,7 +76,7 @@ const project = [
       id: 3,
       name: 'The Dieta',
       description: 'O The Dieta é um aplicativo de dicas nutrição personalizado que ajuda os usuários a atingir seus objetivos de saúde, como emagrecimento, hipertrofia ou ganho de massa muscular. Ao fornecer dados como nome, peso, altura, idade e meta, a inteligência artificial gera uma dieta equilibrada para a semana, acompanhada de sugestões de exercícios. O app também apresenta gráficos de progresso para monitoramento de ganho ou perda de peso, além de recomendações de suplementos, tornando o processo de acompanhamento mais fácil e eficiente.',
-      link: '',
+      link: 'https://the-burger-rock.vercel.app/',
       images: [
          {
             id: 1,
@@ -110,7 +110,7 @@ const project = [
       id: 4,
       name: 'Love & Coffe',
       description: 'O Love & Coffee é um aplicativo simples e prático para amantes de café. Com ele, você pode escolher entre uma variedade de cafés, como macchiato, expresso tradicional, americano e com leite. O processo é fácil: basta selecionar seu café preferido, personalizar sua escolha, e pagar diretamente pelo app. Ideal para quem busca rapidez, conveniência e um ótimo café, tudo na palma da mão.',
-      link: '',
+      link: 'https://the-burger-rock.vercel.app/',
       images: [
          {
             id: 1,
@@ -182,7 +182,7 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
          </div>
 
          {projectData.link && (
-            <div className="flex w-full mt-8 justify-between ">
+            <div className="flex w-full mt-8 justify-between pl-5 pr-5">
                <Link
                   href={projectData.link}
                   target="_blank"
@@ -193,7 +193,6 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
                </Link>
                <Link
                   href={'/'}
-                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-400 underline"
                >

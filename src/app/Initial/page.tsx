@@ -6,12 +6,12 @@ export default function Initial() {
     <div className='lg:flex md:w-full md:h-[100vh] p-[50px] pt-[180px] items-center justify-between md:flex relative bg-slate-950'>
 
       <div className='w-[100%] mb-10 z-10'>
-        <h1 className='text-white md:text-6xl text-3xl font-mono'>Olá, meu</h1>
-        <h1 className='text-white md:text-6xl text-3xl font-mono'>nome é <b className='md:text-7xl text-5xl  text-[#6716cf]'>Silva.</b></h1>
+        <h1 className='text-white md:text-4xl text-2xl font-mono'>Olá, meu</h1>
+        <h1 className='text-white md:text-4xl text-2xl font-mono'>nome é <b className='md:text-5xl text-3xl  text-[#6716cf]'>Silva.</b></h1>
 
         <div className='flex flex-col items-start mt-10 gap-2 md:items-center md:justify-flex-start'>
-          <p className='text-white md:text-2xl text-xl font-mono'>Sou um <b className='md:text-2xl text-1xl font-bold text-white tracking-wider'>desenvolvedor criativo </b> e 
-            <b className='md:text-2xl text-1xl font-bold text-white gap-2 '> independente</b> de curitiba-PR, região sul do Brasil.</p>
+          <p className='text-white md:text-2xl text-lg font-mono'>Sou um <b className='md:text-2xl text-lg font-bold text-white tracking-wider'>desenvolvedor criativo </b> e 
+            <b className='md:text-2xl text-lg font-bold text-white gap-2 '> independente</b> de curitiba-PR, região sul do Brasil.</p>
 
         </div>
       </div>

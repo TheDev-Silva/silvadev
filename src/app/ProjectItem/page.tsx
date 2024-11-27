@@ -51,7 +51,7 @@ export default function ProjectItem({ project }: ProjectsProps) {
             <div className="border-white w-full relative z-10 flex flex-col p-[50px] gap-20" >
                {project.map((item) => (
 
-                  <div key={item.id} className="md:flex relative md:w-full md:justify-between justify-center items-center text-white p-5 rounded-lg mb-5 border-l-neonGreen border-b-neonGreen shadow-neon" style={{ borderBottomWidth: 4, borderLeftWidth: 4, backgroundColor: '#6716cf29', boxShadow: '#6716cf', gap: 15, backgroundImage: `url(${item.backgroundImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                  <div key={item.id} className="md:flex relative md:w-full md:justify-between justify-center items-center text-white p-5 rounded-lg mb-5 border-l-neonGreen border-b-neonGreen shadow-neon" style={{ borderBottomWidth: 4, borderLeftWidth: 4, backgroundColor: '#6716cf29', boxShadow: '#6716cf', gap: 15, /* backgroundImage: `url(${item.backgroundImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' */ }}>
 
                      <div
                         className='absolute z-0 -inset-0 md:w-[200px] md:h-[200px] h-[100px] w-[100px] left-9 top-[30px] rounded-full bg-gradient-to-br to-[#6716cf] from-[#000] transition-all duration-300 blur-md'
