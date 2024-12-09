@@ -1,4 +1,3 @@
-'use client'
 import AboutMe from "@/AboutMe/page";
 import Tecnologias from "@/Tecnologia/page";
 import Initial from "./Initial/page";
@@ -14,6 +13,12 @@ import RNELogo from '../images/RNE.logo.png'
 import TailwindLogo from '../images/tailwind-logo.png'
 import FirebaseLogo from '../images/firebase-logo.png'
 import ProjectItem from "./ProjectItem/page";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+   title: 'Home - página principal'
+}
+
 
 
 export default function Home() {

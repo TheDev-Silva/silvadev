@@ -1,7 +1,7 @@
-
+'use client'
 import Image from "next/image";
 import Link from "next/link";
-import { use } from "react";
+import { use, useState } from "react";
 
 const project = [
    {
@@ -143,10 +143,11 @@ const project = [
 
 const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
    // Resolver a Promise de params
+   const [selectedImage, setSelectedImage] = useState<string | null>(null);
    const { id } = use(params);
 
    // Buscar os dados do projeto pelo ID
-   const projectData = project.find((item) => item.id === parseInt(id, 10));
+   const projectData = project.find((item) => item.id === Number(id));
 
    // Caso o projeto não exista
    if (!projectData) {
@@ -160,23 +161,22 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
 
    return (
       <div className="flex flex-col w-full p-8 pt-[150px] bg-slate-950 ">
-         <h1 className="text-4xl font-bold text-white">{projectData.name}</h1>
-         <p className="mt-4 text-lg text-gray-300">{projectData.description}</p>
+         <h1 className="text-4xl font-bold text-white font-mono">{projectData.name}</h1>
+         <p className="mt-4 text-lg text-white font-mono">{projectData.description}</p>
 
          <div className="mt-8">
-            <h2 className="text-2xl font-semibold text-white">Imagens:</h2>
-            <div className="flex flex-wrap gap-12 mt-4 justify-center items-center w-full">
+            <h2 className="text-2xl font-semibold text-white font-mono">Imagens:</h2>
+            <div className="grid grid-cols-6 gap-12 mt-4 justify-center items-center ">
                {projectData.images.map((image) => (
-                  <Image
-                     key={image.id}
-                     width={0}
-                     height={0}
-                     sizes={'100vh'}
-                     quality={90}
-                     src={image.image}
-                     alt={`${projectData.name} - Imagem ${image.id}`}
-                     className="rounded-lg shadow-lg w-[380px]"
-                  />
+                  <div key={image.id} onClick={() => setSelectedImage(image.image)} className="cursor-pointer">
+                     <Image
+                        width={180}
+                        height={120}
+                        src={image.image}
+                        alt={`${projectData.name} - Imagem ${image.id}`}
+                        className="rounded-lg shadow-lg w-[180px]"
+                     />
+                  </div>
                ))}
             </div>
          </div>
@@ -199,6 +199,27 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
                   voltar
                </Link>
             </div>
+         )}
+
+         {/* Modal */}
+         {selectedImage && (
+            <button
+               onClick={() => setSelectedImage(null)}>
+               <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 z-50">
+                  <div className="relative">
+                     <Image
+                        src={selectedImage}
+                        alt="Imagem ampliada"
+                        width={250}
+                        height={250}
+                        className="rounded-lg shadow-lg"
+                     />
+
+
+
+                  </div>
+               </div>
+            </button>
          )}
       </div>
    );

@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Initial() {
   return (
-    <div className='lg:flex md:w-full md:h-[100vh] p-[50px] pt-[180px] items-center justify-between md:flex relative bg-slate-950'>
+    <div className='lg:flex md:w-full md:h-full p-[50px] pt-[180px] items-center justify-between md:flex relative bg-slate-950'>
 
       <div className='w-[100%] mb-10 z-10'>
         <h1 className='text-white md:text-4xl text-2xl font-mono'>Olá, meu</h1>
@@ -18,7 +18,7 @@ export default function Initial() {
 
       <div className='flex w-full md:justify-end justify-center items-center relative'>
         {/* Contêiner com formato de círculo e overflow oculto */}
-        <div className='flex md:h-[380px] md:w-[380px] w-[380px] h-[380px] bg-gradient-to-l from-[#6716cf] to-[#020617] rounded-full overflow-hidden justify-center items-center ' style={{ zIndex: 1 }}>
+        <div className='flex md:h-[380px] md:w-[380px] w-[380px] h-[380px] bg-gradient-to-l from-[#6716cf] to-[#020617] rounded-full overflow-hidden justify-center items-center ' style={{ zIndex: 1, boxShadow: '10px 10px 100px #6716cf99' }}>
           <Image
             src={'/perfil-1-removebg-preview (1).png'}
             alt={'foto-perfil'}
@@ -26,7 +26,7 @@ export default function Initial() {
             height={0}
             sizes={'100vw'}
             quality={90}
-            className='relative top-[50px] w-[400px] h-[400px] md:h-[400px] md:w-[400px] md:object-contain object-contain'
+            className='relative top-[50px] w-[400px] h-[400px] md:h-[400px] md:w-[400px] md:object-contain object-contain opacity-90'
           />
         </div>
       </div>

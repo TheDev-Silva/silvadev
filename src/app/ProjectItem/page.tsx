@@ -1,10 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 import { Carousel } from './Carrosel';
-import { url } from 'inspector';
 import { useRouter } from 'next/navigation';
 
 interface ProjectProp {
