@@ -63,7 +63,7 @@ export default function Header() {
                         {/*  <h1 className='flex font-Roseberry md:text-3xl text-xl text-white font-bold text drop-shadow-textsm transition-all duration-300 tracking-widest let'></h1> */}
                         {window.innerWidth >= 768 ? (
                            <Image
-                              src={'/logo1.png'}
+                              src={'/logo-completa.png'}
                               alt='logo'
                               width={0}
                               height={0}
@@ -72,7 +72,7 @@ export default function Header() {
                               className='w-[130px] drop-shadow-textlg'
                            />
                         ) : <Image
-                           src={'/logo1.png'}
+                           src={'/logo-reduzida.png'}
                            alt='logo'
                            width={0}
                            height={0}
