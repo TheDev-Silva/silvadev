@@ -9,6 +9,16 @@ const project = [
       name: 'Security Key',
       description: 'O Security Key é um aplicativo de gerenciamento de senhas projetado para oferecer segurança e simplicidade. Com ele, você precisa memorizar apenas uma senha mestra, e o app se encarrega de armazenar de maneira segura todas as suas senhas importantes, como as de redes sociais (Facebook, Instagram), cartões, contas de sites, aplicativos e muito mais. Esse sistema de armazenamento permite que você tenha fácil acesso a todas as suas senhas, mantendo-as protegidas com criptografia robusta e acessíveis apenas com a senha mestra. Com o Security Key, sua segurança e conveniência estão em primeiro lugar.',
       link: 'sem endereco',
+      tecnololigas_usadas: [
+         {
+            
+            framework: 'React Native Expo',
+            estilo: 'StyleSheet Inline',
+            linguagem: 'Javascript',
+            back_end: 'Não',
+            Ai: 'Não'
+         }
+      ],
       images: [
          {
             id: 1,
@@ -43,6 +53,16 @@ const project = [
       name: 'The Burger Rock',
       description: 'O The Burger Rock é uma hamburgueria que combina o estilo metaleiro com uma experiência gastronômica única. Localizada em Curitiba, oferece hambúrgueres artesanais variados, como o "Artesanal de Bacon" e o "Levíssimo Burger", além de bebidas e acompanhamentos. O ambiente e o atendimento remetem ao estilo rock, proporcionando uma experiência temática e descontraída para os fãs de boa música e hambúrgueres. Acesse o site para conferir o cardápio completo e fazer seu pedido: The Burger Rock.',
       link: 'https://the-burger-rock.vercel.app/',
+      tecnololigas_usadas: [
+         {
+         
+            framework: 'HTML',
+            estilo: 'CSS',
+            linguagem: 'Javascript',
+            back_end: 'Não',
+            Ai: 'Não'
+         }
+      ],
       images: [
          {
             id: 1,
@@ -75,8 +95,19 @@ const project = [
    {
       id: 3,
       name: 'The Dieta',
-      description: 'O The Dieta é um aplicativo de dicas nutrição personalizado que ajuda os usuários a atingir seus objetivos de saúde, como emagrecimento, hipertrofia ou ganho de massa muscular. Ao fornecer dados como nome, peso, altura, idade e meta, a inteligência artificial gera uma dieta equilibrada para a semana, acompanhada de sugestões de exercícios. O app também apresenta gráficos de progresso para monitoramento de ganho ou perda de peso, além de recomendações de suplementos, tornando o processo de acompanhamento mais fácil e eficiente.',
+      description: 'O The Dieta é um aplicativo de dicas de nutrição personalizado que ajuda os usuários a atingir seus objetivos de saúde, como emagrecimento, hipertrofia ou ganho de massa muscular. Ao fornecer dados como nome, peso, altura, idade e meta, a inteligência artificial gera uma dieta equilibrada para a semana, acompanhada de sugestões de exercícios. O app também apresenta gráficos de progresso para monitoramento de ganho ou perda de peso, além de recomendações de suplementos, tornando o processo de acompanhamento mais fácil e eficiente.',
       link: 'https://the-burger-rock.vercel.app/',
+      tecnololigas_usadas: [
+         {
+           
+            framework: 'React Native Expo',
+            estilo: 'StyleSheet Inline',
+            linguagem: 'Javascript/typescript',
+            back_end: 'Sim',
+            Ai: 'Gemini'
+
+         }
+      ],
       images: [
          {
             id: 1,
@@ -111,6 +142,16 @@ const project = [
       name: 'Love & Coffe',
       description: 'O Love & Coffee é um aplicativo simples e prático para amantes de café. Com ele, você pode escolher entre uma variedade de cafés, como macchiato, expresso tradicional, americano e com leite. O processo é fácil: basta selecionar seu café preferido, personalizar sua escolha, e pagar diretamente pelo app. Ideal para quem busca rapidez, conveniência e um ótimo café, tudo na palma da mão.',
       link: 'https://the-burger-rock.vercel.app/',
+      tecnololigas_usadas: [
+         {
+
+            framework: 'React Native Expo',
+            estilo: 'StyleSheet Inline',
+            linguagem: 'Javascript',
+            back_end: 'Não',
+            Ai: 'Não'
+         }
+      ],
       images: [
          {
             id: 1,
@@ -166,7 +207,7 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
 
          <div className="mt-8">
             <h2 className="text-2xl font-semibold text-white font-mono">Imagens:</h2>
-            <div className="grid grid-cols-6 gap-12 mt-4 justify-center items-center ">
+            <div className="flex flex-wrap gap-12 mt-4 justify-center items-center ">
                {projectData.images.map((image) => (
                   <div key={image.id} onClick={() => setSelectedImage(image.image)} className="cursor-pointer">
                      <Image
@@ -174,7 +215,7 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
                         height={120}
                         src={image.image}
                         alt={`${projectData.name} - Imagem ${image.id}`}
-                        className="rounded-lg shadow-lg w-[180px]"
+                        className="rounded-lg shadow-lg md:w-[150px] p-2"
                      />
                   </div>
                ))}

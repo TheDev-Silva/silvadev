@@ -14,11 +14,11 @@ import TailwindLogo from '../images/tailwind-logo.png'
 import FirebaseLogo from '../images/firebase-logo.png'
 import ProjectItem from "./ProjectItem/page";
 import { Metadata } from "next";
+import ProjectClient from "@/projectClient/page";
 
 export const metadata: Metadata = {
    title: 'Home - página principal'
 }
-
 
 
 export default function Home() {
@@ -241,7 +241,7 @@ export default function Home() {
 
          <Tecnologias tecnologyItem={tecnology} />
          <ProjectItem project={project} />
-
+         <ProjectClient/>
       </div>
    );
 }

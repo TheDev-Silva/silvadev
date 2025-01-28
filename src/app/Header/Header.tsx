@@ -27,9 +27,9 @@ export default function Header() {
    useEffect(() => {
       const handleResize = () => {
          if (window.innerWidth <= 768) {
-            setLogoText('{ GC }');
+            setLogoText('</ The SD');
          } else {
-            setLogoText('G.' + 'C' + 'ode');
+            setLogoText(logoText);
          }
       };
 
@@ -63,7 +63,7 @@ export default function Header() {
                         {/*  <h1 className='flex font-Roseberry md:text-3xl text-xl text-white font-bold text drop-shadow-textsm transition-all duration-300 tracking-widest let'></h1> */}
                         {window.innerWidth >= 768 ? (
                            <Image
-                              src={'/logoheader.png'}
+                              src={'/logo1.png'}
                               alt='logo'
                               width={0}
                               height={0}
@@ -72,15 +72,16 @@ export default function Header() {
                               className='w-[130px] drop-shadow-textlg'
                            />
                         ) : <Image
-                           src={'/logoheader1.png'}
+                           src={'/logo1.png'}
                            alt='logo'
                            width={0}
                            height={0}
                            quality={90}
                            sizes={'100vw'}
-                           className='w-[35px] drop-shadow-textlg'
+                           className='w-[130px] drop-shadow-textlg'
                         />}
-                        {/* <h1 className="font-GreenKing text-2xl text-white font-bold text drop-shadow-textsm text-right m-[-6px] mr-[3px] transition-all duration-300">{logoText === '_The Silva' ? 'Dev' : ''}</h1> */}</div>
+                        {/* <h1 className="font-GreenKing text-2xl text-white font-bold text drop-shadow-textsm text-right m-[-6px] mr-[3px] transition-all duration-300">{logoText}</h1> */}
+                     </div>
                   </Link>
 
                </div>

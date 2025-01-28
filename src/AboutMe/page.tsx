@@ -6,8 +6,14 @@ export default function AboutMe() {
 
    const [loading, setLoading] = useState(false)
 
-   
-   
+
+   const Isloading = () => {
+      setLoading(true)
+      setTimeout(() => {
+         setLoading(false)
+      }, 5000);
+   }
+
 
 
    return (
@@ -56,7 +62,7 @@ export default function AboutMe() {
             className="border-neon shadow-neon md:p-8 relative"
          >
             <div className='flex flex-col relative md:p-8 bg-gradient-to-t from-transparent to-white' style={{
-               borderTopWidth: 4, borderRightWidth: 4, borderColor: '#6716cf', borderTopRightRadius: 20, paddingTop: 20, paddingRight: 0, paddingLeft: 0, paddingBottom: 0
+               borderTopWidth: 1, borderRightWidth: 1, borderColor: '#6716cf', borderTopRightRadius: 20, paddingTop: 20, paddingRight: 0, paddingLeft: 0, paddingBottom: 0
             }}>
                <p className="backdrop-blur-sm text-white md:text-lg text-base font-mono tracking-tight capitalize md:text-[12px]">
                   Bem-vindos ao meu portfólio! Sou um desenvolvedor front-end com uma ampla experiência em desenvolvimento web e pricipalmente mobile, utilizando tecnologias modernas e frameworks robustos e sempre se mantendo atualizado nas novidades que aparecem a melhorar as aplicações. Meu foco é criar aplicações
@@ -69,16 +75,16 @@ export default function AboutMe() {
                   <Link href="/AboutMais"
 
                   >
-                  <button
-                     
-                     style={{
-                        minWidth: 150,
+                     <button
+                        onClick={Isloading}
+                        style={{
+                           minWidth: 150,
 
-                     }}
-                     className='text-white hover:bg-[#6716cf] bg-[#6716cf89] transition-all duration-300 p-3 rounded-sm text-center items-center justify-center gap-3 mt-5'
-                  >
-                     {loading === true ? 'carregando...' : 'saiba mais'}
-                  </button>
+                        }}
+                        className='text-white hover:bg-[#6716cf] bg-[#6716cf89] transition-all duration-300 p-3 rounded-sm text-center items-center justify-center gap-3 mt-5'
+                     >
+                        {loading ? 'carregando...' : 'saiba mais'}
+                     </button>
                   </Link>
 
 
