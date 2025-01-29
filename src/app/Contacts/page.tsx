@@ -59,7 +59,7 @@ export default function Contact() {
 
 
    return (
-      <div className='relative md:flex w-full bg-black items-center md:justify-between justify-center p-10 md:pt-[150px] pt-[200px] px-10 md:px-40 md:h-[100vh] min-h-[100vh]'>
+      <div className='relative md:flex w-full bg-black items-center md:justify-between justify-center md:pt-[150px] pt-[200px] px-10 md:px-40 md:h-[100vh] min-h-[100vh]'>
          {/* Círculo decorativo ao fundo */}
 
          <div

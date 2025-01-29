@@ -235,7 +235,7 @@ export default function Home() {
 
 
    return (
-      <div className="flex-col w-fulljustify-start items-center bg-[#000] ">
+      <div className="flex-col w-fulljustify-start items-center bg-slate-950 md:p-[50px] p-[30px]">
          <Initial />
          <AboutMe />
 

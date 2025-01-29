@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Initial() {
   return (
-    <div className='lg:flex md:w-full md:h-full p-[50px] pt-[180px] items-center justify-between md:flex relative bg-slate-950'>
+    <div className='lg:flex md:w-full md:h-full pt-[180px] items-center justify-between md:flex relative bg-slate-950'>
 
       <div className='w-[100%] mb-10 z-10'>
         <h1 className='text-white md:text-4xl text-2xl font-mono'>Olá, meu</h1>

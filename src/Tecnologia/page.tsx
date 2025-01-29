@@ -19,7 +19,7 @@ export default function Tecnologias({ tecnologyItem }: TecnologiasProp) {
 
 
    return (
-      <div className='flex w-full flex-col md:w-full md:h-[100vw] p-[50px] items-center justify-between md:flex relative bg-slate-950' >
+      <div className='flex w-full flex-col md:w-full md:h-[100vw] items-center justify-between md:flex relative bg-slate-950' >
          {/* Contêiner flexível para scroll infinito */}
 
          <div className='flex-wrap w-full '>

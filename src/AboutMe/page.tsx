@@ -17,7 +17,7 @@ export default function AboutMe() {
 
 
    return (
-      <div className='flex-col relative p-[50px] h-full items-center justify-between' style={{ flex: 1, flexDirection: 'column', width: '100%', height: '100%', paddingTop: 80, gap: 30 }}>
+      <div className='flex-col relative h-full items-center justify-between' style={{ flex: 1, flexDirection: 'column', width: '100%', height: '100%', paddingTop: 80, gap: 30}}>
 
          <div
             className='absolute -inset-0 md:w-[200px] md:h-[200px] h-[100px] w-[100px] rounded-full bg-gradient-to-br to-[#6716cf] from-[#000] transition-all duration-300 blur-md'
