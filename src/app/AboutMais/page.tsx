@@ -4,7 +4,7 @@ import { GrShieldSecurity } from 'react-icons/gr'
 
 export default function AboutMais() {
    return (
-      <div className='lg:flex-col md:w-full pt-[120px] md:pt-[120px] items-center justify-between md:flex-col relative bg-slate-950 h-full'>
+      <div className='lg:flex-col md:w-full pt-[120px] md:pt-[120px] items-center justify-between md:flex-col relative bg-slate-950 h-full md:p-[30px] p-[20px]'>
 
          <div
             style={{

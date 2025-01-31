@@ -29,15 +29,16 @@ export default function Tecnologias({ tecnologyItem }: TecnologiasProp) {
                <span className='text-xl'>"</span>  Aqui, compartilho algumas das principais tecnologias que utilizo para transformar ideias em soluções completas e eficientes. Minha escolha de ferramentas sempre considera as necessidades específicas de cada projeto, garantindo que as soluções desenvolvidas sejam funcionais, escaláveis e alinhadas aos objetivos do cliente.
                <span className='text-xl'>"</span>
             </p>
-            <div className='text-white font-mono md:text-lg text-base p-10 mt-10 shadow-lg shadow-white' style={{ borderBottomWidth: 4, borderLeftWidth: 4, borderColor: '#6716cf', borderBottomLeftRadius: 30, }}>
+            <div className='text-white font-mono md:text-lg text-base md:p-5 p-8 mt-5 shadow-lg shadow-white' style={{ borderBottomWidth: 2, borderLeftWidth: 2, borderColor: '#6716cf', borderBottomLeftRadius: 30, }}>
 
                No front-end, o<b className='text-[#6716cf] font-mono italic bg-white w-full'> JavaScript</b>  reina como a base para a criação de experiências ricas e interativas, em conjunto com <b className='text-[#6716cf] font-mono'>React</b>  e <b className='text-[#6716cf] font-mono'>Next.js</b>, que me permitem desenvolver interfaces modernas e de alta performance. Para aplicações mobile, combino a flexibilidade do <b className='text-[#6716cf] font-mono'>React Native</b> com a eficiência do Expo, criando aplicativos que oferecem ótima usabilidade.
 
-               <br className=''></br>No back-end, <b className='text-[#6716cf] font-mono'>Node.js</b> é minha escolha para construir APIs robustas e escaláveis, enquanto ferramentas como <b className='text-[#6716cf] font-mono'>Prisma</b> e <b className='text-[#6716cf] font-mono'>Drizzle</b> garantem uma manipulação de dados eficaz e segura. Firebase se destaca por permitir integrações em tempo real e autenticação confiável, essencial para muitos projetos modernos.
+               <br className=''></br><br className=''></br>No back-end, o <b className='text-[#6716cf] font-mono'>Node.js</b> é minha escolha para construir APIs robustas e quando necessárias escaláveis, enquanto ferramentas como <b className='text-[#6716cf] font-mono'>Prisma ORM</b> e <b className='text-[#6716cf] font-mono'>Drizzle</b> garantem uma manipulação de dados eficaz e segura. já o Firebase se destaca por permitir integrações em tempo real e autenticação confiável, essencial para muitos projetos modernos.
 
                Quanto ao design e estilo, <b className='text-[#6716cf] font-mono'>CSS</b> é a base, complementada pela agilidade do <b className='text-[#6716cf] font-mono'>Tailwind CSS</b> e a elegância dos componentes de <b className='text-[#6716cf] font-mono'>Shadcn-UI</b>, que ajudam a criar interfaces consistentes e atraentes.
 
-               Estas são apenas algumas das ferramentas que fazem parte do meu dia a dia. Cada projeto é único, e minha prioridade é sempre encontrar as melhores combinações para atender às suas necessidades. Vamos transformar sua ideia em realidade com as tecnologias certas!
+               Estas são apenas algumas das ferramentas que fazem parte do meu dia a dia. Cada projeto é único, e minha prioridade é sempre encontrar as melhores combinações para atender às suas necessidades.
+               <br className=''></br><br className='text-lg'></br>E então? Vamos transformar sua ideia em realidade com as tecnologias certas!
 
 
             </div>

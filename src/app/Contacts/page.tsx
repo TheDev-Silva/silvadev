@@ -18,14 +18,32 @@ export default function Contact() {
    const [responseMessage, setResponseMessage] = useState('')
    const [isLoading, setIsLoading] = useState(false)
 
+   const formatPhone = (value: string) => {
+      // Remove todos os caracteres não numéricos
+      const onlyNumbers = value.replace(/\D/g, "");
+
+      // Aplica a máscara (00) 99999-9999
+      if (onlyNumbers.length <= 2) {
+         return `(${onlyNumbers}`;
+      } else if (onlyNumbers.length <= 7) {
+         return `(${onlyNumbers.slice(0, 2)}) ${onlyNumbers.slice(2)}`;
+      } else {
+         return `(${onlyNumbers.slice(0, 2)}) ${onlyNumbers.slice(2, 7)}-${onlyNumbers.slice(7, 11)}`;
+      }
+   };
+
    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const { name, value } = e.target;
-      setFormData((prev) => ({ ...prev, [name]: value }));
+      const formattedValue = name === 'phone' ? formatPhone(value) : value;
+      
+      setFormData((prev) => ({ ...prev, [name]: formattedValue }));
    };
 
    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       setIsLoading(true)
+
+      
 
       try {
          const response = await fetch('http://localhost:3333/clients', {
@@ -59,7 +77,7 @@ export default function Contact() {
 
 
    return (
-      <div className='relative md:flex w-full bg-black items-center md:justify-between justify-center md:pt-[150px] pt-[200px] px-10 md:px-40 md:h-[100vh] min-h-[100vh]'>
+      <div className='relative md:flex w-full bg-black items-center md:justify-between justify-center md:pt-[150px] pt-[200px] py-20 px-10 md:px-40 md:h-[100vh] min-h-[100vh]'>
          {/* Círculo decorativo ao fundo */}
 
          <div
@@ -166,11 +184,13 @@ export default function Contact() {
                      value={formData.message}
                      onChange={handleChange}
                      required
-                     className='h-200'
-                  ></textarea>
+                     className='h-200 p-2'
+                  >
+
+                  </textarea>
                   {isLoading ? <button type="submit" className='flex w-full text-white hover:bg-[#6716cf] bg-[#6716cf89] transition-all duration-300 p-3 rounded-sm text-center items-center justify-center gap-3'>
-                     <AiOutlineLoading className='animate-spin ease-linear spin-in-45' size={24} /> Enviando ideia...
-                  </button> : <button type="submit" className='flex w-full text-white hover:bg-[#6716cf] bg-[#6716cf89] transition-all duration-300 p-3 rounded-sm text-center items-center justify-center'>Enviar Ideia</button>}
+                     <AiOutlineLoading className='animate-spin ease-linear spin-in-45' size={24} /> ENVIANDO SUA IDEIA...
+                  </button> : <button type="submit" className='flex w-full text-white hover:bg-[#6716cf] bg-[#6716cf89] transition-all duration-300 p-3 rounded-sm text-center items-center justify-center text-sm font-thin'>ENVIAR IDEIA</button>}
                </form>
                {responseMessage && <p className='text-white'> {responseMessage}</p>}
             </div>

@@ -17,7 +17,7 @@ export default function AboutMe() {
 
 
    return (
-      <div className='flex-col relative h-full items-center justify-between' style={{ flex: 1, flexDirection: 'column', width: '100%', height: '100%', paddingTop: 80, gap: 30}}>
+      <div className='flex-col relative h-full items-center justify-between' style={{ flex: 1, flexDirection: 'column', width: '100%', height: '100%', paddingTop: 80, gap: 30, paddingBottom: 30}}>
 
          <div
             className='absolute -inset-0 md:w-[200px] md:h-[200px] h-[100px] w-[100px] rounded-full bg-gradient-to-br to-[#6716cf] from-[#000] transition-all duration-300 blur-md'
@@ -62,7 +62,7 @@ export default function AboutMe() {
             className="border-neon shadow-neon md:p-8 relative"
          >
             <div className='flex flex-col relative md:p-8 bg-gradient-to-t from-transparent to-white' style={{
-               borderTopWidth: 1, borderRightWidth: 1, borderColor: '#6716cf', borderTopRightRadius: 20, paddingTop: 20, paddingRight: 0, paddingLeft: 0, paddingBottom: 0
+               borderTopWidth: 1, borderRightWidth: 1, borderColor: '#6716cf', borderTopRightRadius: 20, paddingTop: 20, paddingRight: 10, paddingLeft: 0, paddingBottom: 0,
             }}>
                <p className="backdrop-blur-sm text-white md:text-lg text-base font-mono tracking-tight capitalize md:text-[12px]">
                   Bem-vindos ao meu portfólio! Sou um desenvolvedor front-end com uma ampla experiência em desenvolvimento web e pricipalmente mobile, utilizando tecnologias modernas e frameworks robustos e sempre se mantendo atualizado nas novidades que aparecem a melhorar as aplicações. Meu foco é criar aplicações
