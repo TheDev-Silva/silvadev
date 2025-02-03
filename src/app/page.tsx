@@ -1,3 +1,4 @@
+'use client'
 import AboutMe from "@/AboutMe/page";
 import Tecnologias from "@/Tecnologia/page";
 import Initial from "./Initial/page";
@@ -15,13 +16,38 @@ import FirebaseLogo from '../images/firebase-logo.png'
 import ProjectItem from "./ProjectItem/page";
 import { Metadata } from "next";
 import ProjectClient from "@/projectClient/page";
+import { useEffect, useRef, useState } from "react";
+import Header from "./Header/Header";
+import { BiCommentDots } from "react-icons/bi";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
-export const metadata: Metadata = {
+/* export const metadata: Metadata = {
    title: 'Home - página principal'
-}
+} */
 
 
 export default function Home() {
+
+   const initialRef = useRef<HTMLDivElement>(null);
+   const aboutMeRef = useRef<HTMLDivElement>(null);
+   const tecnologiasRef = useRef<HTMLDivElement>(null);
+   const projectsRef = useRef<HTMLDivElement>(null);
+
+   const [isScrolled, setIsScrolled] = useState(false)
+   const [logoText, setLogoText] = useState(false)
+   const sectionRef = useRef<HTMLDivElement>(null)
+
+   // Função para rolar até a seção
+   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+      if (ref.current) {
+         window.scrollTo({
+            top: ref.current.offsetTop - 120, // Obtém a posição da seção
+            behavior: "smooth", // Rolagem suave
+         });
+      }
+   };
 
 
 
@@ -233,15 +259,131 @@ export default function Home() {
       }
    ]
 
+   useEffect(() => {
+
+      const handleScroll = () => {
+         if (window.scrollY > 0) {
+            setIsScrolled(true)
+         } else {
+            setIsScrolled(false)
+         }
+      }
+      window.addEventListener('scroll', handleScroll)
+      return () => window.removeEventListener('scroll', handleScroll)
+
+   }, [])
+
+   useEffect(() => {
+      const handleResize = () => {
+         if (window.innerWidth <= 768) {
+            setLogoText(true);
+         } else {
+            setLogoText(false);
+         }
+      };
+
+      // Verifica o tamanho inicial da tela
+      handleResize();
+
+      // Adiciona o listener de resize
+      window.addEventListener('resize', handleResize);
+
+      // Remove o listener ao desmontar o componente
+      return () => {
+         window.removeEventListener('resize', handleResize);
+      };
+
+   }, [])
+
+
+
 
    return (
-      <div className="flex-col w-fulljustify-start items-center bg-slate-950 md:p-[50px] p-[30px]">
-         <Initial />
-         <AboutMe />
+      <>
+         <div className={`fixed w-full z-40  md:p-6 p-2 transition-all duration-500 ${isScrolled ? 'h-[130px] backdrop-blur-sm' : 'h-[120px] bg-[#6716cf] justify-between'
+            }`}>
+            {/* Camada de fundo com desfoque */}
+            <div className={`absolute inset-0 bg-gradient-to-tr from-[#6716cf] to-[#000] ${isScrolled ? 'opacity-80' : 'opacity-0'
+               } transition-opacity duration-500`}></div>
 
-         <Tecnologias tecnologyItem={tecnology} />
-         <ProjectItem project={project} />
-         <ProjectClient/>
-      </div>
+            {/* Conteúdo do Header */}
+            <div className="relative flex justify-between items-center w-full h-full p-5">
+               <div className='flex items-center min-w-[50px]'>
+                  <div className='flex'>
+                     <Link href={'/'}>
+                        <div className='flex flex-col justify-items-end'>
+
+                           <Image
+                              src={!logoText ? '/logo-completa.png' : '/logo-reduzida.png'}
+                              alt='logo'
+                              width={0}
+                              height={0}
+                              quality={90}
+                              sizes={'100vw'}
+                              className={!logoText ? 'w-[130px] drop-shadow-textlg' : 'w-[50px] drop-shadow-textlg'}
+                           />
+
+                        </div>
+                     </Link>
+
+                  </div>
+
+               </div>
+               {!logoText && <div className='flex w-full md:overflow-hidden justify-center items-center lg:w-[600px] p-5'>
+                  <ul className='flex gap-10'>
+
+                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(initialRef)}>Inicio</li>
+
+
+                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(aboutMeRef)}>Sobre Mim</li>
+
+
+                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(tecnologiasRef)}>Tecnologias</li>
+
+
+                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(projectsRef)}>Projetos</li>
+
+
+
+                  </ul>
+               </div>}
+               {!logoText ? (
+                  <Link href="/Contacts" className='flex items-center gap-2 justify-center'>
+
+                     <BiCommentDots size={24} color="#fff" />
+                     <span className="font-mono uppercase hover:tracking-widest hover:transition-all text-white font-bold tracking-widest">contatos</span>
+
+                  </Link>
+               ) : (
+                  <Link href="/Contacts" className='flex items-center gap-2 justify-center'>
+
+                     <BiCommentDots size={24} color="#fff" />
+                     {/* <span className="font-mono uppercase hover:tracking-widest hover:transition-all text-white font-bold tracking-widest">contatos</span> */}
+
+                  </Link>
+               )}
+
+            </div>
+         </div>
+         <div className="flex-col w-fulljustify-start items-center bg-slate-950 md:p-[50px] p-[30px]">
+
+
+
+
+            <div ref={initialRef}>
+               <Initial />
+            </div>
+            <div ref={aboutMeRef}>
+               <AboutMe />
+            </div>
+            <div ref={tecnologiasRef}>
+               <Tecnologias tecnologyItem={tecnology} />
+            </div>
+            <div ref={projectsRef}>
+               <ProjectItem project={project} />
+               <ProjectClient />
+            </div>
+         </div>
+      </>
    );
 }
