@@ -1,4 +1,5 @@
 'use client'
+import Header from "@/app/Header/Header";
 import Image from "next/image";
 import Link from "next/link";
 import { use, useState } from "react";
@@ -11,7 +12,7 @@ const project = [
       link: 'sem endereco',
       tecnololigas_usadas: [
          {
-            
+
             framework: 'React Native Expo',
             estilo: 'StyleSheet Inline',
             linguagem: 'Javascript',
@@ -55,7 +56,7 @@ const project = [
       link: 'https://the-burger-rock.vercel.app/',
       tecnololigas_usadas: [
          {
-         
+
             framework: 'HTML',
             estilo: 'CSS',
             linguagem: 'Javascript',
@@ -99,7 +100,7 @@ const project = [
       link: 'https://the-burger-rock.vercel.app/',
       tecnololigas_usadas: [
          {
-           
+
             framework: 'React Native Expo',
             estilo: 'StyleSheet Inline',
             linguagem: 'Javascript/typescript',
@@ -188,7 +189,8 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
    const { id } = use(params);
 
    // Buscar os dados do projeto pelo ID
-   const projectData = project.find((item) => item.id === Number(id));
+
+   const projectData = (project.find((item) => item.id === Number(id)));
 
    // Caso o projeto não exista
    if (!projectData) {
@@ -201,68 +203,71 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
    }
 
    return (
-      <div className="flex flex-col w-full p-8 pt-[150px] bg-slate-950 ">
-         <h1 className="text-4xl font-bold text-white font-mono">{projectData.name}</h1>
-         <p className="mt-4 text-lg text-white font-mono">{projectData.description}</p>
+      <>
+      <Header/>
+         <div className="flex flex-col w-full p-8 pt-[150px] bg-slate-950 ">
+            <h1 className="text-4xl font-bold text-white font-mono">{projectData.name}</h1>
+            <p className="mt-4 text-lg text-white font-mono">{projectData.description}</p>
 
-         <div className="mt-8">
-            <h2 className="text-2xl font-semibold text-white font-mono">Imagens:</h2>
-            <div className="flex flex-wrap gap-12 mt-4 justify-center items-center ">
-               {projectData.images.map((image) => (
-                  <div key={image.id} onClick={() => setSelectedImage(image.image)} className="cursor-pointer">
-                     <Image
-                        width={180}
-                        height={120}
-                        src={image.image}
-                        alt={`${projectData.name} - Imagem ${image.id}`}
-                        className="rounded-lg shadow-lg md:w-[150px] p-2"
-                     />
-                  </div>
-               ))}
-            </div>
-         </div>
-
-         {projectData.link && (
-            <div className="flex w-full mt-8 justify-between pl-5 pr-5">
-               <Link
-                  href={projectData.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 underline"
-               >
-                  Acesse o projeto
-               </Link>
-               <Link
-                  href={'/'}
-                  rel="noopener noreferrer"
-                  className="text-blue-400 underline"
-               >
-                  voltar
-               </Link>
-            </div>
-         )}
-
-         {/* Modal */}
-         {selectedImage && (
-            <button
-               onClick={() => setSelectedImage(null)}>
-               <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 z-50">
-                  <div className="relative">
-                     <Image
-                        src={selectedImage}
-                        alt="Imagem ampliada"
-                        width={250}
-                        height={250}
-                        className="rounded-lg shadow-lg"
-                     />
-
-
-
-                  </div>
+            <div className="mt-8">
+               <h2 className="text-2xl font-semibold text-white font-mono">Imagens:</h2>
+               <div className="flex flex-wrap gap-12 mt-4 justify-center items-center ">
+                  {projectData.images.map((image) => (
+                     <div key={image.id} onClick={() => setSelectedImage(image.image)} className="cursor-pointer">
+                        <Image
+                           width={180}
+                           height={120}
+                           src={image.image}
+                           alt={`${projectData.name} - Imagem ${image.id}`}
+                           className="rounded-lg shadow-lg md:w-[150px] p-2"
+                        />
+                     </div>
+                  ))}
                </div>
-            </button>
-         )}
-      </div>
+            </div>
+
+            {projectData.link && (
+               <div className="flex w-full mt-8 justify-between pl-5 pr-5">
+                  <Link
+                     href={projectData.link}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="text-blue-400 underline"
+                  >
+                     Acesse o projeto
+                  </Link>
+                  <Link
+                     href={'/'}
+                     rel="noopener noreferrer"
+                     className="text-blue-400 underline"
+                  >
+                     voltar
+                  </Link>
+               </div>
+            )}
+
+            {/* Modal */}
+            {selectedImage && (
+               <button
+                  onClick={() => setSelectedImage(null)}>
+                  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 z-50">
+                     <div className="relative">
+                        <Image
+                           src={selectedImage}
+                           alt="Imagem ampliada"
+                           width={250}
+                           height={250}
+                           className="rounded-lg shadow-lg"
+                        />
+
+
+
+                     </div>
+                  </div>
+               </button>
+            )}
+         </div>
+      </>
    );
 };
 
