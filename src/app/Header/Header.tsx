@@ -1,17 +1,25 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { BiCommentDots } from 'react-icons/bi'
 import Link from 'next/link';
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { useNavigation } from '@/context/navigationContext';
+import Initial from '../Initial/page';
+import AboutMe from '@/AboutMe/page';
 
 
 
 
 export default function Header() {
 
+   
    const [isScrolled, setIsScrolled] = useState(false)
    const [logoText, setLogoText] = useState(false)
    
+
+
+
 
    useEffect(() => {
 
@@ -50,8 +58,11 @@ export default function Header() {
    }, [])
 
 
+
+
+
    return (
-      <div className={`fixed w-full z-40 md:p-6 p-2 transition-all duration-500 ${isScrolled ? 'h-[130px] backdrop-blur-sm' : 'h-[120px] bg-[#6716cf]'
+      <div className={`fixed w-full z-40 md:p-6 p-2 transition-all duration-500 ${isScrolled ? 'h-[130px] backdrop-blur-sm' : 'h-[120px] bg-[#6716cf] justify-between'
          }`}>
          {/* Camada de fundo com desfoque */}
          <div className={`absolute inset-0 bg-gradient-to-tr from-[#6716cf] to-[#000] ${isScrolled ? 'opacity-80' : 'opacity-0'
@@ -63,17 +74,16 @@ export default function Header() {
                <div className='flex'>
                   <Link href={'/'}>
                      <div className='flex flex-col justify-items-end'>
-                        {/*  <h1 className='flex font-Roseberry md:text-3xl text-xl text-white font-bold text drop-shadow-textsm transition-all duration-300 tracking-widest let'></h1> */}
-                        
-                           <Image
-                              src={!logoText ? '/logo-completa.png' : '/logo-reduzida.png'}
-                              alt='logo'
-                              width={0}
-                              height={0}
-                              quality={90}
-                              sizes={'100vw'}
-                              className={!logoText ? 'w-[130px] drop-shadow-textlg': 'w-[50px] drop-shadow-textlg'}
-                           />
+
+                        <Image
+                           src={!logoText ? '/logo-completa.png' : '/logo-reduzida.png'}
+                           alt='logo'
+                           width={0}
+                           height={0}
+                           quality={90}
+                           sizes={'100vw'}
+                           className={!logoText ? 'w-[130px] drop-shadow-textlg' : 'w-[50px] drop-shadow-textlg'}
+                        />
 
                      </div>
                   </Link>
@@ -81,6 +91,7 @@ export default function Header() {
                </div>
 
             </div>
+         
             {!logoText ? (
                <Link href="/Contacts" className='flex items-center gap-2 justify-center'>
 
