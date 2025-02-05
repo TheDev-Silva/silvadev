@@ -22,6 +22,7 @@ import { BiCommentDots } from "react-icons/bi";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Contact from "./Contacts/page";
 
 /* export const metadata: Metadata = {
    title: 'Home - página principal'
@@ -34,6 +35,7 @@ export default function Home() {
    const aboutMeRef = useRef<HTMLDivElement>(null);
    const tecnologiasRef = useRef<HTMLDivElement>(null);
    const projectsRef = useRef<HTMLDivElement>(null);
+   const contactsRef = useRef<HTMLDivElement>(null)
 
    const [isScrolled, setIsScrolled] = useState(false)
    const [logoText, setLogoText] = useState(false)
@@ -330,7 +332,7 @@ export default function Home() {
 
                </div>
                {!logoText && <div className='flex w-full md:overflow-hidden justify-center items-center lg:w-[600px] p-5'>
-                  <ul className='flex gap-10'>
+                  <ul className='flex gap-4'>
 
                      <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(initialRef)}>Inicio</li>
 
@@ -342,6 +344,8 @@ export default function Home() {
 
 
                      <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(projectsRef)}>Projetos</li>
+
+                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(contactsRef)}>Contatos</li>
 
 
 
@@ -382,6 +386,9 @@ export default function Home() {
             <div ref={projectsRef}>
                <ProjectItem project={project} />
                <ProjectClient />
+            </div>
+            <div ref={contactsRef}>
+               <Contact />
             </div>
          </div>
       </>
