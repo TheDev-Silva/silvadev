@@ -80,8 +80,8 @@ export default function Contact() {
    return (
 
 
-      <div className='flex-wrap w-full h-full'>
-         <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center uppercase" style={{ marginBottom: 10 }}>Contato e onde estamos</h1>
+      <div className='flex-wrap w-full h-full justify-between'>
+         <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center" style={{ marginBottom: 10 }}>contate-nos</h1>
          <div className='relative md:flex w-full items-center md:justify-between justify-center md:pt-[50px] pt-[20px] py-20 px-10 md:px-40 md:h-[100vh] min-h-[100vh]'>
             {/* Círculo decorativo ao fundo */}
             <div

@@ -15,7 +15,6 @@ import TailwindLogo from '../images/tailwind-logo.png'
 import FirebaseLogo from '../images/firebase-logo.png'
 import ProjectItem from "./ProjectItem/page";
 import { Metadata } from "next";
-import ProjectClient from "@/projectClient/page";
 import { useEffect, useRef, useState } from "react";
 import Header from "./Header/Header";
 import { BiCommentDots } from "react-icons/bi";
@@ -23,19 +22,19 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Contact from "./Contacts/page";
-
-/* export const metadata: Metadata = {
-   title: 'Home - página principal'
-} */
+import DepoimentClient, { DepoimentClientProps } from "@/depoimentsClient/page";
 
 
-export default function Home() {
+
+export default function Home({ images }: DepoimentClientProps) {
+
 
    const initialRef = useRef<HTMLDivElement>(null);
    const aboutMeRef = useRef<HTMLDivElement>(null);
    const tecnologiasRef = useRef<HTMLDivElement>(null);
    const projectsRef = useRef<HTMLDivElement>(null);
    const contactsRef = useRef<HTMLDivElement>(null)
+   const depoimentsRef = useRef<HTMLDivElement>(null)
 
    const [isScrolled, setIsScrolled] = useState(false)
    const [logoText, setLogoText] = useState(false)
@@ -322,7 +321,7 @@ export default function Home() {
                               height={0}
                               quality={90}
                               sizes={'100vw'}
-                              className={!logoText ? 'w-[130px] drop-shadow-textlg' : 'w-[50px] drop-shadow-textlg'}
+                              className={!logoText ? 'w-[180px] drop-shadow-textlg' : 'w-[50px] drop-shadow-textlg'}
                            />
 
                         </div>
@@ -331,7 +330,7 @@ export default function Home() {
                   </div>
 
                </div>
-               {!logoText && <div className='flex w-full md:overflow-hidden justify-center items-center lg:w-[600px] p-5'>
+               {!logoText && <div className='flex w-full md:overflow-hidden justify-center items-center p-5'>
                   <ul className='flex gap-4'>
 
                      <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(initialRef)}>Inicio</li>
@@ -343,7 +342,8 @@ export default function Home() {
                      <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(tecnologiasRef)}>Tecnologias</li>
 
 
-                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(projectsRef)}>Projetos</li>
+                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(projectsRef)}>Projetos
+                     </li><li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(depoimentsRef)}>Avaliações</li>
 
                      <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(contactsRef)}>Contatos</li>
 
@@ -385,7 +385,10 @@ export default function Home() {
             </div>
             <div ref={projectsRef}>
                <ProjectItem project={project} />
-               <ProjectClient />
+
+            </div>
+            <div ref={depoimentsRef}>
+               <DepoimentClient images={images} />
             </div>
             <div ref={contactsRef}>
                <Contact />

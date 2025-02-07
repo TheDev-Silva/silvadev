@@ -3,8 +3,12 @@ import Image, { StaticImageData } from 'next/image';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Header from '../Header/Header';
 
+interface imagePros {
+   id: number,
+   image: StaticImageData | string
+}
 interface CarouselProps {
-   images: { id: number; image: StaticImageData | string }[];
+   images: imagePros[];
 }
 
 export const Carousel: React.FC<CarouselProps> = ({ images }) => {

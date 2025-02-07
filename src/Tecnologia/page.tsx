@@ -1,4 +1,5 @@
 'use client'
+import { Button } from '@/components/ui/button';
 import Image, { StaticImageData } from 'next/image'
 import React, { useState } from 'react'
 
@@ -39,13 +40,14 @@ export default function Tecnologias({ tecnologyItem }: TecnologiasProp) {
 
                Estas são apenas algumas das ferramentas que fazem parte do meu dia a dia. Cada projeto é único, e minha prioridade é sempre encontrar as melhores combinações para atender às suas necessidades.
                <br className=''></br><br className='text-lg'></br>E então? Vamos transformar sua ideia em realidade com as tecnologias certas!
+               <br></br><Button className='mt-10 uppercase'>Acesse aqui!</Button>
 
 
             </div>
-            <h1 className='md:text-2xl text-xl font-bold font-mono text-white text-center uppercase' style={{marginBottom: -62, marginTop: 42}}>Skill do dia-a-dia</h1>
+            <h1 className='md:text-2xl text-xl font-bold font-mono text-white text-center uppercase' style={{ marginBottom: -62, marginTop: 42 }}>Skill do dia-a-dia</h1>
 
          </div>
-         
+
          <div className="flex w-full items-center m-10" style={{
 
             overflowX: 'scroll',
@@ -97,7 +99,7 @@ export default function Tecnologias({ tecnologyItem }: TecnologiasProp) {
             ))}
 
          </div>
-
+         
       </div>
    );
 }

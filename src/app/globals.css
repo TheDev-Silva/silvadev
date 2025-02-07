@@ -71,3 +71,12 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Oculta barras de rolagem para navegadores modernos */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
