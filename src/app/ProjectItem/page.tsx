@@ -98,7 +98,7 @@ export default function ProjectItem({ project }: ProjectsProps) {
 
                      </div>
                   ))}
-                  <div
+                  {/* <div
                      className="relative flex flex-wrap w-full md:justify-between justify-center  items-center bg-balck p-10 "
                      style={{
                         backgroundImage: "url('/computer-monitor-with-world-map-screen-night-3d-rendering.jpg')",
@@ -107,13 +107,13 @@ export default function ProjectItem({ project }: ProjectsProps) {
                         backgroundRepeat: "no-repeat",
                      }}
                   >
-                     {/* Sobreposição para aplicar opacidade */}
+                    
                      <div
                         className="absolute inset-0 bg-black opacity-85 z-10"
                         style={{ backdropFilter: "blur(4px)" }} // Ajuste o valor para controlar o desfoque
                      ></div>
 
-                     {/* Conteúdo principal */}
+                     
                      <div className='relative md:w-[380px] md:h-[380px] w-[200px] h-[200px] bg-gradient-to-l from-[#6716cf] to-[#020617] rounded-full overflow-hidden justify-center items-center z-10' style={{ zIndex: 20 }}>
                         <Image
                            src={'/perfil-2-removebg-preview.png'}
@@ -131,7 +131,7 @@ export default function ProjectItem({ project }: ProjectsProps) {
                         <h1 className='font-mono md:text-4xl text-2xl text-white md:text-right text-center'>Hard work</h1>
                      </div>
                   </div>
-                  <h1 className='text-white text-center mt-40 italic'>Criado e Desenvolvido por SilvaDev - Copyright 2024</h1>
+                  <h1 className='text-white text-center mb-40 italic'>Criado e Desenvolvido por SilvaDev - Copyright 2024</h1> */}
                </div>
             </div>
 
