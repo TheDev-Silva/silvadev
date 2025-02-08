@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button'
 import { CheckIcon } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 import depoiment1 from '../../public/depoiment-1.jpg'
 import depoiment2 from '../../public/depoiment-2.jpg'
@@ -60,12 +61,12 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
          }
       }, intervalTime);
 
-      /* return () => clearInterval(autoScroll); // Limpa o intervalo ao desmontar o componente */
+      return () => clearInterval(autoScroll); // Limpa o intervalo ao desmontar o componente */
    }, []);
 
 
    return (
-      <div className="flex-shrink-0 w-full h-auto bg-slate-950 py-10 justify-center items-center">
+      <div className="flex-shrink-0 w-full h-auto bg-slate-950 py-10 justify-center items-center mt-10 pt-[50px]">
          <h1 className="text-2xl md:text-3xl text-white font-mono font-bold text-center mb-6">
             Depoimentos de Clientes
          </h1>
@@ -76,15 +77,17 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
             scrollBehavior: 'smooth', // Rolagem suave
-            marginTop: 100,
+            marginTop: 50,
          }}
             ref={scrollContainerRef}
+            
          >
             <style jsx>{`div::-webkit-scrollbar {display: none;}`}</style>
-            {depoimentClients.map((image) => (
+            {[...depoimentClients, ...depoimentClients].map((image, index) => (
                <div
-                  key={image.id}
+                  key={index}
                   className="border-violet-600 transition-all duration-500"
+                  
                >
                   <Image
                      src={image.image}
@@ -93,42 +96,57 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
                      height={0}
                      quality={90}
                      sizes={'100vw'}
-                     className="object-contain"
+                     className="object-cover"
                      style={{
-                        minWidth: 420,
+                        minWidth: 350,
 
                      }}
                   />
                </div>
             ))}
          </div>
-         <div className='flex-row rounded-lg mt-32' style={{ alignItems: 'center', marginTop: 50, justifyContent: 'center' }}>
-            <p className='text-white'>Ele seus projetos com design desde simples minimalistas a mordernos.</p>
-            <div className='flex-row justify-center items-center relative bg-[#6716cf] p-4' style={{ minWidth: 450 }}>
-               <div >
-                  <h1 className="text-2xl md:text-3xl text-white font-mono font-bold text-center mb-6">
-                     Somo Conhecidos por
-                  </h1>
+         <div className='relative md:flex w-full items-center md:justify-between justify-center' style={{ marginTop: 100, marginBottom: 100 }}>
+            <div className='w-full' style={{ width: '100%' }}>
+               <h1 className="text-2xl md:text-3xl text-white font-mono font-bold text-center mb-6">
+                  "Porque escolher nosso time?
+               </h1>
+               <p className='text-white'>Transformamos suas ideias em soluções digitais práticas e impactantes, com criatividade, eficiência e um suporte que você pode confiar.</p>
 
-               </div>
+            </div>
 
-               <div className='flex-col bg-slate-400 rounded-lg gap-5' style={{ width: 450, justifyContent: 'center', alignItems: 'center' }}>
-                  <div className='flex p-4 justify-between'>
-                     <CheckIcon size={24} color={'#fff'} />
-                     <h1 className='text-white font-mono text-lg'>Desenvolvimento Resposivo</h1>
+            <div className='flex-row justify-center items-center md:mt-0 mt-10 ' style={{ width: '100%', backgroundColor: '#fff' }}>
+
+               <h1 className="text-2xl md:text-3xl text-white font-mono font-bold text-center mb-6 " style={{ backgroundColor: '#6716cf', padding: 30 }}>
+                  Somo Conhecidos por
+               </h1>
+               <div className='flex-col p-5 ' style={{ gap: 10 }}>
+                  <div className='flex gap-4 rounded-md' style={{ paddingTop: 10, paddingBottom: 10 }}>
+                     <CheckIcon size={24} color={'#6716cf'} />
+                     <h1 className='text-[#6716cf] font-mono text-lg'>Desenvolvimento Resposivo</h1>
                   </div>
-                  <div className='flex p-4 justify-between'>
-                     <CheckIcon size={24} color={'#fff'} />
-                     <h1 className='text-white font-mono text-lg'>Integração de Sistemas</h1>
+                  <div className='flex gap-4' style={{ paddingTop: 10, paddingBottom: 10 }}>
+                     <CheckIcon size={24} color={'#6716cf'} />
+                     <h1 className='text-[#6716cf] font-mono text-lg'>Integração de Sistemas</h1>
                   </div>
-                  <div className='flex p-4 justify-between'>
-                     <CheckIcon size={24} color={'#fff'} />
-                     <h1 className='text-white font-mono text-lg'>Manutenções e correções de bug's</h1>
+                  <div className='flex gap-4' style={{ paddingTop: 10, paddingBottom: 10 }}>
+                     <CheckIcon size={24} color={'#6716cf'} />
+                     <h1 className='text-[#6716cf] font-mono text-lg'>Manutenções e correções de bug's</h1>
                   </div>
-                  <Button>Contate-nos</Button>
+                  <Link href={'https://mail.google.com/mail/u/0/#inbox?compose=new'}>
+                     <Button className='mt-8' style={{ padding: 20 }}>Contate-nos</Button>
+                  </Link>
                </div>
             </div>
 
+         </div>
+         <div className='flex-col w-full justify-center items-center'>
+            <h1 className="text-2xl md:text-3xl text-white font-mono font-bold text-center mb-6 ">Perguntas Frequentes</h1>
+            <div className='flex-col'>
+               <div className='flex-col'>
+                  <h1 className='text-white font-mono'>Como começamos?</h1>
+                  <p className='text-white font-mono'>Começamos a dois anos atrás buscando e captando projetos pequenos ainda como freelancer.</p>
+               </div>
+            </div>
          </div>
 
       </div>
