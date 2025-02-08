@@ -110,8 +110,8 @@ export default function Contact() {
             //style={{ top: '10%', right: '0%', transform: 'translate(-50%, -50%)' }} // Centraliza o círculo atrás do conteúdo
             ></div>
             <div className='flex-wrap relative z-10 mb-32 md:mb-0 items-center justify-center'>
-               <p className='text-white font-mono mb-2'>Entre em contato conosco!</p>
-               <p className='text-white font-mono mb-2'>Telefone: (85) 99775-9542</p>
+
+               <p className='text-white font-mono mb-2' onClick={() => whatsappUrl}>Telefone: (85) 99775-9542</p>
                <p className='text-white font-mono mb-2'>E-mail: silvadeveloper2024@gmail.com</p>
                <div className='flex flex-col'>
                   <p className='text-white font-mono mb-2'>redes socias </p>
@@ -133,7 +133,7 @@ export default function Contact() {
                </div>
 
                <div className='mt-10'>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.682043204882!2d-49.261682325624854!3d-25.54896603760742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcfbc3fe73fad1%3A0x259766fdb5ecc1b4!2sR.%20Des.%20Carlos%20Pinheiro%20Guimar%C3%A3es%2C%20244%20-%20S%C3%ADtio%20Cercado%2C%20Curitiba%20-%20PR%2C%2081925-450!5e0!3m2!1spt-BR!2sbr!4v1738576205517!5m2!1spt-BR!2sbr" width="450" height="250" className='md:w-[400px] w-[300px] md:h-[250px] h-[180px]'></iframe>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.682043204882!2d-49.261682325624854!3d-25.54896603760742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcfbc3fe73fad1%3A0x259766fdb5ecc1b4!2sR.%20Des.%20Carlos%20Pinheiro%20Guimar%C3%A3es%2C%20244%20-%20S%C3%ADtio%20Cercado%2C%20Curitiba%20-%20PR%2C%2081925-450!5e0!3m2!1spt-BR!2sbr!4v1738576205517!5m2!1spt-BR!2sbr" width="450" height="250" className='md:w-[450px] w-[350px] md:h-[250px] h-[180px]'></iframe>
                </div>
             </div>
             {/* Conteúdo principal */}

@@ -92,7 +92,7 @@ export default function Header() {
 
             </div>
          
-            {!logoText ? (
+           {/*  {!logoText ? (
                <Link href="/Contacts" className='flex items-center gap-2 justify-center'>
 
                   <BiCommentDots size={24} color="#fff" />
@@ -103,10 +103,9 @@ export default function Header() {
                <Link href="/Contacts" className='flex items-center gap-2 justify-center'>
 
                   <BiCommentDots size={24} color="#fff" />
-                  {/* <span className="font-mono uppercase hover:tracking-widest hover:transition-all text-white font-bold tracking-widest">contatos</span> */}
 
                </Link>
-            )}
+            )} */}
 
          </div>
       </div>
