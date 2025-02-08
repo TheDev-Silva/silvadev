@@ -205,7 +205,7 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
                      {heightCurrent === item.id && (
                         <p className={`text-white font-mono transition-all duration-500 shadow-lg "
                      }`}
-                           style={{ marginTop: 10, backgroundColor: '#000', minHeight: 100, padding: 10, fontSize: innerWidth >= 768 ? 16 : 12 }}
+                           style={{ marginTop: 10, backgroundColor: '#000', minHeight: 60, padding: 10, fontSize: innerWidth >= 768 ? 16 : 12 }}
                         >
                            {item.descricao}
                         </p>
