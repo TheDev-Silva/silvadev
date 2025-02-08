@@ -86,7 +86,7 @@ export default function Contact() {
       <div className='flex-wrap w-full h-full justify-between'>
          <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center" style={{ marginBottom: 10 }}>contate-nos ou tire sua dúvida</h1>
 
-         <div className='relative md:flex w-full items-center md:justify-between justify-center md:pt-[50px] pt-[20px] py-20 px-10 md:px-40 md:h-[100vh] min-h-[100vh]'>
+         <div className='relative md:flex w-full items-center md:justify-between justify-center md:pt-[50px] pt-[20px] md:px-40 md:h-[100vh] min-h-[100vh]'>
             {/* Círculo decorativo ao fundo */}
             <div
                className='absolute -inset-0 md:w-[200px] md:h-[200px] h-[100px] w-[100px] left-9 top-[30px] rounded-full bg-gradient-to-br to-[#6716cf] from-[#000] transition-all duration-300 blur-md'
@@ -109,7 +109,7 @@ export default function Contact() {
                className='absolute md:w-[150px] md:h-[150px] max-h-md w-[80px] h-[80px] rounded-full bg-gradient-to-tr to-[#6716cf] from-[#000] right-10 top-52 bottom-[100px] transition-all duration-300 blur-md'
             //style={{ top: '10%', right: '0%', transform: 'translate(-50%, -50%)' }} // Centraliza o círculo atrás do conteúdo
             ></div>
-            <div className='relative z-10 mb-32 md:mb-0'>
+            <div className='flex-wrap relative z-10 mb-32 md:mb-0 items-center justify-center'>
                <p className='text-white font-mono mb-2'>Entre em contato conosco!</p>
                <p className='text-white font-mono mb-2'>Telefone: (85) 99775-9542</p>
                <p className='text-white font-mono mb-2'>E-mail: silvadeveloper2024@gmail.com</p>
