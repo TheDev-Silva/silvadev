@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation';
-import { AiOutlineGithub, AiOutlineLinkedin, AiOutlineLoading } from 'react-icons/ai'
+import { AiOutlineGithub, AiOutlineLinkedin, AiOutlineLoading, AiOutlineWhatsApp } from 'react-icons/ai'
 /* import Router from 'next/navigation'; */
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -74,14 +74,18 @@ export default function Contact() {
       }
    };
 
+   const whatsappNumber = '5541995825340'; // Substitua com o número de WhatsApp (com DDD, sem espaços ou símbolos)
+   const message = 'Olá! Preciso de mais informações.'; // A mensagem que aparecerá ao abrir o WhatsApp
 
+   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
 
    return (
 
 
       <div className='flex-wrap w-full h-full justify-between'>
-         <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center" style={{ marginBottom: 10 }}>contate-nos</h1>
+         <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center" style={{ marginBottom: 10 }}>contate-nos ou tire sua dúvida</h1>
+
          <div className='relative md:flex w-full items-center md:justify-between justify-center md:pt-[50px] pt-[20px] py-20 px-10 md:px-40 md:h-[100vh] min-h-[100vh]'>
             {/* Círculo decorativo ao fundo */}
             <div
@@ -121,12 +125,15 @@ export default function Contact() {
                      <Link href={'https://www.linkedin.com/in/germano-silva-909372248/'}>
                         <AiOutlineLinkedin size={30} color='#ffff' />
                      </Link>
+                     <Link href={whatsappUrl}>
+                        <AiOutlineWhatsApp size={30} color='#ffff' />
+                     </Link>
                   </div>
 
                </div>
 
                <div className='mt-10'>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.682043204882!2d-49.261682325624854!3d-25.54896603760742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcfbc3fe73fad1%3A0x259766fdb5ecc1b4!2sR.%20Des.%20Carlos%20Pinheiro%20Guimar%C3%A3es%2C%20244%20-%20S%C3%ADtio%20Cercado%2C%20Curitiba%20-%20PR%2C%2081925-450!5e0!3m2!1spt-BR!2sbr!4v1738576205517!5m2!1spt-BR!2sbr" width="450" height="250" className='md:w-[450px] w-[330px] md:h-[250px] h-[180px]'></iframe>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.682043204882!2d-49.261682325624854!3d-25.54896603760742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcfbc3fe73fad1%3A0x259766fdb5ecc1b4!2sR.%20Des.%20Carlos%20Pinheiro%20Guimar%C3%A3es%2C%20244%20-%20S%C3%ADtio%20Cercado%2C%20Curitiba%20-%20PR%2C%2081925-450!5e0!3m2!1spt-BR!2sbr!4v1738576205517!5m2!1spt-BR!2sbr" width="450" height="250" className='md:w-[450px] w-[350px] md:h-[250px] h-[180px]'></iframe>
                </div>
             </div>
             {/* Conteúdo principal */}

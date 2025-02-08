@@ -17,12 +17,15 @@ import ProjectItem from "./ProjectItem/page";
 import { Metadata } from "next";
 import { useEffect, useRef, useState } from "react";
 import Header from "./Header/Header";
-import { BiCommentDots } from "react-icons/bi";
+import { BiCommentDots, BiLogoWhatsapp } from "react-icons/bi";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Contact from "./Contacts/page";
 import DepoimentClient, { DepoimentClientProps } from "@/depoimentsClient/page";
+import WhatsAppContact from "../whatsappContact/whatsappContact";
+import Footer from "@/footer/footer";
+
 
 
 
@@ -297,12 +300,23 @@ export default function Home({ images }: DepoimentClientProps) {
    }, [])
 
 
+   function whatsContact() {
+
+   }
 
 
    return (
       <>
+         <div className="z-50 rounded-full bg-green-500" style={{ position: 'absolute', backgroundColor: '#fff', bottom: 20, right: 20 }}>
+
+            <WhatsAppContact />
+
+         </div>
          <div className={`fixed w-full z-40  md:p-6 p-2 transition-all duration-500 ${isScrolled ? 'h-[130px] backdrop-blur-sm' : 'h-[120px] bg-[#6716cf] justify-between'
             }`}>
+
+
+
             {/* Camada de fundo com desfoque */}
             <div className={`absolute inset-0 bg-gradient-to-tr from-[#6716cf] to-[#000] ${isScrolled ? 'opacity-80' : 'opacity-0'
                } transition-opacity duration-500`}></div>
@@ -330,7 +344,7 @@ export default function Home({ images }: DepoimentClientProps) {
                   </div>
 
                </div>
-               {!logoText && <div className='flex w-full md:overflow-hidden justify-center items-center p-5'>
+               {!logoText && <div className='flex w-full md:overflow-hidden justify-center items-center '>
                   <ul className='flex gap-4'>
 
                      <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(initialRef)}>Inicio</li>
@@ -345,34 +359,26 @@ export default function Home({ images }: DepoimentClientProps) {
                      <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(projectsRef)}>Projetos
                      </li><li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(depoimentsRef)}>Avaliações</li>
 
-                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(contactsRef)}>Contatos</li>
+                     {/*  <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(contactsRef)}>Contatos</li> */}
 
 
 
                   </ul>
                </div>}
-               {!logoText ? (
-                  <Link href="/Contacts" className='flex items-center gap-2 justify-center'>
 
-                     <BiCommentDots size={24} color="#fff" />
-                     <span className="font-mono uppercase hover:tracking-widest hover:transition-all text-white font-bold tracking-widest">contatos</span>
+               <div className='flex items-center gap-2 justify-center cursor-pointer'
+                  onClick={() => scrollToSection(contactsRef)}
+               >
+                  <BiCommentDots size={24} color="#fff" />
+                  {!logoText && <span className="font-mono uppercase hover:tracking-widest hover:transition-all text-white font-bold tracking-widest">contatos</span>}
 
-                  </Link>
-               ) : (
-                  <Link href="/Contacts" className='flex items-center gap-2 justify-center'>
+               </div>
 
-                     <BiCommentDots size={24} color="#fff" />
-                     {/* <span className="font-mono uppercase hover:tracking-widest hover:transition-all text-white font-bold tracking-widest">contatos</span> */}
 
-                  </Link>
-               )}
 
             </div>
          </div>
          <div className="flex-col w-fulljustify-start items-center bg-slate-950 md:p-[50px] p-[30px]">
-
-
-
 
             <div ref={initialRef}>
                <Initial />
@@ -393,6 +399,7 @@ export default function Home({ images }: DepoimentClientProps) {
             <div ref={contactsRef}>
                <Contact />
             </div>
+            <Footer />
          </div>
       </>
    );
