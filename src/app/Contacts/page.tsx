@@ -84,9 +84,9 @@ export default function Contact() {
 
 
       <div className='flex-wrap w-full relative '>
-         <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center" style={{ marginBottom: 10 }}>contate-nos e tire sua dúvida</h1>
+         <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center" style={{ marginBottom: 10 }}>Contate-nos</h1>
 
-         <div className='w-full relative md:flex items-center md:justify-between justify-center md:pt-[50px] pt-[20px] md:px-10 md:h-[100vh] min-h-[100vh]'>
+         <div className='w-full relative md:flex items-center md:justify-between justify-center md:pt-[50px] pt-[20px] md:px-10'>
             {/* Círculo decorativo ao fundo */}
             <div
                className='absolute -inset-0 md:w-[200px] md:h-[200px] h-[100px] w-[100px] left-9 top-[30px] rounded-full bg-gradient-to-br to-[#6716cf] from-[#000] transition-all duration-300 blur-md'
@@ -152,11 +152,11 @@ export default function Contact() {
                }}
                className="border-neon shadow-neon relative"
             >
-               <div className='relative bg-[#6716cf29] p-4 justify-center items-center' style={{ borderRadius: 30 }}>
+               <div className='flex-wrap relative bg-[#6716cf29] p-4 justify-center items-center' style={{ borderRadius: 30 }}>
                   <p className='text-white font-mono m-4 mb-[-20px] text-center'>Vamos criar um projeto incrivel juntos?</p>
-                  <p className='text-white font-mono m-4 '>Mande sua ideia.</p>
+                  <p className='text-white font-mono m-4 text-center'>Mande sua ideia.</p>
 
-                  <form onSubmit={handleSubmit} className='w-fill flex flex-col gap-5 p-4'>
+                  <form onSubmit={handleSubmit} className='w-fill flex flex-col gap-5 p-4 justify-center'>
                      <div className='flex flex-col relative z-10'>
                         {/* <label className='absolute left-2 top-2 opacity-45 hover:top-[-4px]'>Nome</label> */}
                         <input
@@ -204,8 +204,8 @@ export default function Contact() {
                      </textarea>
                      <button type="submit" className='flex w-full text-white hover:bg-[#6716cf] bg-[#6716cf89] transition-all duration-300 p-3 rounded-sm text-center items-center justify-center gap-3'>
                         {isLoading ? <>
-                           <AiOutlineLoading className='animate-spin ease-linear spin-in-45' size={24} /> ENVIANDO SUA IDEIA...
-                        </> : <>ENVIAR IDEIA </>}
+                           <AiOutlineLoading className='animate-spin ease-linear spin-in-45' size={24} /> Enviando...
+                        </> : <>Enviar </>}
 
                         {/* </button> : <button type="submit" className='flex w-full text-white hover:bg-[#6716cf] bg-[#6716cf89] transition-all duration-300 p-3 rounded-sm text-center items-center justify-center text-sm font-thin'> }*/}
                      </button>
