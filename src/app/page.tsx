@@ -25,6 +25,7 @@ import Contact from "./Contacts/page";
 import DepoimentClient, { DepoimentClientProps } from "@/depoimentsClient/page";
 import WhatsAppContact from "../whatsappContact/whatsappContact";
 import Footer from "@/footer/footer";
+import Clients from "./clients/page";
 
 
 
@@ -366,7 +367,7 @@ export default function Home({ images }: DepoimentClientProps) {
                   onClick={() => scrollToSection(contactsRef)}
                >
                   <BiCommentDots size={24} color="#fff" />
-                  {!logoText && <span className="font-mono uppercase hover:tracking-widest hover:transition-all text-white font-bold tracking-widest">contatos</span>}
+                  {!logoText && <span className="font-mono hover:tracking-widest hover:transition-all text-white font-bold tracking-widest">contatos</span>}
 
                </div>
 
@@ -395,6 +396,7 @@ export default function Home({ images }: DepoimentClientProps) {
             <div ref={contactsRef}>
                <Contact />
             </div>
+            {/* <Clients /> */}
             <Footer />
          </div>
       </>

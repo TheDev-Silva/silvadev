@@ -44,7 +44,7 @@ export default function ProjectItem({ project }: ProjectsProps) {
       <>
          <Header />
          <div className="flex-col w-full justify-center items-center bg-slate-950">
-            <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center uppercase">Projetos já Desenvolvidos</h1>
+            <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center ">Projetos já Desenvolvidos</h1>
 
             <div className="flex w-full justify-center item-center ">
 

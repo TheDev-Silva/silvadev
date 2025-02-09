@@ -23,7 +23,7 @@ export default function AboutMais() {
             >
                <div className='relative bg-[#6716cf29] p-8 lining-nums' style={{ borderRadius: 30 }}>
                   <div className='flex justify-between'>
-                     <h1 className="w-full text-white md:text-2xl text-lg mb-6 uppercase">Apresentação</h1>
+                     <h1 className="w-full text-white md:text-2xl text-lg mb-6">Apresentação</h1>
                      <RiPresentationLine size={30} color='#fff' />
                   </div>
 
@@ -56,7 +56,7 @@ export default function AboutMais() {
 
                <div className='relative bg-[#6716cf29] p-8' style={{ borderRadius: 30 }}>
                   <div className='flex justify-between'>
-                     <h1 className="w-full text-white md:text-xl text-lg uppercase mb-6">Sobre minha Abordagem</h1>
+                     <h1 className="w-full text-white md:text-xl text-lg mb-6">Sobre minha Abordagem</h1>
                      <GrShieldSecurity size={30} color="#fff" />
                   </div>
 

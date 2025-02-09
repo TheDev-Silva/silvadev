@@ -46,7 +46,7 @@ export default function AboutMe() {
             className='absolute md:w-[150px] md:h-[150px] max-h-md w-[80px] h-[80px] rounded-full bg-gradient-to-tr to-[#6716cf] from-[#000] right-10 top-52 bottom-[100px] transition-all duration-300 blur-md'
          //style={{ top: '10%', right: '0%', transform: 'translate(-50%, -50%)' }} // Centraliza o círculo atrás do conteúdo
          ></div>
-         <h1 className="md:text-3xl text-2xl relative text-white font-mono font-bold pt-10 text-center uppercase" style={{ paddingTop: 0 }}>Quem sou...</h1>
+         <h1 className="md:text-3xl text-2xl relative text-white font-mono font-bold pt-10 text-center " style={{ paddingTop: 0 }}>Quem sou...</h1>
 
          <div
             style={{

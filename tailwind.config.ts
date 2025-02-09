@@ -83,6 +83,15 @@ const config: Config = {
             textlg: "3px 3px 6px rgba(0, 0, 0, 0.8)",
          },
       },
+      keyframes: {
+         float: {
+            '0%, 100%': { transform: 'translateY(0)' },
+            '50%': { transform: 'translateY(-10px)' }, // Ajuste a altura do "flutuar"
+         },
+      },
+      animation: {
+         float: 'float 3s ease-in-out infinite', // Define a duração e repetição
+      },
    },
    plugins: [require("tailwindcss-animate")],
 };

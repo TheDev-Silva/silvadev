@@ -3,7 +3,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className='flex w-full md:justify-center justify-between items-center gap-3 pt-10 mt-10 text-center' style={{ borderTopWidth: 1, borderTopColor: '#c1c1c1'}}>
+        <div className='md:flex flex-coll w-full md:justify-center justify-between items-center gap-3 pt-10 mt-10 text-center' style={{ borderTopWidth: 1, borderTopColor: '#c1c1c1'}}>
             <div className='flex gap-3 md:justify-center justify-start items-center font-mono'>
                 <h1 className='text-white '>silvadev</h1>
                 <Copyright color='#fff' />

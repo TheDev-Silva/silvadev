@@ -27,8 +27,9 @@ export default function Tecnologias({ tecnologyItem }: TecnologiasProp) {
             <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center uppercase" style={{ marginBottom: 50 }}>Explorando tecnologias e as dominando</h1>
 
             <p className='text-white font-mono italic'>
-               <span className='text-xl'>"</span>  Aqui, compartilho algumas das principais tecnologias que utilizo para transformar ideias em soluções completas e eficientes. Minha escolha de ferramentas sempre considera as necessidades específicas de cada projeto, garantindo que as soluções desenvolvidas sejam funcionais, escaláveis e alinhadas aos objetivos do cliente.
+               <span className='text-xl'>"</span>Aqui, compartilho algumas das principais tecnologias que utilizo para transformar ideias em soluções completas e eficientes. Minha escolha de ferramentas sempre considera as necessidades específicas de cada projeto, garantindo que as soluções desenvolvidas sejam funcionais, escaláveis e alinhadas aos objetivos do cliente.
                <span className='text-xl'>"</span>
+
             </p>
             <div className='text-white font-mono md:text-lg text-base md:p-5 p-8 mt-5 shadow-lg shadow-white' style={{ borderBottomWidth: 2, borderLeftWidth: 2, borderColor: '#6716cf', borderBottomLeftRadius: 30, }}>
 
@@ -44,7 +45,7 @@ export default function Tecnologias({ tecnologyItem }: TecnologiasProp) {
 
 
             </div>
-            <h1 className='md:text-2xl text-xl font-bold font-mono text-white text-center uppercase' style={{ marginBottom: -62, marginTop: 42 }}>Skill do dia-a-dia</h1>
+            <h1 className='md:text-3xl text-2xl font-bold font-mono text-white text-center' style={{ marginBottom: -62, marginTop: 42 }}>Skill do dia-a-dia</h1>
 
          </div>
 
