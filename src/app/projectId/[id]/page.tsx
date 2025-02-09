@@ -240,24 +240,34 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
             </div>
             <div
                className={`mt-10 overflow-hidden md:w-full md:overflow-hidden hidden md:block`}
-               style={{
-                  borderTopWidth: 1,
-                  borderTopColor: '#c1c1c1',
-                  borderBottomWidth: 1,
-                  borderBottomColor: '#c1c1c1',
-               }}
+
             >
                <h1>Tecnologias usadas.</h1>
                {projectData.tecnololigas_usadas.map((tec, index) => (
                   <div
                      key={index} // Sempre adicione uma chave única ao map para evitar erros
-                     className="flex justify-between items-center mb-10"
+                     className="w-full flex-col justify-between items-center pb-6"
                   >
-                     <p className="text-[#000] font-bold w-[180px] bg-[#fff] text-center p-2 rounded-md">{tec.Ai}</p>
-                     <p className="text-[#000] font-bold w-[180px] bg-[#fff] text-center p-2 rounded-md">{tec.back_end}</p>
-                     <p className="text-[#000] font-bold w-[180px] bg-[#fff] text-center p-2 rounded-md">{tec.estilo}</p>
-                     <p className="text-[#000] font-bold w-[180px] bg-[#fff] text-center p-2 rounded-md">{tec.framework}</p>
-                     <p className="text-[#000] font-bold w-[180px] bg-[#fff] text-center p-2 rounded-md">{tec.linguagem}</p>
+                     <div className="flex justify-between border-slate-50 border-y-[1px] py-6">
+                        <p className="text-white font-mono">Possui AI?: </p>
+                        <p className="text-white font-mono ">{tec.Ai}</p>
+                     </div>
+                     <div className="flex justify-between border-slate-50 border-b-[1px] py-6">
+                        <p className="text-white font-mono">Possui Backend?</p>
+                        <p className="text-white font-mono">{tec.back_end}</p>
+                     </div>
+                     <div className="flex justify-between border-slate-50 border-b-[1px] py-6">
+                        <p className="text-white font-mono">Qual o tipo de estilo usado?</p>
+                        <p className="text-white font-mono">{tec.estilo}</p>
+                     </div>
+                     <div className="flex justify-between border-slate-50 border-b-[1px] py-6">
+                        <p className="text-white font-mono">Qual o Framework usado?</p>
+                        <p className="text-white font-mono">{tec.framework}</p>
+                     </div>
+                     <div className="flex justify-between border-slate-50 border-b-[1px] py-6">
+                        <p className="text-white font-mono">Qual Linguagem usada?</p>
+                        <p className="text-white font-mono">{tec.linguagem}</p>
+                     </div>
                   </div>
                ))}
             </div>
@@ -265,7 +275,7 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
 
          </div>
          {projectData.link && (
-            <div className="flex w-full pl-5 pr-5 mt-10 text-white">
+            <div className="flex w-full mt-10 text-white">
                <Link
                   href={projectData.link}
                   target="_blank"
