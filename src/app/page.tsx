@@ -354,7 +354,10 @@ export default function Home({ images }: DepoimentClientProps) {
 
 
                      <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(projectsRef)}>Projetos
-                     </li><li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(depoimentsRef)}>Avaliações</li>
+                     </li>
+
+                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(depoimentsRef)}>Avaliações
+                     </li>
 
                      {/*  <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(contactsRef)}>Contatos</li> */}
 

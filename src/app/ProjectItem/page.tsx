@@ -84,7 +84,7 @@ export default function ProjectItem({ project }: ProjectsProps) {
                            <button onClick={() => handleNavigate(item.id)}
                               className='flex w-full text-white hover:bg-[#6716cf] bg-[#6716cf89] transition-all duration-300 p-3 rounded-sm text-center items-center justify-center gap-3 mt-5'
                            >
-                              <h1 className=''>{isLoading ? 'Carregando...' : 'veja mais aqui'}</h1>
+                              <h1 className=''>{isLoading ? <p className='text-white'>Carregando...</p> : <p className='text-white'>veja mais</p>}</h1>
                            </button>
 
                            {/* </Link> */}

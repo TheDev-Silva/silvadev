@@ -205,7 +205,7 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
    return (
       <>
       <Header/>
-         <div className="flex flex-col w-full p-8 pt-[150px] bg-slate-950 ">
+         <div className="flex flex-col w-full p-8 pt-[150px] bg-slate-950 h-full">
             <h1 className="text-4xl font-bold text-white font-mono">{projectData.name}</h1>
             <p className="mt-4 text-lg text-white font-mono">{projectData.description}</p>
 

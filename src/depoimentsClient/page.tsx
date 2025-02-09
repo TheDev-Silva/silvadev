@@ -118,7 +118,7 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
             scrollBehavior: 'smooth', // Rolagem suave
             marginTop: 50,
          }}
-            /* ref={scrollContainerRef} */
+         /* ref={scrollContainerRef} */
 
          >
             <style jsx>{`div::-webkit-scrollbar {display: none;}`}</style>
@@ -188,12 +188,12 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
 
                <div className='flex-col roudend-lg' style={{ backgroundColor: '#6716cf', borderRadius: 15 }} >
                   <div className='flex-colshadow-lg p-5' style={{ backgroundColor: '#fff' }}>
-                     <div className={`flex justify-between items-center ${heightCurrent === item.id ? 'transition-all duration-300' : ''}`} onClick={() => toggleheight(item.id)}>
+                     <div className={`flex justify-between items-center ${heightCurrent === item.id ? 'hover:transition-transform duration-300' : ''}`} onClick={() => toggleheight(item.id)}>
                         <h1 className='text-black font-mono md:text-xl font-semibold '>{item.titulo}</h1>
 
                         {heightCurrent === item.id ? (
                            <>
-                              <ArrowUp color='#000' className='cursor-pointer' />
+                              <ArrowDown color='#000' className='cursor-pointer '/>
                            </>
                         ) : (
                            <>
@@ -203,7 +203,7 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
 
                      </div>
                      {heightCurrent === item.id && (
-                        <p className={`text-white font-mono transition-all duration-500 shadow-lg "
+                        <p className={`text-white font-mono transition-transform duration-500 shadow-lg "
                      }`}
                            style={{ marginTop: 10, backgroundColor: '#000', minHeight: 60, padding: 10, fontSize: innerWidth >= 768 ? 16 : 12 }}
                         >
