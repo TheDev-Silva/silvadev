@@ -1,5 +1,6 @@
 'use client'
-import Header from "@/app/Header/Header";
+
+import { ArrowLeft, ArrowLeftCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { use, useState } from "react";
@@ -97,7 +98,7 @@ const project = [
       id: 3,
       name: 'The Dieta',
       description: 'O The Dieta é um aplicativo de dicas de nutrição personalizado que ajuda os usuários a atingir seus objetivos de saúde, como emagrecimento, hipertrofia ou ganho de massa muscular. Ao fornecer dados como nome, peso, altura, idade e meta, a inteligência artificial gera uma dieta equilibrada para a semana, acompanhada de sugestões de exercícios. O app também apresenta gráficos de progresso para monitoramento de ganho ou perda de peso, além de recomendações de suplementos, tornando o processo de acompanhamento mais fácil e eficiente.',
-      link: 'https://the-burger-rock.vercel.app/',
+      link: 'url indisponível',
       tecnololigas_usadas: [
          {
 
@@ -142,7 +143,7 @@ const project = [
       id: 4,
       name: 'Love & Coffe',
       description: 'O Love & Coffee é um aplicativo simples e prático para amantes de café. Com ele, você pode escolher entre uma variedade de cafés, como macchiato, expresso tradicional, americano e com leite. O processo é fácil: basta selecionar seu café preferido, personalizar sua escolha, e pagar diretamente pelo app. Ideal para quem busca rapidez, conveniência e um ótimo café, tudo na palma da mão.',
-      link: 'https://the-burger-rock.vercel.app/',
+      link: 'url indisponível',
       tecnololigas_usadas: [
          {
 
@@ -203,71 +204,104 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
    }
 
    return (
-      <>
-      <Header/>
-         <div className="flex flex-col w-full p-8 pt-[150px] bg-slate-950 h-full">
-            <h1 className="text-4xl font-bold text-white font-mono">{projectData.name}</h1>
-            <p className="mt-4 text-lg text-white font-mono">{projectData.description}</p>
 
-            <div className="mt-8">
-               <h2 className="text-2xl font-semibold text-white font-mono">Imagens:</h2>
-               <div className="flex flex-wrap gap-12 mt-4 justify-center items-center ">
-                  {projectData.images.map((image) => (
-                     <div key={image.id} onClick={() => setSelectedImage(image.image)} className="cursor-pointer">
-                        <Image
-                           width={180}
-                           height={120}
-                           src={image.image}
-                           alt={`${projectData.name} - Imagem ${image.id}`}
-                           className="rounded-lg shadow-lg md:w-[150px] p-2"
-                        />
-                     </div>
-                  ))}
-               </div>
+
+      <div className="flex flex-col w-full bg-slate-950 lg:h-[100%] md:h-[100vh] justify-between p-10 ">
+         <div className="flex-col ">
+            <div className="flex gap-10">
+               <Link
+                  href={'/'}
+                  rel="noopener noreferrer"
+                  className="text-blue-400 underline"
+               >
+                  <ArrowLeft color="#fff" size={40} />
+               </Link>
+               <h1 className="text-2xl md:text-4xl font-bold text-white font-mono">{projectData.name}</h1>
+            </div>
+            <p className="mt-4 text-md text-white font-mono">{projectData.description}</p>
+         </div>
+
+
+
+         <div className="mt-8">
+            <h2 className="text-2xl md:text-xl font-semibold text-white font-mono mb-10">Imagens do Projeto:</h2>
+            <div className="w-full flex-wrap flex gap-12 justify-center md:justify-between items-center ">
+               {projectData.images.map((image) => (
+                  <div key={image.id} onClick={() => setSelectedImage(image.image)} className="cursor-pointer">
+                     <Image
+                        width={180}
+                        height={120}
+                        src={image.image}
+                        alt={`${projectData.name} - imagem ${image.id}`}
+                        className="rounded-lg shadow-lg md:w-[120px] p-2 hover:underline-offset-1"
+                     />
+                  </div>
+               ))}
+            </div>
+            <div
+               className={`mt-10 overflow-hidden md:w-full md:overflow-hidden hidden md:block`}
+               style={{
+                  borderTopWidth: 1,
+                  borderTopColor: '#c1c1c1',
+                  borderBottomWidth: 1,
+                  borderBottomColor: '#c1c1c1',
+               }}
+            >
+               <h1>Tecnologias usadas.</h1>
+               {projectData.tecnololigas_usadas.map((tec, index) => (
+                  <div
+                     key={index} // Sempre adicione uma chave única ao map para evitar erros
+                     className="flex justify-between items-center mb-10"
+                  >
+                     <p className="text-[#000] font-bold w-[180px] bg-[#fff] text-center p-2 rounded-md">{tec.Ai}</p>
+                     <p className="text-[#000] font-bold w-[180px] bg-[#fff] text-center p-2 rounded-md">{tec.back_end}</p>
+                     <p className="text-[#000] font-bold w-[180px] bg-[#fff] text-center p-2 rounded-md">{tec.estilo}</p>
+                     <p className="text-[#000] font-bold w-[180px] bg-[#fff] text-center p-2 rounded-md">{tec.framework}</p>
+                     <p className="text-[#000] font-bold w-[180px] bg-[#fff] text-center p-2 rounded-md">{tec.linguagem}</p>
+                  </div>
+               ))}
             </div>
 
-            {projectData.link && (
-               <div className="flex w-full mt-8 justify-between pl-5 pr-5">
-                  <Link
-                     href={projectData.link}
-                     target="_blank"
-                     rel="noopener noreferrer"
-                     className="text-blue-400 underline"
-                  >
-                     Acesse o projeto
-                  </Link>
-                  <Link
-                     href={'/'}
-                     rel="noopener noreferrer"
-                     className="text-blue-400 underline"
-                  >
-                     voltar
-                  </Link>
-               </div>
-            )}
 
-            {/* Modal */}
-            {selectedImage && (
-               <button
-                  onClick={() => setSelectedImage(null)}>
-                  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 z-50">
-                     <div className="relative">
-                        <Image
-                           src={selectedImage}
-                           alt="Imagem ampliada"
-                           width={250}
-                           height={250}
-                           className="rounded-lg shadow-lg"
-                        />
-
-
-
-                     </div>
-                  </div>
-               </button>
-            )}
          </div>
-      </>
+         {projectData.link && (
+            <div className="flex w-full pl-5 pr-5 mt-10 text-white">
+               <Link
+                  href={projectData.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+
+               >
+                  <h1 className="text-white font-mono text-lg md:text-xl">
+                     Acesse o projeto
+                  </h1>
+
+               </Link>
+
+            </div>
+         )}
+
+         {/* Modal */}
+         {selectedImage && (
+            <button
+               onClick={() => setSelectedImage(null)}>
+               <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 z-50">
+                  <div className="relative">
+                     <Image
+                        src={selectedImage}
+                        alt="Imagem ampliada"
+                        width={250}
+                        height={250}
+                        className="rounded-lg shadow-lg"
+                     />
+
+                  </div>
+               </div>
+            </button>
+         )}
+
+      </div>
+
    );
 };
 
