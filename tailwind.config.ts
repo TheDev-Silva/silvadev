@@ -14,15 +14,20 @@ const config: Config = {
                "0%": { transform: "translateX(0)" },
                "100%": { transform: "translateX(-100%)" },
             },
+            float: {
+               '0%, 100%': { transform: 'translateY(0)' },
+               '50%': { transform: 'translateY(-10px)' }, // Ajuste a altura do "flutuar"
+            },
+         },
+         animation: {
+            scroll: "scroll 20s linear infinite",
+            float: 'float 3s ease-in-out infinite',
          },
          boxShadow: {
             neon: "0 0 10px rgba(103,22,207,0.8), 0 0 20px rgba(103,22,207,0.8)",
          },
          borderColor: {
             neon: "#6716cf78",
-         },
-         animation: {
-            scroll: "scroll 20s linear infinite",
          },
          colors: {
             neonGreen: "#6716cf",
@@ -82,15 +87,6 @@ const config: Config = {
             textmd: "2px 2px 4px rgba(0, 0, 0, 0.8)",
             textlg: "3px 3px 6px rgba(0, 0, 0, 0.8)",
          },
-      },
-      keyframes: {
-         float: {
-            '0%, 100%': { transform: 'translateY(0)' },
-            '50%': { transform: 'translateY(-10px)' }, // Ajuste a altura do "flutuar"
-         },
-      },
-      animation: {
-         float: 'float 3s ease-in-out infinite', // Define a duração e repetição
       },
    },
    plugins: [require("tailwindcss-animate")],
