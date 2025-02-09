@@ -118,7 +118,7 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
             scrollBehavior: 'smooth', // Rolagem suave
             marginTop: 50,
          }}
-            ref={scrollContainerRef}
+            /* ref={scrollContainerRef} */
 
          >
             <style jsx>{`div::-webkit-scrollbar {display: none;}`}</style>
@@ -137,7 +137,7 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
                      sizes={'100vw'}
                      className="object-cover"
                      style={{
-                        minWidth: 350,
+                        minWidth: 320,
 
                      }}
                   />

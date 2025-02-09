@@ -83,10 +83,10 @@ export default function Contact() {
    return (
 
 
-      <div className='flex-wrap w-full h-full justify-between'>
+      <div className='flex-wrap w-full relative '>
          <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center" style={{ marginBottom: 10 }}>contate-nos ou tire sua dúvida</h1>
 
-         <div className='relative md:flex w-full items-center md:justify-between justify-center md:pt-[50px] pt-[20px] md:px-40 md:h-[100vh] min-h-[100vh]'>
+         <div className='w-full relative md:flex items-center md:justify-between justify-center md:pt-[50px] pt-[20px] md:px-10 md:h-[100vh] min-h-[100vh]'>
             {/* Círculo decorativo ao fundo */}
             <div
                className='absolute -inset-0 md:w-[200px] md:h-[200px] h-[100px] w-[100px] left-9 top-[30px] rounded-full bg-gradient-to-br to-[#6716cf] from-[#000] transition-all duration-300 blur-md'
@@ -109,11 +109,14 @@ export default function Contact() {
                className='absolute md:w-[150px] md:h-[150px] max-h-md w-[80px] h-[80px] rounded-full bg-gradient-to-tr to-[#6716cf] from-[#000] right-10 top-52 bottom-[100px] transition-all duration-300 blur-md'
             //style={{ top: '10%', right: '0%', transform: 'translate(-50%, -50%)' }} // Centraliza o círculo atrás do conteúdo
             ></div>
-            <div className='flex-wrap relative z-10 mb-32 md:mb-0 items-center justify-center'>
+            <div className='flex-wrap z-10 relative'>
 
-               <p className='text-white font-mono mb-2' onClick={() => whatsappUrl}>Telefone: (85) 99775-9542</p>
-               <p className='text-white font-mono mb-2'>E-mail: silvadeveloper2024@gmail.com</p>
-               <div className='flex flex-col'>
+              
+
+
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.682043204882!2d-49.261682325624854!3d-25.54896603760742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcfbc3fe73fad1%3A0x259766fdb5ecc1b4!2sR.%20Des.%20Carlos%20Pinheiro%20Guimar%C3%A3es%2C%20244%20-%20S%C3%ADtio%20Cercado%2C%20Curitiba%20-%20PR%2C%2081925-450!5e0!3m2!1spt-BR!2sbr!4v1738576205517!5m2!1spt-BR!2sbr" width="0" height="0" className='md:w-[450px] w-full md:h-[300px] h-[190px]'></iframe>
+               
+               <div className='flex-col justify-center items-center mt-10'>
                   <p className='text-white font-mono mb-2'>redes socias </p>
                   <div className='flex gap-10'>
                      <Link href={'https://www.instagram.com/silva.developer/'}>
@@ -131,14 +134,11 @@ export default function Contact() {
                   </div>
 
                </div>
-
-               <div className='mt-10'>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.682043204882!2d-49.261682325624854!3d-25.54896603760742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcfbc3fe73fad1%3A0x259766fdb5ecc1b4!2sR.%20Des.%20Carlos%20Pinheiro%20Guimar%C3%A3es%2C%20244%20-%20S%C3%ADtio%20Cercado%2C%20Curitiba%20-%20PR%2C%2081925-450!5e0!3m2!1spt-BR!2sbr!4v1738576205517!5m2!1spt-BR!2sbr" width="450" height="250" className='md:w-[450px] w-[350px] md:h-[250px] h-[180px]'></iframe>
-               </div>
             </div>
             {/* Conteúdo principal */}
             <div
                style={{
+                  
                   flexDirection: 'column',
                   borderColor: '#6716cf',
                   borderBottomLeftRadius: 20,
@@ -149,7 +149,7 @@ export default function Contact() {
                   justifyContent: 'center',
                   alignItems: 'center'
                }}
-               className="border-neon shadow-neon"
+               className="border-neon shadow-neon relative"
             >
                <div className='relative bg-[#6716cf29] p-4 justify-center items-center' style={{ borderRadius: 30 }}>
                   <p className='text-white font-mono m-4 mb-[-20px] text-center'>Vamos criar um projeto incrivel juntos?</p>
