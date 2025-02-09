@@ -110,7 +110,7 @@ export default function Contact() {
                className='absolute md:w-[150px] md:h-[150px] max-h-md w-[80px] h-[80px] rounded-full bg-gradient-to-tr to-[#6716cf] from-[#000] right-10 top-52 bottom-[100px] transition-all duration-300 blur-md'
             //style={{ top: '10%', right: '0%', transform: 'translate(-50%, -50%)' }} // Centraliza o círculo atrás do conteúdo
             ></div>
-            <div className='flex-wrap z-10 relative'>
+            <div className='flex-wrap z-10 relative p-10'>
 
 
 
