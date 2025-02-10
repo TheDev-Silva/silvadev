@@ -4,9 +4,12 @@ import React from 'react'
 const Footer = () => {
     return (
         <div className='md:flex flex-coll w-full md:justify-center justify-between items-center gap-3 pt-10 mt-10 text-center' style={{ borderTopWidth: 1, borderTopColor: '#c1c1c1' }}>
-            <div className='flex gap-3 justify-center md:justify-start items-center font-mono'>
-                <h1 className='text-white '>silvadev</h1>
-                <Copyright color='#fff' />
+            <div className='md:flex  gap-3 justify-center md:justify-start items-center font-mono'>
+                <div className='flex gap-3 items-center justify-center'>
+                    <h1 className='text-white '>silvadev</h1>
+                    <Copyright color='#fff' />
+                </div>
+
                 <h1 className='text-white '>Todos os direitos recervados.</h1>
             </div>
 
