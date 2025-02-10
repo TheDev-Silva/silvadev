@@ -10,7 +10,7 @@ const Footer = () => {
                     <Copyright color='#fff' />
                 </div>
 
-                <h1 className='text-white '>Todos os direitos recervados.</h1>
+                <h1 className='text-white '>Todos os direitos reservados.</h1>
             </div>
 
             <h1 className='text-white font-mono'>suporte urgente chama no zap!</h1>

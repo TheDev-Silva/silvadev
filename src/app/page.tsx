@@ -366,14 +366,14 @@ export default function Home({ images }: DepoimentClientProps) {
                   </ul>
                </div>}
 
-               <div className='flex items-center gap-2 justify-center cursor-pointer'
+               <div className='flex items-center gap-2 justify-center cursor-pointer md:w-[200px]'
                   onClick={() => scrollToSection(contactsRef)}
                >
                   <BiCommentDots size={24} color="#fff" />
-                  {!logoText && <span className="font-mono hover:tracking-widest hover:transition-all text-white font-bold tracking-widest">contatos</span>}
+                  {!logoText && <span className="font-mono hover:tracking-widest hover:transition-all text-white font-bold">contatos</span>}
 
                </div>
-
+               
 
 
             </div>
