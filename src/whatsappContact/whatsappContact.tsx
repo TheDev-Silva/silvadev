@@ -3,10 +3,12 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import WhatsAppImage from '../../public/whatsapp-logo.png';
+import { Button } from '@/components/ui/button';
 
 const WhatsAppContact = () => {
     const [isHovered, setIsHovered] = useState(false);
     const [isAtBottom, setIsAtBottom] = useState(false);
+    const [cury, setCury] = useState(false)
 
     const whatsappNumber = '5541995825340'; // Substitua pelo número do WhatsApp
     const message = 'Olá! Preciso de mais informações.';
@@ -30,13 +32,19 @@ const WhatsAppContact = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    function handleCuriosity() {
+
+        
+
+    }
+
     return (
         <div
             className={`fixed flex items-center justify-center rounded-full p-3 shadow-lg cursor-pointer ${isHovered ? 'hover:scale-150' : 'scale-0'} ${isHovered ? 'hover:rotate-6' : ''} ${isHovered ? 'hover:transition-transform' : ''} ${isHovered ? 'duration-300' : ''} ${isHovered ? 'hover:opacity-90' : ''} `}
             style={{
                 bottom: isAtBottom ? 30 : 40,
-                right: isAtBottom ? '45%' : 80,
-                
+                right: isAtBottom ? '40%' : 80,
+
                 transform: isAtBottom ? 'translateX(-50%)' : 'none',
             }}
             onMouseOver={() => setIsHovered(true)}
@@ -54,6 +62,8 @@ const WhatsAppContact = () => {
                     }}
                 >
                     Olá, fale conosco aqui.
+                    <Button onClick={() => handleCuriosity()}>Curiosidade</Button>
+                    <p>{cury}</p>
                 </p>
             )}
             <a

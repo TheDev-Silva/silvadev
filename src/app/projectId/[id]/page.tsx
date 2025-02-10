@@ -257,15 +257,15 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
                         <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.back_end}</p>
                      </div>
                      <div className="flex justify-between border-slate-50 border-b-[1px] py-6">
-                        <p className="text-white font-mono text-[12px] md:text-[14px]">Qual o tipo de estilo usado?</p>
+                        <p className="text-white font-mono text-[12px] md:text-[14px]">Qual o tipo de estilo foi usado?</p>
                         <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.estilo}</p>
                      </div>
                      <div className="flex justify-between border-slate-50 border-b-[1px] py-6">
-                        <p className="text-white font-mono text-[12px] md:text-[14px]">Qual o Framework usado?</p>
+                        <p className="text-white font-mono text-[12px] md:text-[14px]">Qual o foi Framework usado?</p>
                         <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.framework}</p>
                      </div>
                      <div className="flex justify-between border-slate-50 border-b-[1px] py-6">
-                        <p className="text-white font-mono text-[12px] md:text-[14px]">Qual Linguagem usada?</p>
+                        <p className="text-white font-mono text-[12px] md:text-[14px]">Qual linguagem foi usada?</p>
                         <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.linguagem}</p>
                      </div>
                   </div>

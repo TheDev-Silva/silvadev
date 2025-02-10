@@ -83,7 +83,7 @@ export default function Contact() {
    return (
 
 
-      <div className='flex-wrap w-full relative justify-between'>
+      <div className='flex-wrap w-full relative justify-around'>
          <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center" style={{ marginBottom: 10 }}>Contate-nos</h1>
 
          <div className='w-full relative md:flex items-center md:justify-between justify-center md:pt-[50px] pt-[20px] '>
@@ -110,12 +110,12 @@ export default function Contact() {
                className='absolute md:w-[150px] md:h-[150px] max-h-md w-[80px] h-[80px] rounded-full bg-gradient-to-tr to-[#6716cf] from-[#000] right-10 top-52 bottom-[100px] transition-all duration-300 blur-md'
             //style={{ top: '10%', right: '0%', transform: 'translate(-50%, -50%)' }} // Centraliza o círculo atrás do conteúdo
             ></div>
-            <div className='flex-wrap z-10 relative mr-10 justify-center items-center'>
+            <div className='flex-wrap z-10 relative md:mr-10 justify-center items-center'>
 
 
 
 
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.682043204882!2d-49.261682325624854!3d-25.54896603760742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcfbc3fe73fad1%3A0x259766fdb5ecc1b4!2sR.%20Des.%20Carlos%20Pinheiro%20Guimar%C3%A3es%2C%20244%20-%20S%C3%ADtio%20Cercado%2C%20Curitiba%20-%20PR%2C%2081925-450!5e0!3m2!1spt-BR!2sbr!4v1738576205517!5m2!1spt-BR!2sbr" width="0" height="0" className='md:w-[400px] w-full md:h-[300px] h-[190px]'></iframe>
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.682043204882!2d-49.261682325624854!3d-25.54896603760742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcfbc3fe73fad1%3A0x259766fdb5ecc1b4!2sR.%20Des.%20Carlos%20Pinheiro%20Guimar%C3%A3es%2C%20244%20-%20S%C3%ADtio%20Cercado%2C%20Curitiba%20-%20PR%2C%2081925-450!5e0!3m2!1spt-BR!2sbr!4v1738576205517!5m2!1spt-BR!2sbr" width="0" height="0" className='md:w-[450px] w-full md:h-[300px] h-[190px]'></iframe>
 
                <div className='flex-col justify-center items-center mt-10'>
                   <p className='text-white font-mono mb-2'>redes socias </p>
@@ -198,7 +198,7 @@ export default function Contact() {
                         value={formData.message}
                         onChange={handleChange}
                         required
-                        className='h-200 p-2'
+                        className='max-h-200 p-2'
                      >
 
                      </textarea>
