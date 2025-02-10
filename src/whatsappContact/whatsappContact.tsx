@@ -32,10 +32,10 @@ const WhatsAppContact = () => {
 
     return (
         <div
-            className={`fixed flex items-center justify-center rounded-full p-3 shadow-lg cursor-pointer ${isHovered ? 'hover:scale-150' : 'scale-0'} ${isHovered ? 'hover:rotate-6' : ''} ${isHovered ? 'hover:transition-transform' : ''} ${isHovered ? 'duration-300' : ''} ${isHovered ? 'hover:opacity-90' : ''}`}
+            className={`fixed flex items-center justify-center rounded-full p-3 shadow-lg cursor-pointer ${isHovered ? 'hover:scale-150' : 'scale-0'} ${isHovered ? 'hover:rotate-6' : ''} ${isHovered ? 'hover:transition-transform' : ''} ${isHovered ? 'duration-300' : ''} ${isHovered ? 'hover:opacity-90' : ''} `}
             style={{
-                bottom: isAtBottom ? 30 : 60,
-                right: isAtBottom ? '45%' : 100,
+                bottom: isAtBottom ? 30 : 40,
+                right: isAtBottom ? '45%' : 80,
                 
                 transform: isAtBottom ? 'translateX(-50%)' : 'none',
             }}

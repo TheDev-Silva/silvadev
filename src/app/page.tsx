@@ -304,7 +304,7 @@ export default function Home({ images }: DepoimentClientProps) {
 
    return (
       <>
-         <div className="flex-wrap w-full z-50 rounded-full bg-green-500" style={{ position: 'absolute', backgroundColor: '#fff', bottom: 20, right: 20 }}>
+         <div className="flex-wrap w-full z-50 rounded-full bg-green-500 overflow-hidden md:w-[786px] md:overflow-hidden hidden md:block" style={{ position: 'absolute', backgroundColor: '#fff' }}>
 
             <WhatsAppContact />
 
