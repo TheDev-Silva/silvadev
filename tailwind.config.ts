@@ -23,14 +23,14 @@ const config: Config = {
             scroll: "scroll 20s linear infinite",
             float: 'float 3s ease-in-out infinite',
          },
-         boxShadow: {
-            neon: "0 0 10px rgba(103,22,207,0.8), 0 0 20px rgba(103,22,207,0.8)",
+         shadow: {
+            neon: "0 0 10px 'rgb(30, 58, 138, 0.8)', 0 0 20px 'rgb(30, 58, 138, 0.8)'",
          },
          borderColor: {
-            neon: "#6716cf78",
+            neon: "#1E3A8A78",
          },
          colors: {
-            neonGreen: "#6716cf",
+            neonGreen: "#1e3a8a",
             background: "hsl(var(--background))",
             foreground: "hsl(var(--foreground))",
             card: {
@@ -44,6 +44,13 @@ const config: Config = {
             primary: {
                DEFAULT: "hsl(var(--primary))",
                foreground: "hsl(var(--primary-foreground))",
+               dark: '#1E3A8A',  // Azul-marinho
+               dark_opacity: '#1E3A8A99',  // Azul-marinho
+               light: '#3B82F6', // Azul-claro
+            },
+            neutral: {
+               white: '#FFFFFF', // Branco
+               light: '#F3F4F6', // Cinza-claro
             },
             secondary: {
                DEFAULT: "hsl(var(--secondary))",

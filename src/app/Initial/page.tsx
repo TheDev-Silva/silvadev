@@ -7,7 +7,7 @@ export default function Initial() {
 
       <div className='w-[100%] mb-10 z-10'>
         <h1 className='text-white md:text-4xl text-2xl font-mono'>Olá, meu</h1>
-        <h1 className='text-white md:text-4xl text-2xl font-mono'>nome é <b className='md:text-5xl text-3xl  text-[#6716cf]'>Silva.</b></h1>
+        <h1 className='text-white md:text-4xl text-2xl font-mono'>nome é <b className='md:text-5xl text-3xl  text-primary-light'>Silva.</b></h1>
 
         <div className='flex flex-col items-start mt-10 gap-2 md:items-center md:justify-flex-start'>
           <p className='text-white md:text-2xl text-lg font-mono'>Sou um <b className='md:text-2xl text-lg font-bold text-white tracking-wider'>desenvolvedor criativo </b> e 
@@ -18,7 +18,7 @@ export default function Initial() {
 
       <div className='flex w-full md:justify-end justify-center items-center relative'>
         {/* Contêiner com formato de círculo e overflow oculto */}
-        <div className='flex md:h-[380px] md:w-[380px] w-[380px] h-[380px] bg-gradient-to-l from-[#6716cf] to-[#020617] rounded-full overflow-hidden justify-center items-center ' style={{ zIndex: 1, boxShadow: '10px 10px 100px #6716cf99' }}>
+        <div className='flex md:h-[380px] md:w-[380px] w-[380px] h-[380px] bg-gradient-to-l from-primary-light to-[#020617 rounded-full overflow-hidden justify-center items-center ' style={{ zIndex: 1, boxShadow: '10px 10px 100px #1e3a8a99' }}>
           <Image
             src={'/perfil-1-removebg-preview (1).png'}
             alt={'foto-perfil'}

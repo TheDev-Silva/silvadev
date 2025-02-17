@@ -301,21 +301,25 @@ export default function Home({ images }: DepoimentClientProps) {
    }, [])
 
 
-
    return (
       <>
+
          <div className="flex-wrap w-full z-50 rounded-full bg-green-500 overflow-hidden md:w-[786px] md:overflow-hidden hidden md:block" style={{ position: 'absolute', backgroundColor: '#fff' }}>
 
             <WhatsAppContact />
 
          </div>
-         <div className={`fixed w-full z-40  md:p-6 p-2 transition-all duration-500 ${isScrolled ? 'h-[130px] backdrop-blur-sm' : 'h-[120px] bg-[#6716cf] justify-between'
+
+
+
+
+         <div className={`fixed w-full z-40  md:p-6 p-2 transition-all duration-500 ${isScrolled ? 'h-[130px] backdrop-blur-sm' : 'h-[120px] bg-primary-dark justify-between'
             }`}>
 
 
 
             {/* Camada de fundo com desfoque */}
-            <div className={`absolute inset-0 bg-gradient-to-tr from-[#6716cf] to-[#000] ${isScrolled ? 'opacity-80' : 'opacity-0'
+            <div className={`absolute inset-0 bg-gradient-to-tr from-primary-light to-[#000] ${isScrolled ? 'opacity-80' : 'opacity-0'
                } transition-opacity duration-500`}></div>
 
             {/* Conteúdo do Header */}
@@ -344,24 +348,20 @@ export default function Home({ images }: DepoimentClientProps) {
                {!logoText && <div className='flex w-full md:overflow-hidden justify-center items-center '>
                   <ul className='flex gap-4'>
 
-                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(initialRef)}>Inicio</li>
+                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(initialRef)}>Inicio</li>
 
 
-                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(aboutMeRef)}>Sobre Mim</li>
+                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(aboutMeRef)}>Sobre Mim</li>
 
 
-                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(tecnologiasRef)}>Tecnologias</li>
+                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(tecnologiasRef)}>Tecnologias</li>
 
 
-                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(projectsRef)}>Projetos
+                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(projectsRef)}>Projetos
                      </li>
 
-                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(depoimentsRef)}>Avaliações
+                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(depoimentsRef)}>Avaliações
                      </li>
-
-                     {/*  <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-purple-300 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(contactsRef)}>Contatos</li> */}
-
-
 
                   </ul>
                </div>}
@@ -373,7 +373,7 @@ export default function Home({ images }: DepoimentClientProps) {
                   {!logoText && <span className="font-mono hover:tracking-widest hover:transition-all text-white font-bold">contatos</span>}
 
                </div>
-               
+
 
 
             </div>

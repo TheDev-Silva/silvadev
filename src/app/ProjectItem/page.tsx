@@ -4,6 +4,7 @@ import Image, { StaticImageData } from 'next/image';
 import { Carousel } from './Carrosel';
 import { useRouter } from 'next/navigation';
 import Header from '../Header/Header';
+import { Button } from '@/components/ui/button';
 
 interface ProjectProp {
    id: number;
@@ -42,7 +43,6 @@ export default function ProjectItem({ project }: ProjectsProps) {
 
    return (
       <>
-         <Header />
          <div className="flex-col w-full justify-center items-center bg-slate-950">
             <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center ">Projetos já Desenvolvidos</h1>
 
@@ -51,41 +51,41 @@ export default function ProjectItem({ project }: ProjectsProps) {
                <div className="border-white w-full relative z-10 pt-[50px] flex flex-col gap-20" >
                   {project.map((item) => (
 
-                     <div key={item.id} className="md:flex relative md:w-full md:justify-between justify-center items-center text-white p-5 rounded-lg mb-5 border-l-neonGreen border-b-neonGreen shadow-neon" style={{ borderBottomWidth: 4, borderLeftWidth: 4, backgroundColor: '#6716cf29', boxShadow: '#6716cf', gap: 15, /* backgroundImage: `url(${item.backgroundImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' */ }}>
+                     <div key={item.id} className="md:flex relative md:w-full md:justify-between justify-center items-center text-white p-5 rounded-lg mb-5 border-l-neonGreen border-b-[#1e3a8a] shadow-neon" style={{ borderBottomWidth: 4, borderLeftWidth: 4, backgroundColor: '#1e3a8a89', boxShadow: '#1e3a8a', gap: 15, /* backgroundImage: `url(${item.backgroundImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' */ }}>
 
                         <div
-                           className='absolute z-0 -inset-0 md:w-[200px] md:h-[200px] h-[100px] w-[100px] left-9 top-[30px] rounded-full bg-gradient-to-br to-[#6716cf] from-[#000] transition-all duration-300 blur-md'
+                           className='absolute z-0 -inset-0 md:w-[200px] md:h-[200px] h-[100px] w-[100px] left-9 top-[30px] rounded-full bg-gradient-to-br to-primary-light from-[#000] transition-all duration-300 blur-md'
                         //style={{ top: '10%', right: '0%', transform: 'translate(-50%, -50%)' }} // Centraliza o círculo atrás do conteúdo
                         >
                         </div>
                         <div
-                           className='absolute w-[50px] h-[50px] right-5 bottom-[20px] rounded-full bg-gradient-to-br to-[#6716cf] from-[#000] opacity-90 transition-all duration-300 blur-md'
-                        //style={{ top: '10%', right: '0%', transform: 'translate(-50%, -50%)' }} // Centraliza o círculo atrás do conteúdo
-                        >
-
-                        </div>
-                        <div
-                           className='absolute md:w-[50px] md:h-[50px] w-[40px] h-[40px] left-5  rounded-full bg-gradient-to-br to-[#6716cf] from-[#000] bottom-[100px] transition-all duration-300 blur-md'
+                           className='absolute w-[50px] h-[50px] right-5 bottom-[20px] rounded-full bg-gradient-to-br to-primary-light from-[#000] opacity-90 transition-all duration-300 blur-md'
                         //style={{ top: '10%', right: '0%', transform: 'translate(-50%, -50%)' }} // Centraliza o círculo atrás do conteúdo
                         >
 
                         </div>
                         <div
-                           className='absolute md:w-[150px] md:h-[150px] max-h-md w-[80px] h-[80px] rounded-full bg-gradient-to-tr to-[#6716cf] from-[#000] right-10 top-52 bottom-[100px] transition-all duration-300 blur-md'
+                           className='absolute md:w-[50px] md:h-[50px] w-[40px] h-[40px] left-5  rounded-full bg-gradient-to-br to-primary-light from-[#000] bottom-[100px] transition-all duration-300 blur-md'
+                        //style={{ top: '10%', right: '0%', transform: 'translate(-50%, -50%)' }} // Centraliza o círculo atrás do conteúdo
+                        >
+
+                        </div>
+                        <div
+                           className='absolute md:w-[150px] md:h-[150px] max-h-md w-[80px] h-[80px] rounded-full bg-gradient-to-tr to-primary-dark from-[#000] right-10 top-52 bottom-[100px] transition-all duration-300 blur-md'
                         //style={{ top: '10%', right: '0%', transform: 'translate(-50%, -50%)' }} // Centraliza o círculo atrás do conteúdo
                         ></div>
 
 
-                        <div className='flex-col relative md:w-[45%] p-4'>
-                           <h1 className='font-mono uppercase md:text-4xl text-2xl pb-5 tracking-widest'>{item.name}</h1>
+                        <div className='flex-col relative md:w-[45%] p-4 justify-between'>
+                           <h1 className='font-mono capitalize md:text-4xl text-2xl pb-5 tracking-wider'>{item.name}</h1>
                            <p className='font-mono md:text-base text-[14px]'>{item.description.slice(0, 100)}...</p>
 
                            {/* <Link key={item.id} href={`/ProjectId/${item.id}`}> */}
-                           <button onClick={() => handleNavigate(item.id)}
-                              className='flex w-full text-white hover:bg-[#6716cf] bg-[#6716cf89] transition-all duration-300 p-3 rounded-sm text-center items-center justify-center gap-3 mt-5'
+                           <Button onClick={() => handleNavigate(item.id)} size={'lg'}
+                              className='flex w-full text-white hover:bg-primary-dark bg-primary-light transition-all duration-300 p-3 rounded-sm text-center items-center justify-center gap-3 mt-5'
                            >
-                              <h1 className=''>{isLoading ? <p className='text-white'>Carregando...</p> : <p className='text-white'>veja mais</p>}</h1>
-                           </button>
+                              <p className='text-white'>{isLoading ? 'carregando...' : 'veja mais'}</p>
+                           </Button>
 
                            {/* </Link> */}
                         </div>

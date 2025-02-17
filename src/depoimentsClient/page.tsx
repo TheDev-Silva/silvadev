@@ -59,7 +59,7 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
          descricao: '"A SilvaDev foi fundada há 2 anos com o propósito de transformar ideias em soluções digitais inovadoras. Desde o início, nosso foco tem sido oferecer serviços de desenvolvimento de sites, aplicativos mobile e manutenção, sempre com qualidade, eficiência e atenção às necessidades de nossos clientes. Com dedicação e paixão pela tecnologia, construímos uma trajetória sólida, conquistando tanto clientes locais quanto internacionais."'
       }, {
          id: 2,
-         titulo: 'Você trabalha com clientes locais ou internacionais?',
+         titulo: 'Seus clientes locais ou gringos?',
          descricao: '"Trabalho com clientes tanto locais quanto internacionais. Meu foco é atender às necessidades de cada projeto, independentemente da localização, sempre oferecendo soluções personalizadas e de alta qualidade."'
       }, {
          id: 3,
@@ -125,7 +125,7 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
             {depoimentClients.map((image) => (
                <div
                   key={image.id}
-                  className="border-violet-600 transition-all duration-500"
+                  className="border-primary-dark transition-all duration-500"
 
                >
                   <Image
@@ -155,7 +155,7 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
 
             <div className='flex-row justify-center items-center md:mt-0' style={{ width: '100%', backgroundColor: '#fff', borderRadius: 16 }}>
 
-               <div className='w-full p-[20px] items-center justify-center bg-[#6716cf]  overflow-hidden' style={{ borderTopRightRadius: 15, borderTopLeftRadius: 15 }}>
+               <div className='w-full p-[20px] items-center justify-center bg-primary-light  overflow-hidden' style={{ borderTopRightRadius: 15, borderTopLeftRadius: 15 }}>
                   <h1 className="text-2xl md:text-3xl text-white font-mono font-bold text-center" >
                      Somo Conhecidos por
                   </h1>
@@ -163,16 +163,16 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
 
                <div className='flex-col p-5' style={{ gap: 10 }}>
                   <div className='flex gap-4 ' style={{ paddingTop: 10, paddingBottom: 10 }}>
-                     <CheckIcon size={24} color={'#6716cf'} />
-                     <h1 className='text-[#6716cf] font-mono text-lg'>Desenvolvimento Resposivo</h1>
+                     <CheckIcon size={24} color={'#1e3a8a'} />
+                     <h1 className='text-primary-dark font-mono text-lg'>Desenvolvimento Resposivo</h1>
                   </div>
                   <div className='flex gap-4' style={{ paddingTop: 10, paddingBottom: 10 }}>
-                     <CheckIcon size={24} color={'#6716cf'} />
-                     <h1 className='text-[#6716cf] font-mono text-lg'>Integração de Sistemas</h1>
+                     <CheckIcon size={24} color={'#1e3a8a'} />
+                     <h1 className='text-primary-dark font-mono text-lg'>Integração de Sistemas</h1>
                   </div>
                   <div className='flex gap-4' style={{ paddingTop: 10, paddingBottom: 10 }}>
-                     <CheckIcon size={24} color={'#6716cf'} />
-                     <h1 className='text-[#6716cf] font-mono text-lg'>Manutenções e correções de bug's</h1>
+                     <CheckIcon size={24} color={'#1e3a8a'} />
+                     <h1 className='text-primary-dark font-mono text-lg'>Manutenções e correções de bug's</h1>
                   </div>
                   <Link href={'https://mail.google.com/mail/u/0/#inbox?compose=new'}>
                      <Button className='mt-8' style={{ padding: 20 }}>Contate-nos</Button>
@@ -186,35 +186,51 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
                key={item.id}
             >
 
-               <div className='flex-col roudend-lg' style={{ backgroundColor: '#6716cf', borderRadius: 15 }} >
-                  <div className='flex-colshadow-lg p-5' style={{ backgroundColor: '#fff' }}>
-                     <div className={`flex justify-between items-center ${heightCurrent === item.id ? 'hover:transition-transform duration-300' : ''}`} onClick={() => toggleheight(item.id)}>
-                        <h1 className='text-black font-mono md:text-xl font-semibold '>{item.titulo}</h1>
+               <div
+                  className="flex-col rounded-lg"
+                  style={{ backgroundColor: '#1e3a8a', borderRadius: 15 }}
+               >
+                  <div
+                     className="flex-col shadow-lg p-5"
+                     style={{ backgroundColor: '#fff' }}
+                  >
+                     <div
+                        className={`flex justify-between items-center ${heightCurrent === item.id ? 'hover:transition-transform duration-300 hover:ease-linear' : ''
+                           }`}
+                        onClick={() => toggleheight(item.id)}
+                     >
+                        <h1 className="text-black font-mono md:text-xl font-semibold">
+                           {item.titulo}
+                        </h1>
 
                         {heightCurrent === item.id ? (
-                           <>
-                              <ArrowDown color='#000' className='cursor-pointer '/>
-                           </>
+                           <ArrowDown color="#000" className="cursor-pointer" />
                         ) : (
-                           <>
-                              <ArrowUp color='#000' className='cursor-pointer' />
-                           </>
+                           <ArrowUp color="#000" className="cursor-pointer" />
                         )}
-
                      </div>
+
                      {heightCurrent === item.id && (
-                        <p className={`text-white font-mono transition-transform duration-500 shadow-lg "
-                     }`}
-                           style={{ marginTop: 10, backgroundColor: '#000', minHeight: 60, padding: 10, fontSize: innerWidth >= 768 ? 16 : 12 }}
+                        <p
+                           className={`text-white font-mono shadow-lg`}
+                           style={{
+                              marginTop: 10,
+                              backgroundColor: '#3a82f6',
+                              minHeight: 60,
+                              padding: 10,
+                              fontSize: window.innerWidth >= 768 ? 16 : 10,
+                              opacity: heightCurrent === item.id ? 1 : 0,
+                              transform: heightCurrent === item.id
+                                 ? 'translate(0, 0)'
+                                 : 'translateY(-10px)',
+                           }}
                         >
                            {item.descricao}
                         </p>
                      )}
-
-
                   </div>
-
                </div>
+
             </div>
          ))}
       </div>
