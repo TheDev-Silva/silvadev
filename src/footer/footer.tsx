@@ -6,26 +6,30 @@ const Footer = () => {
 
    const [isHovered, setIsHovered] = useState(false);
    const [isAtBottom, setIsAtBottom] = useState(false);
+   const [isMobile, setIsMobile] = useState(false);
+
+   useEffect(() => {
+      const checkScreenSize = () => {
+         setIsMobile(window.innerWidth > 786);
+      };
+      checkScreenSize()
+      window.addEventListener('resize', checkScreenSize);
+
+      return () =>
+         window.removeEventListener('resize', checkScreenSize)
+   }, [])
 
    useEffect(() => {
       const handleScroll = () => {
-         const scrollPosition = window.scrollY + window.innerHeight;
-         const pageHeight = document.documentElement.scrollHeight;
+         requestAnimationFrame(() => {
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const pageHeight = document.documentElement.scrollHeight;
+            setIsAtBottom(scrollPosition >= pageHeight - 10)
+         })
 
-         // Verifica se o usuário chegou ao final da página
-         if (scrollPosition >= pageHeight - 10) {
-            setIsAtBottom(true);
-
-         } else {
-            setIsAtBottom(false);
-
-         }
       };
-
-
-
       window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll)
 
    }, []);
 
@@ -37,15 +41,15 @@ const Footer = () => {
             <div className='flex gap-1 items-center justify-center px-2'>
 
                <h1 className='text-white '>thesilvadev</h1>
-               <Copyright color='#fff' size={18}/>
+               <Copyright color='#fff' size={18} />
             </div>
 
             <h1 className='text-white'>Todos os direitos reservados.</h1>
          </div>
 
-         {window.innerWidth > 786 ? (
+         {isMobile && window.innerWidth > 786 ? (
             <h1 className={`text-white font-mono text-center relative `}
-            style={{right: 60}}
+               style={{ right: 60 }}
             >
                suporte urgente chama no zap!
             </h1>
