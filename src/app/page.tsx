@@ -16,19 +16,20 @@ import FirebaseLogo from '../images/firebase-logo.png'
 import ProjectItem from "./ProjectItem/page";
 import { Metadata } from "next";
 import { useEffect, useRef, useState } from "react";
-import Header from "./Header/Header";
 import { BiCommentDots, BiLogoWhatsapp } from "react-icons/bi";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+
 import Image from "next/image";
 import Contact from "./Contacts/page";
 import DepoimentClient, { DepoimentClientProps } from "@/depoimentsClient/page";
 import WhatsAppContact from "../whatsappContact/whatsappContact";
-import Footer from "@/footer/footer";
-import Clients from "./clients/page";
+import Footer from "@/footer/footer"
 
 
-
+export const metadataPage: Metadata = {
+   title: 'The Silva Dev',
+   description: 'Desenvolvimento Web e Mobile'
+}
 
 export default function Home({ images }: DepoimentClientProps) {
 
@@ -303,7 +304,6 @@ export default function Home({ images }: DepoimentClientProps) {
 
    return (
       <>
-
          <div className="flex-wrap w-full z-50 rounded-full bg-green-500 overflow-hidden md:w-[786px] md:overflow-hidden hidden md:block" style={{ position: 'absolute', backgroundColor: '#fff' }}>
 
             <WhatsAppContact />
@@ -351,10 +351,10 @@ export default function Home({ images }: DepoimentClientProps) {
                      <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(initialRef)}>Inicio</li>
 
 
-                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(aboutMeRef)}>Sobre Mim</li>
+                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(aboutMeRef)}>Sobre</li>
 
 
-                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(tecnologiasRef)}>Tecnologias</li>
+                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(tecnologiasRef)}>Techs</li>
 
 
                      <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(projectsRef)}>Projetos

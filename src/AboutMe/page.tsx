@@ -1,9 +1,15 @@
 'use client'
+
 import { Button } from '@/components/ui/button'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
-export default function AboutMe() {
+export const metadataAbout: Metadata = {
+   title: 'sobre mim'
+}
+
+const AboutMe: React.FC = () => {
 
    const [loading, setLoading] = useState(false)
 
@@ -18,6 +24,7 @@ export default function AboutMe() {
 
 
    return (
+
       <div className='flex-col relative h-full items-center justify-between' style={{ flex: 1, flexDirection: 'column', width: '100%', height: '100%', paddingTop: 80, gap: 30, paddingBottom: 30 }}>
 
          <div
@@ -65,7 +72,7 @@ export default function AboutMe() {
             }}
             className="border-primary-light md:p-8 relative "
          >
-            <div className='flex flex-col relative md:p-8 bg-gradient-to-t from-transparent to-primary-light' style={{
+            <div className='flex flex-col relative md:p-8 bg-gradient-to-t ' style={{
                borderTopWidth: 1, borderRightWidth: .5, borderColor: '#ffff', borderTopRightRadius: 20, paddingTop: 20, paddingRight: 10, paddingLeft: 0, paddingBottom: 0,
             }}>
                <p className="backdrop-blur-sm text-white md:text-lg text-base font-mono tracking-tight capitalize md:text-[12px]">
@@ -98,3 +105,4 @@ export default function AboutMe() {
       </div>
    );
 }
+export default AboutMe;

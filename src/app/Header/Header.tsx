@@ -1,14 +1,7 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
-import { BiCommentDots } from 'react-icons/bi'
 import Link from 'next/link';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { useNavigation } from '@/context/navigationContext';
-import Initial from '../Initial/page';
-import AboutMe from '@/AboutMe/page';
-
-
 
 
 export default function Header() {
@@ -62,10 +55,10 @@ export default function Header() {
 
 
    return (
-      <div className={`fixed w-full z-40 md:p-6 p-2 transition-all duration-500 ${isScrolled ? 'h-[130px] backdrop-blur-sm' : 'h-[120px] bg-[#6716cf] justify-between'
+      <div className={`fixed w-full z-40 md:p-6 p-2 transition-all duration-500 ${isScrolled ? 'h-[130px] backdrop-blur-sm' : 'h-[120px] bg-primary-dark justify-between'
          }`}>
          {/* Camada de fundo com desfoque */}
-         <div className={`absolute inset-0 bg-gradient-to-tr from-[#6716cf] to-[#000] ${isScrolled ? 'opacity-80' : 'opacity-0'
+         <div className={`absolute inset-0 bg-gradient-to-tr from-primary-dark to-[#000] ${isScrolled ? 'opacity-80' : 'opacity-0'
             } transition-opacity duration-500`}></div>
 
          {/* Conteúdo do Header */}
@@ -82,7 +75,7 @@ export default function Header() {
                            height={0}
                            quality={90}
                            sizes={'100vw'}
-                           className={!logoText ? 'w-[130px] drop-shadow-textlg' : 'w-[50px] drop-shadow-textlg'}
+                           className={!logoText ? 'w-[180px] drop-shadow-textlg' : 'w-[50px] drop-shadow-textlg'}
                         />
 
                      </div>
