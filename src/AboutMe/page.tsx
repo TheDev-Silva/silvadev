@@ -88,10 +88,9 @@ const AboutMe: React.FC = () => {
                   >
                      <Button
                         onClick={Isloading}
-                        size={'lg'}
-                        className='text-white p-3 rounded-sm text-center items-center justify-center gap-3 mt-5 '
+                        className='text-white py-6 rounded-md text-center items-center justify-center gap-3 mt-5 bg-black px-8'
                      >
-                        {loading ? 'carregando...' : 'saiba mais'}
+                        {loading ? <p style={{textTransform: 'uppercase'}}>carregando...</p> : <p style={{textTransform: 'uppercase'}}>saiba mais</p>}
                      </Button>
                   </Link>
 

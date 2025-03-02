@@ -1,11 +1,11 @@
-`use client`
+"use client"
 import { Copyright } from 'lucide-react';
 import React, { useEffect, useState } from 'react'
 
 const Footer = () => {
 
-   const [isHovered, setIsHovered] = useState(false);
-   const [isAtBottom, setIsAtBottom] = useState(false);
+
+   const [, setIsAtBottom] = useState(false);
    const [isMobile, setIsMobile] = useState(false);
 
    useEffect(() => {
@@ -40,18 +40,18 @@ const Footer = () => {
          <div className='md:flex gap-3 md:justify-center justify-start items-center font-mono'>
             <div className='flex gap-1 items-center justify-center px-2'>
 
-               <h1 className='text-white '>thesilvadev</h1>
-               <Copyright color='#fff' size={18} />
+               <h1 className='text-white '>copyright </h1>
+                <Copyright color='#fff' size={18} />
+               <h1 className='text-white '> 2025 silvadev - Todos os direitos reservados.</h1>
             </div>
 
-            <h1 className='text-white'>Todos os direitos reservados.</h1>
          </div>
 
          {isMobile && window.innerWidth > 786 ? (
             <h1 className={`text-white font-mono text-center relative `}
                style={{ right: 60 }}
             >
-               suporte urgente chama no zap!
+               powered by the silvadev
             </h1>
          ) : (
             null

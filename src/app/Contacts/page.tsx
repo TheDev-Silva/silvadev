@@ -5,10 +5,9 @@ import { AiOutlineGithub, AiOutlineLinkedin, AiOutlineLoading, AiOutlineWhatsApp
 /* import Router from 'next/navigation'; */
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { AiFillInstagram, AiOutlineInstagram } from "react-icons/ai";
-import { relative } from 'path';
-import Header from '../Header/Header';
+import { AiOutlineInstagram } from "react-icons/ai";
 import { Button } from '@/components/ui/button';
+import Head from 'next/head';
 
 export default function Contact() {
 
@@ -85,6 +84,10 @@ export default function Contact() {
 
 
       <div className='flex-wrap w-full relative justify-around'>
+         <Head>
+            <title>Contatos</title>
+            <meta name="description" content="Transforme seu sorriso com nossos tratamentos odontológicos avançados." />
+         </Head>
          <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center" style={{ marginBottom: 10 }}>Contate-nos</h1>
 
          <div className='w-full relative md:flex items-center md:justify-around justify-center md:pt-[50px] pt-[20px] '>

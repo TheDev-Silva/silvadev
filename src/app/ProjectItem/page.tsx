@@ -1,10 +1,10 @@
 "use client"
 import React, { useState } from 'react';
-import Image, { StaticImageData } from 'next/image';
 import { Carousel } from './Carrosel';
 import { useRouter } from 'next/navigation';
-import Header from '../Header/Header';
+
 import { Button } from '@/components/ui/button';
+import { StaticImageData } from 'next/image';
 
 interface ProjectProp {
    id: number;
@@ -32,6 +32,7 @@ export default function ProjectItem({ project }: ProjectsProps) {
          setTimeout(() => {
             router.push(`/projectId/${id}`);
          }, 500);
+         // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (error) {
          console.log('Erro ao buscar Projeto')
       } finally {
@@ -40,6 +41,12 @@ export default function ProjectItem({ project }: ProjectsProps) {
 
 
    };
+   const handleIsloading = () => {
+      setIsLoading(true)
+      setTimeout(() => {
+         setIsLoading(false)
+      }, 5000);
+   }
 
    return (
       <>
@@ -51,7 +58,7 @@ export default function ProjectItem({ project }: ProjectsProps) {
                <div className="border-white w-full relative z-10 pt-[50px] flex flex-col gap-20" >
                   {project.map((item) => (
 
-                     <div key={item.id} className="md:flex relative md:w-full md:justify-between justify-center items-center text-white p-5 rounded-lg mb-5 border-l-neonGreen border-b-[#1e3a8a] shadow-neon" style={{ borderBottomWidth: 4, borderLeftWidth: 4, backgroundColor: '#1e3a8a89', boxShadow: '#1e3a8a', gap: 15, /* backgroundImage: `url(${item.backgroundImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' */ }}>
+                     <div key={item.id} className="md:flex relative md:w-full md:justify-between justify-center items-center text-white p-5 rounded-lg mb-5 border-l-neonGreen border-b-[#1e3a8a] shadow-neon" style={{ borderBottomWidth: 4, borderLeftWidth: 4, backgroundColor: '#1e3a8a89', boxShadow: '#1e3a8a', gap: 15 }}>
 
                         <div
                            className='absolute z-0 -inset-0 md:w-[200px] md:h-[200px] h-[100px] w-[100px] left-9 top-[30px] rounded-full bg-gradient-to-br to-primary-light from-[#000] transition-all duration-300 blur-md'
@@ -81,10 +88,10 @@ export default function ProjectItem({ project }: ProjectsProps) {
                            <p className='font-mono md:text-base text-[14px]'>{item.description.slice(0, 100)}...</p>
 
                            {/* <Link key={item.id} href={`/ProjectId/${item.id}`}> */}
-                           <Button onClick={() => handleNavigate(item.id)} size={'lg'}
+                           <Button onClick={() => [handleNavigate(item.id), handleIsloading()]} size={'lg'}
                               className='flex w-full text-white hover:bg-primary-dark bg-primary-light transition-all duration-300 p-3 rounded-sm text-center items-center justify-center gap-3 mt-5'
                            >
-                              <p className='text-white'>{isLoading ? 'carregando...' : 'veja mais'}</p>
+                              {isLoading ? <p className='uppercase text-white'>carregando...</p> : <p className='uppercase text-white'>veja mais</p>}
                            </Button>
 
                            {/* </Link> */}

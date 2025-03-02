@@ -16,7 +16,7 @@ import FirebaseLogo from '../images/firebase-logo.png'
 import ProjectItem from "./ProjectItem/page";
 import { Metadata } from "next";
 import { useEffect, useRef, useState } from "react";
-import { BiCommentDots, BiLogoWhatsapp } from "react-icons/bi";
+import { BiCommentDots } from "react-icons/bi";
 import Link from "next/link";
 
 import Image from "next/image";
@@ -24,6 +24,13 @@ import Contact from "./Contacts/page";
 import DepoimentClient, { DepoimentClientProps } from "@/depoimentsClient/page";
 import WhatsAppContact from "../whatsappContact/whatsappContact";
 import Footer from "@/footer/footer"
+import { Menu, X } from "lucide-react";
+
+/* import { Navigation } from "@/components/navigation"; */
+
+
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 
 export const metadataPage: Metadata = {
@@ -40,10 +47,11 @@ export default function Home({ images }: DepoimentClientProps) {
    const projectsRef = useRef<HTMLDivElement>(null);
    const contactsRef = useRef<HTMLDivElement>(null)
    const depoimentsRef = useRef<HTMLDivElement>(null)
-
+   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+   const [isOpen, setIsOpen] = useState(false)
    const [isScrolled, setIsScrolled] = useState(false)
    const [logoText, setLogoText] = useState(false)
-   const sectionRef = useRef<HTMLDivElement>(null)
+   //const sectionRef = useRef<HTMLDivElement>(null)
 
    // Função para rolar até a seção
    const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
@@ -54,6 +62,15 @@ export default function Home({ images }: DepoimentClientProps) {
          });
       }
    };
+
+   const navNavigations = [
+      { id: 1, name: "Início", href: "Initial", ref: initialRef },
+      { id: 2, name: "Sobre", href: "#AboutMe", ref: aboutMeRef },
+      { id: 3, name: "Tecnologías", href: "#tecnologias", ref: tecnologiasRef },
+      { id: 4, name: "Projetos", href: "#projects", ref: projectsRef },
+      { id: 5, name: "Avaliações", href: "#depoiments", ref: depoimentsRef },
+
+   ]
 
 
 
@@ -302,18 +319,18 @@ export default function Home({ images }: DepoimentClientProps) {
    }, [])
 
 
+
    return (
       <>
+         {/* <Navigation /> */}
+
          <div className="flex-wrap w-full z-50 rounded-full bg-green-500 overflow-hidden md:w-[786px] md:overflow-hidden hidden md:block" style={{ position: 'absolute', backgroundColor: '#fff' }}>
 
             <WhatsAppContact />
 
          </div>
 
-
-
-
-         <div className={`fixed w-full z-40  md:p-6 p-2 transition-all duration-500 ${isScrolled ? 'h-[130px] backdrop-blur-sm' : 'h-[120px] bg-primary-dark justify-between'
+         <div className={`fixed w-full z-40 ${isOpen === true && 'pb-6'} md:p-6 p-2 transition-all duration-500 ${isScrolled ? ' backdrop-blur-sm' : 'justify-between backdrop-blur-md'
             }`}>
 
 
@@ -336,7 +353,7 @@ export default function Home({ images }: DepoimentClientProps) {
                               height={0}
                               quality={90}
                               sizes={'100vw'}
-                              className={!logoText ? 'w-[180px] drop-shadow-textlg' : 'w-[50px] drop-shadow-textlg'}
+                              className={!logoText ? 'w-[200px] drop-shadow-textlg' : 'w-[50px] drop-shadow-textlg'}
                            />
 
                         </div>
@@ -345,37 +362,75 @@ export default function Home({ images }: DepoimentClientProps) {
                   </div>
 
                </div>
-               {!logoText && <div className='flex w-full md:overflow-hidden justify-center items-center '>
-                  <ul className='flex gap-4'>
 
-                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(initialRef)}>Inicio</li>
+               {!logoText && <div className="hidden md:flex space-x-8">
+                  {navNavigations.map((nav) => (
+                     <a
+                        key={nav.id}
+                        href={nav.href}
 
+                        onClick={(e) => {
+                           e.preventDefault()
+                           scrollToSection(nav.ref)
+                        }}
+                        className="p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300"
+                     >
+                        {nav.name}
+                     </a>
+                  ))}
 
-                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(aboutMeRef)}>Sobre</li>
+                  <div className='flex items-center gap-2 justify-center cursor-pointer md:w-[200px] bg-primary-light rounded-sm p-2'
+                     onClick={() => scrollToSection(contactsRef)}
+                  >
+                     <BiCommentDots size={24} color="#fff" />
+                     {!logoText && <span className="font-mono hover:tracking-widest hover:transition-all text-white font-bold">contatos</span>}
 
-
-                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(tecnologiasRef)}>Techs</li>
-
-
-                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(projectsRef)}>Projetos
-                     </li>
-
-                     <li className="w-[100px] p-2 font-mono text-center text-white cursor-pointer hover:text-sky-200 hover:scale-110 hover:opacity-90 transition-transform duration-300" onClick={() => scrollToSection(depoimentsRef)}>Avaliações
-                     </li>
-
-                  </ul>
+                  </div>
                </div>}
-
-               <div className='flex items-center gap-2 justify-center cursor-pointer md:w-[200px]'
-                  onClick={() => scrollToSection(contactsRef)}
+               <button
+                  className="md:hidden text-white"
+                  onClick={() => setIsOpen(!isOpen)}
                >
-                  <BiCommentDots size={24} color="#fff" />
-                  {!logoText && <span className="font-mono hover:tracking-widest hover:transition-all text-white font-bold">contatos</span>}
+                  {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+               </button>
 
+
+
+            </div>
+            <div
+               className={`md:hidden md:mb-4 relative inset-0 transition-all md:p-6 duration-300 ease-in-out ${isOpen
+                  ? "max-h-64 opacity-100 "
+                  : "max-h-0 opacity-0 pointer-events-none "
+                  } `}
+            >
+               <div className="p-6 space-y-4">
+                  {navNavigations.map((navMob) => (
+
+
+                     <a
+                        key={navMob.id}
+                        href={navMob.href}
+                        onClick={(e) => {
+                           e.preventDefault()
+                           setIsOpen(false)
+                           scrollToSection(navMob.ref)
+                        }}
+                           className={`block text-white hover:text-primary transition-colors z-10 ${isScrolled ? 'hover:text-black hover:font-bold':'hover:text-primary-light hover:font-bold '} cursor-pointer`}
+                     >
+
+                        {navMob.name}
+
+                     </a>
+
+                  ))}
+                  <div className='flex items-center gap-2 justify-center cursor-pointer md:w-[200px] bg-primary-light rounded-sm p-2 mb-4'
+                     onClick={() => [scrollToSection(contactsRef), setIsOpen(false)]}
+                  >
+                     <BiCommentDots size={24} color="#fff" />
+                     <span className="font-mono hover:tracking-widest hover:transition-all text-white font-bold">contatos</span>
+
+                  </div>
                </div>
-
-
-
             </div>
          </div>
          <div className="flex-col w-fulljustify-start items-center bg-slate-950 md:p-[50px] p-[30px]">

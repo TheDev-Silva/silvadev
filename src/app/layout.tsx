@@ -15,12 +15,12 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-/* export const metadata: Metadata = {
+export const metadata: Metadata = {
   title: "The Silva Dev",
   description: "Desenvolvedor web e Mobile",
   
 };
- */
+
 export default function RootLayout({
   children,
 }: Readonly<{

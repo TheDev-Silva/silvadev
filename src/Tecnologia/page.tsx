@@ -27,13 +27,13 @@ export default function Tecnologias({ tecnologyItem }: TecnologiasProp) {
             <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center uppercase" style={{ marginBottom: 50 }}>Explorando tecnologias e as dominando</h1>
 
             <p className='text-white font-mono italic'>
-               <span className='text-xl'>"</span>Aqui, compartilho algumas das principais tecnologias que utilizo para transformar ideias em soluções completas e eficientes. Minha escolha de ferramentas sempre considera as necessidades específicas de cada projeto, garantindo que as soluções desenvolvidas sejam funcionais, escaláveis e alinhadas aos objetivos do cliente.
-               <span className='text-xl'>"</span>
+               <span className='text-xl'>&quot;</span>Aqui, compartilho algumas das principais tecnologias que utilizo para transformar ideias em soluções completas e eficientes. Minha escolha de ferramentas sempre considera as necessidades específicas de cada projeto, garantindo que as soluções desenvolvidas sejam funcionais, escaláveis e alinhadas aos objetivos do cliente.
+               <span className='text-xl'>&quot;</span>
 
             </p>
             <div className='text-white font-mono md:text-lg text-base md:p-5 p-8 mt-5 shadow-lg shadow-white' style={{ borderBottomWidth: 2, borderLeftWidth: 2, borderColor: '#1e3a8a', borderBottomLeftRadius: 30, }}>
 
-               No front-end, o<b className='text-primary-light font-mono italic bg-white w-full'> JavaScript</b>  reina como a base para a criação de experiências ricas e interativas, em conjunto com <b className='text-primary-light font-mono'>React</b>  e <b className='text-primary-light font-mono'>Next.js</b>, que me permitem desenvolver interfaces modernas e de alta performance. Para aplicações mobile, combino a flexibilidade do <b className='text-primary-light font-mono'>React Native</b> com a eficiência do Expo, criando aplicativos que oferecem ótima usabilidade.
+               No front-end, o<b className='text-primary-light font-mono italic '> JavaScript</b>  reina como a base para a criação de experiências ricas e interativas, em conjunto com <b className='text-primary-light font-mono'>React</b>  e <b className='text-primary-light font-mono'>Next.js</b>, que me permitem desenvolver interfaces modernas e de alta performance. Para aplicações mobile, combino a flexibilidade do <b className='text-primary-light font-mono'>React Native</b> com a eficiência do Expo, criando aplicativos que oferecem ótima usabilidade.
 
                <br className=''></br><br className=''></br>No back-end, o <b className='text-primary-light font-mono'>Node.js</b> é minha escolha para construir APIs robustas e quando necessárias escaláveis, enquanto ferramentas como <b className='text-primary-light font-mono'>Prisma ORM</b> e <b className='text-primary-light font-mono'>Drizzle</b> garantem uma manipulação de dados eficaz e segura. já o Firebase se destaca por permitir integrações em tempo real e autenticação confiável, essencial para muitos projetos modernos.
 
@@ -41,7 +41,8 @@ export default function Tecnologias({ tecnologyItem }: TecnologiasProp) {
 
                Estas são apenas algumas das ferramentas que fazem parte do meu dia a dia. Cada projeto é único, e minha prioridade é sempre encontrar as melhores combinações para atender às suas necessidades.
                <br className=''></br><br className='text-lg'></br>E então? Vamos transformar sua ideia em realidade com as tecnologias certas!
-               <br></br><Button className='mt-10 uppercase bg-primary-light'>Acesse aqui!</Button>
+               <br></br>
+               <Button className='mt-10 bg-primary-light rounded-md hover:bg-white' style={{textTransform: 'uppercase'}}>Acesse aqui!</Button>
 
 
             </div>

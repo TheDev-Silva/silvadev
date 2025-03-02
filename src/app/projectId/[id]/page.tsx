@@ -1,6 +1,8 @@
 'use client'
 
-import { ArrowLeft, ArrowLeftCircle } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { use, useState } from "react";
@@ -222,55 +224,80 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
          </div>
 
 
+         <h1 className="text-white font-mono uppercase mb-4 text-center text-xl md:text-2xl mt-8">Tecnologias usadas neste projeto</h1>
+         <div className="mt-8 flex justify-between">
+         
+            <div className="p-2 w-full flex-wrap md:grid md:grid-cols-2 gap-12 justify-center md:justify-center items-center ">
+               <Carousel
+                  opts={{
+                     align: "start",
+                     loop: true,
+                  }}
+                  className="relative"
+               >
+                  <CarouselContent>
+                     {projectData.images.map((image, index) => (
+                        <CarouselItem key={index} onClick={() => setSelectedImage(image.image)}>
+                           <div className="p-4">
+                              <Card className="flex overflow-hidden bg-slate-200 border-none justify-center items-center">
+                                 <div className="aspect-video relative group">
+                                    <Image
+                                       width={0}
+                                       height={0}
+                                       sizes="100vw"
+                                       src={image.image}
+                                       alt={image.image}
+                                       className="w-full h-[70vh] object-contain transition-transform duration-300 group-hover:scale-105"
+                                       
+                                    />
+                                     {/* <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                       {projectData.name}
+                                    </div> */}
+                                 </div>
+                              </Card>
+                           </div>
+                        </CarouselItem>
+                     ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="absolute -left-12 top-1/2 -translate-y-1/2" />
+                  <CarouselNext className="absolute -right-12 top-1/2 -translate-y-1/2" />
+               </Carousel>
 
-         <div className="mt-8">
-            <h2 className="text-2xl md:text-xl font-semibold text-white font-mono mb-10">Imagens do Projeto:</h2>
-            <div className="w-full flex-wrap flex gap-12 justify-center md:justify-between items-center ">
-               {projectData.images.map((image) => (
-                  <div key={image.id} onClick={() => setSelectedImage(image.image)} className="cursor-pointer">
-                     <Image
-                        width={180}
-                        height={120}
-                        src={image.image}
-                        alt={`${projectData.name} - imagem ${image.id}`}
-                        className="rounded-lg shadow-lg md:w-[120px] p-2 hover:underline-offset-1"
-                     />
-                  </div>
-               ))}
-            </div>
-            <div
-               className={`mt-10 `}
+               <div
+                  className={`w-full px-6`}
 
-            >
-               <h1>Tecnologias usadas.</h1>
-               {projectData.tecnololigas_usadas.map((tec, index) => (
-                  <div
-                     key={index} // Sempre adicione uma chave única ao map para evitar erros
-                     className="w-full flex-col justify-between items-center pb-6"
-                  >
-                     <div className="flex justify-between border-slate-50 border-y-[1px] py-6">
-                        <p className="text-white font-mono text-[12px] md:text-[14px]">Possui AI?: </p>
-                        <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.Ai}</p>
+               >
+                  
+                  {projectData.tecnololigas_usadas.map((tec, index) => (
+                     <div
+                        key={index} // Sempre adicione uma chave única ao map para evitar erros
+                        className="w-full flex-col justify-between items-center pb-6"
+                     >
+                        <div className="flex justify-between py-4">
+                           <p className="text-white font-mono text-[12px] md:text-[14px]">Possui AI?: </p>
+                           <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.Ai}</p>
+                        </div>
+                        <div className="flex justify-between border-slate-50 border-y-[1px] py-4">
+                           <p className="text-white font-mono text-[12px] md:text-[14px]">Possui Backend?</p>
+                           <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.back_end}</p>
+                        </div>
+                        <div className="flex justify-between border-slate-50 border-b-[1px] py-4">
+                           <p className="text-white font-mono text-[12px] md:text-[14px]">Qual o tipo de estilo foi usado?</p>
+                           <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.estilo}</p>
+                        </div>
+                        <div className="flex justify-between border-slate-50 border-b-[1px] py-4">
+                           <p className="text-white font-mono text-[12px] md:text-[14px]">Qual o foi Framework usado?</p>
+                           <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.framework}</p>
+                        </div>
+                        <div className="flex justify-between border-slate-50 border-b-[1px] py-4">
+                           <p className="text-white font-mono text-[12px] md:text-[14px]">Qual linguagem foi usada?</p>
+                           <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.linguagem}</p>
+                        </div>
                      </div>
-                     <div className="flex justify-between border-slate-50 border-b-[1px] py-6">
-                        <p className="text-white font-mono text-[12px] md:text-[14px]">Possui Backend?</p>
-                        <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.back_end}</p>
-                     </div>
-                     <div className="flex justify-between border-slate-50 border-b-[1px] py-6">
-                        <p className="text-white font-mono text-[12px] md:text-[14px]">Qual o tipo de estilo foi usado?</p>
-                        <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.estilo}</p>
-                     </div>
-                     <div className="flex justify-between border-slate-50 border-b-[1px] py-6">
-                        <p className="text-white font-mono text-[12px] md:text-[14px]">Qual o foi Framework usado?</p>
-                        <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.framework}</p>
-                     </div>
-                     <div className="flex justify-between border-slate-50 border-b-[1px] py-6">
-                        <p className="text-white font-mono text-[12px] md:text-[14px]">Qual linguagem foi usada?</p>
-                        <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.linguagem}</p>
-                     </div>
-                  </div>
-               ))}
+                  ))}
+               </div>
             </div>
+
 
 
          </div>
