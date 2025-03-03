@@ -2,10 +2,11 @@
 
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Images } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { use, useState } from "react";
+import { FaGithub, FaWhatsapp } from "react-icons/fa";
 
 const project = [
    {
@@ -26,11 +27,11 @@ const project = [
       images: [
          {
             id: 1,
-            image: '/imageSecurityKEy/security-1.jpg'
+            image: '/imageSecurityKEy/security-1.jpg',
          },
          {
             id: 2,
-            image: '/imageSecurityKEy/security-2.jpg'
+            image: '/imageSecurityKEy/security-2.jpg',
          },
          {
             id: 3,
@@ -191,6 +192,16 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
    const [selectedImage, setSelectedImage] = useState<string | null>(null);
    const { id } = use(params);
 
+   const [loading, setLoading] = useState(false)
+   
+   
+      const Isloading = () => {
+         setLoading(true)
+         setTimeout(() => {
+            setLoading(false)
+         }, 5000);
+      }
+
    // Buscar os dados do projeto pelo ID
 
    const projectData = (project.find((item) => item.id === Number(id)));
@@ -208,7 +219,7 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
    return (
 
 
-      <div className="flex flex-col w-full bg-slate-950 lg:h-[100%] md:h-[100vh] justify-between p-10 ">
+      <div className="flex flex-col w-full bg-slate-950 md:h-full justify-between p-10 ">
          <div className="flex-col ">
             <div className="flex gap-10">
                <Link
@@ -225,22 +236,26 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
 
 
          <h1 className="text-white font-mono uppercase mb-4 text-center text-xl md:text-2xl mt-8">Tecnologias usadas neste projeto</h1>
-         <div className="mt-8 flex justify-between">
-         
-            <div className="p-2 w-full flex-wrap md:grid md:grid-cols-2 gap-12 justify-center md:justify-center items-center ">
+         <div className="flex justify-around">
+
+            <div className="p-2 w-full flex-wrap md:grid md:grid-cols-2 gap-12 justify-center md:justify-around items-center mx-8">
                <Carousel
                   opts={{
                      align: "start",
                      loop: true,
                   }}
-                  className="relative"
+                  className="relative md:w-[550px]"
                >
-                  <CarouselContent>
+                  <CarouselContent
+                     className=""
+                  >
                      {projectData.images.map((image, index) => (
-                        <CarouselItem key={index} onClick={() => setSelectedImage(image.image)}>
-                           <div className="p-4">
-                              <Card className="flex overflow-hidden bg-slate-200 border-none justify-center items-center">
-                                 <div className="aspect-video relative group">
+                        <CarouselItem key={index} onClick={() => setSelectedImage(image.image)}
+                           className=""
+                        >
+                           <div className="py-4">
+                              <Card className="overflow-hidden">
+                                 <div className="aspect-video relative bg-slate-100 group">
                                     <Image
                                        width={0}
                                        height={0}
@@ -248,11 +263,27 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
                                        src={image.image}
                                        alt={image.image}
                                        className="w-full h-[70vh] object-contain transition-transform duration-300 group-hover:scale-105"
-                                       
+
                                     />
-                                     {/* <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                       {projectData.name}
-                                    </div> */}
+                                    {image.id === 1 && <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                       <h3 className="flex absolute top-[10px] left-[10px] text-center bg-primary-dark bg-opacity-45 backdrop-blur-lg rounded-md p-2 px-4 text-white text-lg font-semibold items-center gap-2">
+                                          {projectData.name}
+                                       </h3>
+
+                                    </div>
+
+                                    }
+                                    <Link href={'/Contacts'}
+                                    onClick={Isloading}
+                                    >
+
+                                       {loading ? <h3 className="flex absolute top-[10px] right-[10px] text-center bg-black bg-opacity-45 backdrop-blur-lg rounded-md p-2 px-4 text-white text-md font-mono items-center gap-2 z-10">
+                                          aguarde... <FaWhatsapp/>
+                                       </h3>: <h3 className="flex absolute top-[10px] right-[10px] text-center bg-black bg-opacity-45 backdrop-blur-lg rounded-md p-2 px-4 text-white text-md font-semibold items-center gap-2 z-10">
+                                          quero este projeto <FaWhatsapp/>
+                                       </h3>}
+                                    </Link>
+                                    
                                  </div>
                               </Card>
                            </div>
@@ -264,34 +295,38 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
                </Carousel>
 
                <div
-                  className={`w-full px-6`}
+                  className={`flex flex-coljustify-between items-center bg-primary-light rounded-md`}
 
                >
-                  
+
                   {projectData.tecnololigas_usadas.map((tec, index) => (
                      <div
                         key={index} // Sempre adicione uma chave única ao map para evitar erros
-                        className="w-full flex-col justify-between items-center pb-6"
+                        className="relative w-full flex-col justify-between items-center bg-gradient-to-br from-primary-dark backdrop-blur-md bg-opacity-45 px-6 py-4 rounded-lg h-[70vh] "
                      >
-                        <div className="flex justify-between py-4">
-                           <p className="text-white font-mono text-[12px] md:text-[14px]">Possui AI?: </p>
-                           <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.Ai}</p>
+                        <div className="flex justify-between py-6">
+                           <p className="text-white font-mono font-bold text-[14px] md:text-[14px]">AI :</p>
+                           <p className="text-white font-mono text-[14px] md:text-[14px] text-end">{tec.Ai}</p>
                         </div>
-                        <div className="flex justify-between border-slate-50 border-y-[1px] py-4">
-                           <p className="text-white font-mono text-[12px] md:text-[14px]">Possui Backend?</p>
-                           <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.back_end}</p>
+
+                        <div className="flex justify-between border-slate-50 border-y-[1px] py-6">
+                           <p className="text-white font-mono font-bold text-[14px] md:text-[14px]">Backend :</p>
+                           <p className="text-white font-mono text-[14px] md:text-[14px] text-end">{tec.back_end}</p>
                         </div>
-                        <div className="flex justify-between border-slate-50 border-b-[1px] py-4">
-                           <p className="text-white font-mono text-[12px] md:text-[14px]">Qual o tipo de estilo foi usado?</p>
-                           <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.estilo}</p>
+
+                        <div className="flex justify-between border-slate-50 border-b-[1px] py-6">
+                           <p className="text-white font-mono font-bold text-[14px] md:text-[14px]">Estilo :</p>
+                           <p className="text-white font-mono text-[14px] md:text-[14px] text-end">{tec.estilo}</p>
                         </div>
-                        <div className="flex justify-between border-slate-50 border-b-[1px] py-4">
-                           <p className="text-white font-mono text-[12px] md:text-[14px]">Qual o foi Framework usado?</p>
-                           <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.framework}</p>
+
+                        <div className="flex justify-between border-slate-50 border-b-[1px] py-6">
+                           <p className="text-white font-mono font-bold text-[14px] md:text-[14px]">Framework :</p>
+                           <p className="text-white font-mono text-[14px] md:text-[14px] text-end">{tec.framework}</p>
                         </div>
-                        <div className="flex justify-between border-slate-50 border-b-[1px] py-4">
-                           <p className="text-white font-mono text-[12px] md:text-[14px]">Qual linguagem foi usada?</p>
-                           <p className="text-white font-mono text-[12px] md:text-[14px] text-end">{tec.linguagem}</p>
+
+                        <div className="flex justify-between border-slate-50 border-b-[1px] py-6">
+                           <p className="text-white font-mono font-bold text-[14px] md:text-[14px]">Linguagem :</p>
+                           <p className="text-white font-mono text-[14px] md:text-[14px] text-end">{tec.linguagem}</p>
                         </div>
                      </div>
                   ))}

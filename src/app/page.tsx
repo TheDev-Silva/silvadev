@@ -322,8 +322,6 @@ export default function Home({ images }: DepoimentClientProps) {
 
    return (
       <>
-         {/* <Navigation /> */}
-
          <div className="flex-wrap w-full z-50 rounded-full bg-green-500 overflow-hidden md:w-[786px] md:overflow-hidden hidden md:block" style={{ position: 'absolute', backgroundColor: '#fff' }}>
 
             <WhatsAppContact />
@@ -331,7 +329,7 @@ export default function Home({ images }: DepoimentClientProps) {
          </div>
 
          <div className={`fixed w-full z-40 ${isOpen === true && 'pb-6'} md:p-6 p-2 transition-all duration-500 ${isScrolled ? ' backdrop-blur-sm' : 'justify-between backdrop-blur-md'
-            }`}>
+            }`} >
 
 
 
@@ -433,7 +431,7 @@ export default function Home({ images }: DepoimentClientProps) {
                </div>
             </div>
          </div>
-         <div className="flex-col w-fulljustify-start items-center bg-slate-950 md:p-[50px] p-[30px]">
+         <div className="flex-col w-fulljustify-start items-center bg-slate-950 md:p-[50px] p-[30px]" onClick={() => setIsOpen(false)}>
 
             <div ref={initialRef}>
                <Initial />
