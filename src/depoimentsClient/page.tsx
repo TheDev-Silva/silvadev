@@ -1,6 +1,6 @@
 'use client'
 import { Button } from '@/components/ui/button'
-import { ArrowDown, ArrowUp, ArrowUpDown, CheckIcon } from 'lucide-react'
+import { ArrowDown, ArrowUp, CheckIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
@@ -8,10 +8,12 @@ import depoiment1 from '../../public/depoiment-1.jpg'
 import depoiment2 from '../../public/depoiment-2.jpg'
 import depoiment3 from '../../public/depoiment-3.jpg'
 import depoiment4 from '../../public/depoiment-4.jpg'
+import { StaticImageData } from 'next/image'
 
 export interface ImageProps {
    id: number,
-   image: string
+   image: string | StaticImageData,
+   
 }
 
 export interface DepoimentClientProps {
@@ -21,11 +23,12 @@ export interface DepoimentClientProps {
 interface perguntasProps {
    id: number,
    titulo: string,
-   descricao: string
+   descricao: string,
 }
 
 
-export default function DepoimentClient({ images }: DepoimentClientProps) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export default function DepoimentClient({ images, }: DepoimentClientProps) {
 
    const [heightCurrent, setHeightCurrent] = useState<number | null>(null);
 
@@ -35,19 +38,19 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
    const depoimentClients: ImageProps[] = [
       {
          id: 1,
-         image: depoiment1.src,
+         image: depoiment1,
       },
       {
          id: 2,
-         image: depoiment2.src,
+         image: depoiment2,
       },
       {
          id: 3,
-         image: depoiment3.src,
+         image: depoiment3,
       },
       {
          id: 4,
-         image: depoiment4.src,
+         image: depoiment4,
       }
    ]
 
@@ -147,7 +150,7 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
          <div className='relative md:flex w-full items-center md:justify-between justify-center' style={{ marginTop: 100, marginBottom: 100 }}>
             <div className='w-full' style={{ width: '100%', padding: 20 }}>
                <h1 className="text-2xl md:text-3xl text-white font-mono font-bold text-center mb-6">
-                  "Porque escolher nosso time?
+                  &quot;Porque escolher nosso time?
                </h1>
                <p className={'text-white font-mono'}>Transformamos suas ideias em soluções digitais práticas e impactantes, com criatividade, eficiência e um suporte que você pode confiar.</p>
 
@@ -172,7 +175,7 @@ export default function DepoimentClient({ images }: DepoimentClientProps) {
                   </div>
                   <div className='flex gap-4' style={{ paddingTop: 10, paddingBottom: 10 }}>
                      <CheckIcon size={24} color={'#1e3a8a'} />
-                     <h1 className='text-primary-dark font-mono text-lg'>Manutenções e correções de bug's</h1>
+                     <h1 className='text-primary-dark font-mono text-lg'>Manutenções e correções de bug&apos;s</h1>
                   </div>
                   <Link href={'https://mail.google.com/mail/u/0/#inbox?compose=new'}>
                      <Button className='mt-8' style={{ padding: 20 }}>Contate-nos</Button>

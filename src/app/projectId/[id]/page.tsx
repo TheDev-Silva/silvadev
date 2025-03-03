@@ -2,11 +2,12 @@
 
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { ArrowLeft, Images } from "lucide-react";
+import WhatsProject from "@/whatsappContact/whatsProject";
+import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { use, useState } from "react";
-import { FaGithub, FaWhatsapp } from "react-icons/fa";
+
 
 const project = [
    {
@@ -192,15 +193,9 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
    const [selectedImage, setSelectedImage] = useState<string | null>(null);
    const { id } = use(params);
 
-   const [loading, setLoading] = useState(false)
-   
-   
-      const Isloading = () => {
-         setLoading(true)
-         setTimeout(() => {
-            setLoading(false)
-         }, 5000);
-      }
+   const [loading] = useState(false)
+
+
 
    // Buscar os dados do projeto pelo ID
 
@@ -238,7 +233,7 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
          <h1 className="text-white font-mono uppercase mb-4 text-center text-xl md:text-2xl mt-8">Tecnologias usadas neste projeto</h1>
          <div className="flex justify-around">
 
-            <div className="p-2 w-full flex-wrap md:grid md:grid-cols-2 gap-12 justify-center md:justify-around items-center mx-8">
+            <div className="p-2 w-full flex-wrap md:grid md:grid-cols-2 gap-12 justify-center md:justify-center items-center mx-8">
                <Carousel
                   opts={{
                      align: "start",
@@ -273,29 +268,34 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
                                     </div>
 
                                     }
-                                    <Link href={'/Contacts'}
-                                    onClick={Isloading}
-                                    >
 
-                                       {loading ? <h3 className="flex absolute top-[10px] right-[10px] text-center bg-black bg-opacity-45 backdrop-blur-lg rounded-md p-2 px-4 text-white text-md font-mono items-center gap-2 z-10">
-                                          aguarde... <FaWhatsapp/>
-                                       </h3>: <h3 className="flex absolute top-[10px] right-[10px] text-center bg-black bg-opacity-45 backdrop-blur-lg rounded-md p-2 px-4 text-white text-md font-semibold items-center gap-2 z-10">
-                                          quero este projeto <FaWhatsapp/>
-                                       </h3>}
-                                    </Link>
-                                    
+
                                  </div>
                               </Card>
+
                            </div>
                         </CarouselItem>
                      ))}
                   </CarouselContent>
                   <CarouselPrevious className="absolute -left-12 top-1/2 -translate-y-1/2" />
                   <CarouselNext className="absolute -right-12 top-1/2 -translate-y-1/2" />
+                  <div className="bg-white">
+                     <div className="flex h-16 w-full absolute bottom-[15px] text-center bg-black bg-opacity-45 backdrop-blur-sm rounded-md p-4 text-md font-semibold items-center gap-2 z-10 justify-center">
+                        {loading ?
+                           <p>Carregando...</p>
+
+                           : <WhatsProject projectName={projectData.name} text={projectData.name} />}
+                     </div>
+
+                  </div>
+                  <div className="flex relative w-45 h-45 bottom-0">
+
+
+                  </div>
                </Carousel>
 
                <div
-                  className={`flex flex-coljustify-between items-center bg-primary-light rounded-md`}
+                  className={`flex flex-coljustify-between items-center bg-primary-light rounded-lg`}
 
                >
 

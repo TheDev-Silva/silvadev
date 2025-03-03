@@ -1,37 +1,20 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import WhatsAppImage from '../../public/whatsapp-logo.png';
+import { StaticImageData } from 'next/image';
+
+
 
 const WhatsAppContact = () => {
    const [isHovered, setIsHovered] = useState(false);
+   // eslint-disable-next-line @typescript-eslint/no-unused-vars
    const [isAtBottom, setIsAtBottom] = useState(false);
-   const [cury, setCury] = useState(false)
 
    const whatsappNumber = '5541995825340'; // Substitua pelo número do WhatsApp
    const message = 'Olá! Preciso de mais informações.';
    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-
-   /* useEffect(() => {
-       const handleScroll = () => {
-           const scrollPosition = window.scrollY + window.innerHeight;
-           const pageHeight = document.documentElement.scrollHeight;
-
-           // Verifica se o usuário chegou ao final da página
-           if (scrollPosition >= pageHeight - 10) {
-               setIsAtBottom(true);
-           } else {
-               setIsAtBottom(false);
-           }
-       };
-
-       window.addEventListener('scroll', handleScroll);
-       return () => window.removeEventListener('scroll', handleScroll);
-   }, []); 
-*/
-
 
 
    return (
@@ -67,7 +50,7 @@ const WhatsAppContact = () => {
             rel="noopener noreferrer"
          >
             <Image
-               src={WhatsAppImage.src}
+               src={WhatsAppImage as string | StaticImageData}
                alt="Contato pelo WhatsApp"
                width={45}
                height={45}

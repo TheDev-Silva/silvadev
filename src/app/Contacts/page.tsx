@@ -93,11 +93,11 @@ export default function Contact() {
             <title>Contatos</title>
             <meta name="description" content="Transforme seu sorriso com nossos tratamentos odontológicos avançados." />
          </Head> */}
-         <div className='flex-wrap w-full relative justify-around bg-zinc-950'>
+         <div className='flex-wrap w-full h-full relative justify-around bg-zinc-950 p-10'>
             
             <h1 className="md:text-3xl text-2xl text-white font-mono font-bold text-center pt-2" >Contate-nos</h1>
 
-            <div className='w-full h-[100vh] relative md:flex items-center md:justify-around justify-center '>
+            <div className='w-full h-[100vh] relative md:flex items-center md:justify-around justify-center p-10'>
                {/* Círculo decorativo ao fundo */}
                <div
                   className='absolute -inset-0 md:w-[200px] md:h-[200px] h-[100px] w-[100px] left-9 top-[30px] rounded-full bg-gradient-to-br to-primary-light from-[#000] transition-all duration-300 blur-md'
