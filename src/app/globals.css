@@ -67,6 +67,19 @@
   }
 }
 
+@keyframes spin-once {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-once {
+  animation: spin-once 1s ease-in-out;
+}
+
 /* Oculta barras de rolagem para navegadores modernos */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

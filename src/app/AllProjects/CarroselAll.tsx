@@ -7,11 +7,11 @@ interface imagePros {
    id: number,
    image: StaticImageData | string
 }
-interface CarouselProps {
+interface CarouselAllProps {
    images: imagePros[];
 }
 
-export const Carousel: React.FC<CarouselProps> = ({ images }) => {
+export const Carousel: React.FC<CarouselAllProps> = ({ images }) => {
    const [currentIndex, setCurrentIndex] = useState(0);
 
    const handleNext = () => {

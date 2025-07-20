@@ -9,7 +9,7 @@ import Link from "next/link";
 import { use, useState } from "react";
 
 
-const project = [
+export const project = [
    {
       id: 1,
       name: 'Security Key',
@@ -371,6 +371,7 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
                </div>
             </button>
          )}
+
 
       </div>
 

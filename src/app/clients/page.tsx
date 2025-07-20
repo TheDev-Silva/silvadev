@@ -29,8 +29,8 @@ export default function Clients() {
                throw new Error(`Failed to fetch: ${response.statusText}`);
             }
 
-            const data: ClientProps = await response.json();
-            setClientData(data as any);
+            const data: ClientProps[] = await response.json();
+            setClientData(data);
          } catch (err) {
             setError(err instanceof Error ? err.message : 'An unknown error occurred');
          }

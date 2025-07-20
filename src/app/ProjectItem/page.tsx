@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 
 import { Button } from '@/components/ui/button';
 import { StaticImageData } from 'next/image';
+import Link from 'next/link';
+import { ArrowRightIcon } from 'lucide-react';
 
 interface ProjectProp {
    id: number;
@@ -51,7 +53,7 @@ export default function ProjectItem({ project }: ProjectsProps) {
    return (
       <>
          <div className="flex-col w-full justify-center items-center bg-slate-950">
-            <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center ">Projetos já Desenvolvidos</h1>
+            <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center ">Projetos Desenvolvidos</h1>
 
             <div className="flex w-full justify-center item-center ">
 
@@ -105,42 +107,19 @@ export default function ProjectItem({ project }: ProjectsProps) {
 
                      </div>
                   ))}
-                  {/* <div
-                     className="relative flex flex-wrap w-full md:justify-between justify-center  items-center bg-balck p-10 "
-                     style={{
-                        backgroundImage: "url('/computer-monitor-with-world-map-screen-night-3d-rendering.jpg')",
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat",
-                     }}
-                  >
-                    
-                     <div
-                        className="absolute inset-0 bg-black opacity-85 z-10"
-                        style={{ backdropFilter: "blur(4px)" }} // Ajuste o valor para controlar o desfoque
-                     ></div>
-
-                     
-                     <div className='relative md:w-[380px] md:h-[380px] w-[200px] h-[200px] bg-gradient-to-l from-[#6716cf] to-[#020617] rounded-full overflow-hidden justify-center items-center z-10' style={{ zIndex: 20 }}>
-                        <Image
-                           src={'/perfil-2-removebg-preview.png'}
-                           alt={'foto-perfil'}
-                           width={400}
-                           height={400}
-                           quality={90}
-                           className="relative top-[50px] md:w-[400px] md:h-[400px] w-[200px] h-[200px] md:object-contain object-contain "
-                        />
-                     </div>
-
-                     <div className="relative flex-col md:justify-end justify-center items-end mt-10 z-10">
-                        <h1 className='font-mono md:text-4xl text-2xl text-white md:text-right text-center'>No one can</h1>
-                        <h1 className='font-mono md:text-4xl text-2xl text-white md:text-right text-center'>Achieve success without</h1>
-                        <h1 className='font-mono md:text-4xl text-2xl text-white md:text-right text-center'>Hard work</h1>
-                     </div>
-                  </div>
-                  <h1 className='text-white text-center mb-40 italic'>Criado e Desenvolvido por SilvaDev - Copyright 2024</h1> */}
                </div>
             </div>
+
+            
+               <Button className='bg-[#3b82f6] hover:bg-[#3b82f699]'>
+                  <Link href={'/AllProjects'} className='p-4 gap-4 flex items-center'>
+                     <h1 className='text-blue-50'>Mais Projetos</h1>
+                     <ArrowRightIcon size={24} />
+                  </Link>
+               </Button>
+
+           
+
 
          </div>
       </>

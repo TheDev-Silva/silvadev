@@ -150,7 +150,7 @@ export default function DepoimentClient({ images, }: DepoimentClientProps) {
          <div className='relative md:flex w-full items-center md:justify-between justify-center' style={{ marginTop: 100, marginBottom: 100 }}>
             <div className='w-full' style={{ width: '100%', padding: 20 }}>
                <h1 className="text-2xl md:text-3xl text-white font-mono font-bold text-center mb-6">
-                  &quot;Porque escolher nosso time?
+                  &quot;Porque escolher a silvadev?&quot;
                </h1>
                <p className={'text-white font-mono'}>Transformamos suas ideias em soluções digitais práticas e impactantes, com criatividade, eficiência e um suporte que você pode confiar.</p>
 
@@ -160,22 +160,38 @@ export default function DepoimentClient({ images, }: DepoimentClientProps) {
 
                <div className='w-full p-[20px] items-center justify-center bg-primary-light  overflow-hidden' style={{ borderTopRightRadius: 15, borderTopLeftRadius: 15 }}>
                   <h1 className="text-2xl md:text-3xl text-white font-mono font-bold text-center" >
-                     Somo Conhecidos por
+                     A silvadev é Conhecidos por
                   </h1>
                </div>
 
                <div className='flex-col p-5' style={{ gap: 10 }}>
                   <div className='flex gap-4 ' style={{ paddingTop: 10, paddingBottom: 10 }}>
                      <CheckIcon size={24} color={'#1e3a8a'} />
-                     <h1 className='text-primary-dark font-mono text-lg'>Desenvolvimento Resposivo</h1>
+                     <h1 className='text-primary-dark font-mono text-lg'>Desenvolvimento com Resposivo.</h1>
                   </div>
                   <div className='flex gap-4' style={{ paddingTop: 10, paddingBottom: 10 }}>
                      <CheckIcon size={24} color={'#1e3a8a'} />
-                     <h1 className='text-primary-dark font-mono text-lg'>Integração de Sistemas</h1>
+                     <h1 className='text-primary-dark font-mono text-lg'>Integração de Sistemas e API Rest.</h1>
+                  </div>
+                  <div className='flex gap-4' style={{ paddingTop: 10, paddingBottom: 10 }}>
+                     <CheckIcon size={24} color={'#1e3a8a'} />
+                     <h1 className='text-primary-dark font-mono text-lg'>Comprometimento com prazos.</h1>
+                  </div>
+                  <div className='flex gap-4' style={{ paddingTop: 10, paddingBottom: 10 }}>
+                     <CheckIcon size={24} color={'#1e3a8a'} />
+                     <h1 className='text-primary-dark font-mono text-lg'>Fidelidade com layout pronto do cliente.</h1>
+                  </div>
+                  <div className='flex gap-4' style={{ paddingTop: 10, paddingBottom: 10 }}>
+                     <CheckIcon size={24} color={'#1e3a8a'} />
+                     <h1 className='text-primary-dark font-mono text-lg'>Lançamentos na PlayStore e AppleStore.</h1>
                   </div>
                   <div className='flex gap-4' style={{ paddingTop: 10, paddingBottom: 10 }}>
                      <CheckIcon size={24} color={'#1e3a8a'} />
                      <h1 className='text-primary-dark font-mono text-lg'>Manutenções e correções de bug&apos;s</h1>
+                  </div>
+                  <div className='flex gap-4' style={{ paddingTop: 10, paddingBottom: 10 }}>
+                     <CheckIcon size={24} color={'#1e3a8a'} />
+                     <h1 className='text-primary-dark font-mono text-lg'>Entre outras mais&apos;s</h1>
                   </div>
                   <Link href={'https://mail.google.com/mail/u/0/#inbox?compose=new'}>
                      <Button className='mt-8' style={{ padding: 20 }}>Contate-nos</Button>

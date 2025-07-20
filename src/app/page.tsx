@@ -131,12 +131,6 @@ export default function Home({ images }: DepoimentClientProps) {
       },
       {
          id: 10,
-         name: 'Tailwind',
-         image: TailwindLogo,
-         description: 'Tailwind é tudo.'
-      },
-      {
-         id: 11,
          name: 'Firebase',
          image: FirebaseLogo,
          description: 'Firebase Console é tudo.'

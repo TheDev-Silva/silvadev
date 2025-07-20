@@ -1,15 +1,20 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
 
+interface IconProps {
+   icon: ReactNode
+}
 
-export default function Header() {
 
-   
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export default function Header({ icon }: IconProps) {
+
+
    const [isScrolled, setIsScrolled] = useState(false)
    const [logoText, setLogoText] = useState(false)
-   
+
 
 
 
@@ -51,9 +56,6 @@ export default function Header() {
    }, [])
 
 
-
-
-
    return (
       <div className={`fixed w-full z-40 md:p-6 p-2 transition-all duration-500 ${isScrolled ? 'h-[130px] backdrop-blur-sm' : 'h-[120px] bg-primary-dark justify-between'
          }`}>
@@ -83,8 +85,13 @@ export default function Header() {
 
                </div>
 
-            </div>
 
+            </div>
+            {icon && (
+               <div className="flex items-center">
+                  {icon}
+               </div>
+            )}
          </div>
       </div>
    );

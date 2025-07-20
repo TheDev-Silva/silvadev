@@ -32,8 +32,7 @@ export default function RootLayout({
       <body
         className={cn(`${geistSans.variable} ${geistMono.variable} antialiased`)}
       >
-        <NavigationProvider>
-
+        <NavigationProvider> 
           {children}
         </NavigationProvider>
       </body>
