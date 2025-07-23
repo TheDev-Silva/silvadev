@@ -47,7 +47,7 @@ export default function Contact() {
       setIsLoading(true);
 
       try {
-         const response = await fetch(`${NEXT_URL}/create-client`, {
+         const response = await fetch(`https://backend-capture.vercel.app/create-client`, {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json',
