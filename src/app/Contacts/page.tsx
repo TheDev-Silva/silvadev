@@ -9,11 +9,7 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { Button } from '@/components/ui/button';
 
 
-/* export const metadata: Metadata = {
-   title: "contato",
-   description: "transforme seu sorriso hoje!",
-   
- }; */
+const NEXT_URL=process.env.NEXT_PUBLIC_BACKEND_URL
 
 export default function Contact() {
 
@@ -51,7 +47,7 @@ export default function Contact() {
       setIsLoading(true);
 
       try {
-         const response = await fetch('http://localhost:3333/create-client', {
+         const response = await fetch(`${NEXT_URL}/create-client`, {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json',
