@@ -5,7 +5,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
-export const metadata: Metadata = {
+/* export const metadata: Metadata = {
    title: "Sobre Mim - The Silva Dev", // Título da página
    description: "Conheça mais sobre o desenvolvedor Silva Dev e seus projetos.", // Descrição para SEO
    // Você pode adicionar mais campos aqui como:
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
    //   images: ['https://thesilvadev.com.br/twitter-image.jpg'],
    // },
  };
-
+ */
 const AboutMe: React.FC = () => {
 
    const [loading, setLoading] = useState(false)
