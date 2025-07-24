@@ -191,7 +191,7 @@ export const project = [
 const ProjectId = ({ params }: { params: { id: string } }) => {
    // Resolver a Promise de params
    const [selectedImage, setSelectedImage] = useState<string | null>(null);
-   const { id } = (params);
+   const { id } = params;
 
    const [loading] = useState(false)
 
