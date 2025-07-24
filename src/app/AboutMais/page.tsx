@@ -2,12 +2,7 @@ import React from 'react'
 import { RiPresentationLine } from 'react-icons/ri'
 import { GrShieldSecurity } from 'react-icons/gr'
 import Header from '../Header/Header'
-import { Metadata } from 'next'
 
-export const metadataAboutMais: Metadata = {
-   title: 'Mais sobre mim - The Silva Dev',
-   description: 'Mais Sobre Mim como o Silva Dev trabalha'
-}
 
 export default function AboutMais() {
 

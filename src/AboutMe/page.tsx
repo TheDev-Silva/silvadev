@@ -5,32 +5,6 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
-/* export const metadata: Metadata = {
-   title: "Sobre Mim - The Silva Dev", // Título da página
-   description: "Conheça mais sobre o desenvolvedor Silva Dev e seus projetos.", // Descrição para SEO
-   // Você pode adicionar mais campos aqui como:
-   // openGraph: {
-   //   title: 'Sobre Mim',
-   //   description: 'Conheça mais sobre o desenvolvedor.',
-   //   url: 'https://thesilvadev.com.br/about',
-   //   siteName: 'TheDev-Silva',
-   //   images: [
-   //     {
-   //       url: 'https://thesilvadev.com.br/og-image.jpg', // Adicione uma imagem para Open Graph
-   //       width: 800,
-   //       height: 600,
-   //     },
-   //   ],
-   // },
-   // twitter: {
-   //   card: 'summary_large_image',
-   //   title: 'Sobre Mim',
-   //   description: 'Conheça mais sobre o desenvolvedor.',
-   //   creator: '@seuTwitter',
-   //   images: ['https://thesilvadev.com.br/twitter-image.jpg'],
-   // },
- };
- */
 const AboutMe: React.FC = () => {
 
    const [loading, setLoading] = useState(false)
