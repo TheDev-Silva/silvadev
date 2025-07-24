@@ -14,7 +14,7 @@ import RNELogo from '../images/RNE.logo.png'
 import TailwindLogo from '../images/tailwind-logo.png'
 import FirebaseLogo from '../images/firebase-logo.png'
 import ProjectItem from "./ProjectItem/page";
-import { Metadata } from "next";
+
 import { useEffect, useRef, useState } from "react";
 import { BiCommentDots } from "react-icons/bi";
 import Link from "next/link";

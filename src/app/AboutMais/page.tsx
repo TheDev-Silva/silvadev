@@ -12,9 +12,6 @@ export const metadataAboutMais: Metadata = {
 export default function AboutMais() {
 
 
-
-
-
    return (
       <>
          <Header icon={''} />
