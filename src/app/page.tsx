@@ -17,7 +17,7 @@ import { useEffect, useRef, useState } from "react";
 import { BiCommentDots } from "react-icons/bi";
 import Link from "next/link";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Contact from "./Contacts/page";
 import DepoimentClient, { DepoimentClientProps } from "@/depoimentsClient/page";
 import WhatsAppContact from "../whatsappContact/whatsappContact";
@@ -25,8 +25,15 @@ import Footer from "@/footer/footer"
 import { Menu, X } from "lucide-react";
 import ProjectList from "../components/ProjectList";
 
+interface ImageProps {
+   id: number,
+   image: string | StaticImageData,
+   name: string,
+   description: string
+}
 
-export default function Home({ images }: DepoimentClientProps) {
+
+export default function Home() {
 
 
    const initialRef = useRef<HTMLDivElement>(null);
@@ -35,7 +42,7 @@ export default function Home({ images }: DepoimentClientProps) {
    const projectsRef = useRef<HTMLDivElement>(null);
    const contactsRef = useRef<HTMLDivElement>(null)
    const depoimentsRef = useRef<HTMLDivElement>(null)
-   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+   
    const [isOpen, setIsOpen] = useState(false)
    const [isScrolled, setIsScrolled] = useState(false)
    const [logoText, setLogoText] = useState(false)
@@ -62,7 +69,7 @@ export default function Home({ images }: DepoimentClientProps) {
 
 
 
-   const tecnology = [
+   const tecnology: ImageProps[] = [
       {
          id: 1,
          name: 'Javascript',
@@ -429,7 +436,7 @@ export default function Home({ images }: DepoimentClientProps) {
 
             </div>
             <div ref={depoimentsRef}>
-               <DepoimentClient images={images} />
+               <DepoimentClient images={tecnology} />
             </div>
             <div ref={contactsRef}>
                <Contact />
