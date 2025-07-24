@@ -25,7 +25,6 @@ export default function ProjectList({project} : ProjectsProps) {
 
    const [isLoading, setIsLoading] = useState(false)
    const [projects, setProjects] = useState<ProjectProp[]>([])
-   const [error, setError] = useState<string | null>(null); 
 
    const router = useRouter();
 
@@ -36,7 +35,7 @@ export default function ProjectList({project} : ProjectsProps) {
          setTimeout(() => {
             router.push(`/projectId/${id}`);
          }, 500);
-         // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
       } catch (error) {
          console.log('Erro ao buscar Projeto')
       } finally {
