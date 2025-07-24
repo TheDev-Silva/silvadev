@@ -19,7 +19,7 @@ import Link from "next/link";
 
 import Image, { StaticImageData } from "next/image";
 import Contact from "./Contacts/page";
-import DepoimentClient, { DepoimentClientProps } from "@/depoimentsClient/page";
+import DepoimentClient from "@/depoimentsClient";
 import WhatsAppContact from "../whatsappContact/whatsappContact";
 import Footer from "@/footer/footer"
 import { Menu, X } from "lucide-react";
@@ -436,7 +436,7 @@ export default function Home() {
 
             </div>
             <div ref={depoimentsRef}>
-               <DepoimentClient images={tecnology} />
+               <DepoimentClient />
             </div>
             <div ref={contactsRef}>
                <Contact />

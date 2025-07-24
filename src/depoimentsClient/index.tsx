@@ -28,7 +28,7 @@ interface perguntasProps {
 
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export default function DepoimentClient({ images, }: DepoimentClientProps) {
+export default function DepoimentClient() {
 
    const [heightCurrent, setHeightCurrent] = useState<number | null>(null);
 
