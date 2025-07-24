@@ -37,7 +37,7 @@ export const metadata: Metadata = {
    title: "The Silva Dev",
    description: "Desenvolvedor front-end web e Mobile",
    
- };
+ }; 
 
 export default function Home({ images }: DepoimentClientProps) {
 
