@@ -6,7 +6,7 @@ import WhatsProject from "@/whatsappContact/whatsProject";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { use, useState } from "react";
+import { useState } from "react";
 
 
 export const project = [
@@ -191,15 +191,14 @@ export const project = [
 const ProjectId = ({ params }: { params: { id: string } }) => {
    // Resolver a Promise de params
    const [selectedImage, setSelectedImage] = useState<string | null>(null);
-   //const { id } = use(params);
+   const { id } = (params);
 
    const [loading] = useState(false)
 
 
-
    // Buscar os dados do projeto pelo ID
 
-   const projectData = (project.find((item) => item.id === Number(item.id)));
+   const projectData = (project.find((item) => item.id === Number(id)));
 
    // Caso o projeto não exista
    if (!projectData) {
