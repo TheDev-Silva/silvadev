@@ -5,7 +5,8 @@ import Header from '../Header/Header'
 import { Metadata } from 'next'
 
 export const metadataAboutMais: Metadata = {
-   title: 'Mais sobre mim'
+   title: 'Mais sobre mim - The Silva Dev',
+   description: 'Mais Sobre Mim como o Silva Dev trabalha'
 }
 
 export default function AboutMais() {
@@ -16,7 +17,7 @@ export default function AboutMais() {
 
    return (
       <>
-         <Header />
+         <Header icon={''} />
          <div className='lg:flex-col md:w-full pt-[120px] md:pt-[120px] items-center justify-between md:flex-col relative bg-slate-950 h-full md:p-[30px] p-[20px]'>
 
             <div

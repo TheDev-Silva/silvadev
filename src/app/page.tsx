@@ -33,10 +33,11 @@ import { Menu, X } from "lucide-react";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 
-export const metadataPage: Metadata = {
-   title: 'The Silva Dev',
-   description: 'Desenvolvimento Web e Mobile'
-}
+export const metadata: Metadata = {
+   title: "The Silva Dev",
+   description: "Desenvolvedor front-end web e Mobile",
+   
+ };
 
 export default function Home({ images }: DepoimentClientProps) {
 

@@ -18,7 +18,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "The Silva Dev",
-  description: "Desenvolvedor web e Mobile",
+  description: "Desenvolvedor front-end web e Mobile",
   
 };
 
