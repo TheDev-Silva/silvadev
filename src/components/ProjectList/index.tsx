@@ -24,7 +24,7 @@ interface ProjectsProps {
 export default function ProjectList({project} : ProjectsProps) {
 
    const [isLoading, setIsLoading] = useState(false)
-   const [projects, setProjects] = useState<ProjectProp[]>([])
+   //const [projects, setProjects] = useState<ProjectProp[]>([])
 
    const router = useRouter();
 
@@ -51,9 +51,7 @@ export default function ProjectList({project} : ProjectsProps) {
       }, 5000);
    }
 
-   useEffect(() => {
-      setProjects([])
-   },[projects])
+   
 
    return (
       <>

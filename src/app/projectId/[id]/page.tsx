@@ -188,10 +188,10 @@ export const project = [
    }
 ]
 
-const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
+const ProjectId = ({ params }: { params: { id: string } }) => {
    // Resolver a Promise de params
    const [selectedImage, setSelectedImage] = useState<string | null>(null);
-   const { id } = use(params);
+   //const { id } = use(params);
 
    const [loading] = useState(false)
 
@@ -199,7 +199,7 @@ const ProjectId = ({ params }: { params: Promise<{ id: string }> }) => {
 
    // Buscar os dados do projeto pelo ID
 
-   const projectData = (project.find((item) => item.id === Number(id)));
+   const projectData = (project.find((item) => item.id === Number(item.id)));
 
    // Caso o projeto não exista
    if (!projectData) {
