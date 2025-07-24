@@ -37,7 +37,7 @@ export default function ProjectList({project} : ProjectsProps) {
          }, 500);
 
       } catch (error) {
-         console.log('Erro ao buscar Projeto')
+         console.log('Erro ao buscar Projeto', error)
       } finally {
          setIsLoading(false)
       }
