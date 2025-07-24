@@ -3,7 +3,6 @@ import { RiPresentationLine } from 'react-icons/ri'
 import { GrShieldSecurity } from 'react-icons/gr'
 import Header from '../Header/Header'
 
-
 export default function AboutMais() {
 
 

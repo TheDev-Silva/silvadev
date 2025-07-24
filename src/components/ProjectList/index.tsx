@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Carousel } from './Carrosel';
 import { useRouter } from 'next/navigation';
 
@@ -21,9 +21,11 @@ interface ProjectsProps {
    project: ProjectProp[];
 }
 
-export default function ProjectItem({ project }: ProjectsProps) {
+export default function ProjectList({project} : ProjectsProps) {
 
    const [isLoading, setIsLoading] = useState(false)
+   const [projects, setProjects] = useState<ProjectProp[]>([])
+   const [error, setError] = useState<string | null>(null); 
 
    const router = useRouter();
 
@@ -49,6 +51,10 @@ export default function ProjectItem({ project }: ProjectsProps) {
          setIsLoading(false)
       }, 5000);
    }
+
+   useEffect(() => {
+      setProjects([])
+   },[projects])
 
    return (
       <>

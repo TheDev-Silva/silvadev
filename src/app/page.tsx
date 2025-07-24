@@ -13,8 +13,6 @@ import PrismaLogo from '../images/prisma.logo.png'
 import RNELogo from '../images/RNE.logo.png'
 import TailwindLogo from '../images/tailwind-logo.png'
 import FirebaseLogo from '../images/firebase-logo.png'
-import ProjectItem from "./ProjectItem/page";
-
 import { useEffect, useRef, useState } from "react";
 import { BiCommentDots } from "react-icons/bi";
 import Link from "next/link";
@@ -25,6 +23,7 @@ import DepoimentClient, { DepoimentClientProps } from "@/depoimentsClient/page";
 import WhatsAppContact from "../whatsappContact/whatsappContact";
 import Footer from "@/footer/footer"
 import { Menu, X } from "lucide-react";
+import ProjectList from "../components/ProjectList";
 
 
 export default function Home({ images }: DepoimentClientProps) {
@@ -426,7 +425,7 @@ export default function Home({ images }: DepoimentClientProps) {
                <Tecnologias tecnologyItem={tecnology} />
             </div>
             <div ref={projectsRef}>
-               <ProjectItem project={project} />
+               <ProjectList project={project} />
 
             </div>
             <div ref={depoimentsRef}>
