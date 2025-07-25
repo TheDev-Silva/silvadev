@@ -1,7 +1,5 @@
 'use client'
 import React, { ReactNode, useEffect, useState } from 'react'
-import Link from 'next/link';
-import Image from 'next/image';
 
 interface IconProps {
    icon: ReactNode,
