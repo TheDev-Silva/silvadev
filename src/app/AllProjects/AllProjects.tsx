@@ -235,13 +235,22 @@ export default function AllProjects({ project }: ProjectsProps) {
    return (
 
       <>
-         <Header icon={
-            <Link href={'/'}>
-               <div className="text-white p-2 rounded-full hover:bg-white/10 transition">
-              <ArrowLeftIcon size={24} />
-            </div>
-            </Link>
-         } />
+         <Header
+            text={
+               <div>
+                  <h1 className='text-white font-mono text-[20px]'>Todos os Projetos</h1>
+               </div>
+            }
+
+            icon={
+               <Link href={'/'}>
+                  <div className="text-white p-2 rounded-full hover:bg-white/10 transition">
+                     <ArrowLeftIcon size={24} />
+                  </div>
+               </Link>
+            }
+
+         />
          <div className="flex-col w-full justify-center items-center bg-slate-950 p-10" style={{ paddingTop: 160 }}>
 
 

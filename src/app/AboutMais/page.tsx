@@ -2,13 +2,28 @@ import React from 'react'
 import { RiPresentationLine } from 'react-icons/ri'
 import { GrShieldSecurity } from 'react-icons/gr'
 import Header from '../Header/Header'
+import Link from 'next/link'
+import { ArrowLeftIcon } from 'lucide-react'
 
 export default function AboutMais() {
 
 
    return (
       <>
-         <Header icon={''} />
+         <Header
+            text={
+
+               <h1 className='text-white font-mono text-[20px]'>Mais sobre mim</h1>
+
+            }
+            icon={
+               <Link href={'/'}>
+                  <div className="text-white p-2 rounded-full hover:bg-white/10 transition">
+                     <ArrowLeftIcon size={24} />
+                  </div>
+               </Link>
+            }
+         />
          <div className='lg:flex-col md:w-full pt-[120px] md:pt-[120px] items-center justify-between md:flex-col relative bg-slate-950 h-full md:p-[30px] p-[20px]'>
 
             <div
@@ -52,7 +67,7 @@ export default function AboutMais() {
                   backgroundColor: '#3b82f679',
                   borderRadius: 30,
                   marginTop: 40,
-               }} 
+               }}
                className="border-neon shadow-neon "
             >
 

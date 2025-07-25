@@ -4,12 +4,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 interface IconProps {
-   icon: ReactNode
+   icon: ReactNode,
+   text: ReactNode
 }
 
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export default function Header({ icon }: IconProps) {
+export default function Header({ icon, text }: IconProps) {
 
 
    const [isScrolled, setIsScrolled] = useState(false)
@@ -66,7 +67,7 @@ export default function Header({ icon }: IconProps) {
          {/* Conteúdo do Header */}
          <div className="relative flex justify-between items-center w-full h-full p-5">
             <div className='flex items-center min-w-[50px]'>
-               <div className='flex'>
+               {/*  <div className='flex'>
                   <Link href={'/'}>
                      <div className='flex flex-col justify-items-end'>
 
@@ -83,7 +84,12 @@ export default function Header({ icon }: IconProps) {
                      </div>
                   </Link>
 
-               </div>
+               </div> */}
+               {text && (
+                  <div className="flex items-center">
+                     {text}
+                  </div>
+               )}
 
 
             </div>
