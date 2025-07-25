@@ -1,5 +1,5 @@
 'use client'
-import React, { ReactNode, useEffect, useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 
 interface IconProps {
    icon: ReactNode,
@@ -7,12 +7,12 @@ interface IconProps {
 }
 
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 export default function Header({ icon, text }: IconProps) {
 
 
-   const [isScrolled, setIsScrolled] = useState(false)
-   const [logoText, setLogoText] = useState(false)
+   const [isScrolled ] = useState(false)
+   /* const [logoText, setLogoText] = useState(false)
 
 
 
@@ -52,7 +52,7 @@ export default function Header({ icon, text }: IconProps) {
          window.removeEventListener('resize', handleResize);
       };
 
-   }, [])
+   }, []) */
 
 
    return (
