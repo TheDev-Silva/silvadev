@@ -257,8 +257,6 @@ export const projects = [
       ],
       backgroundImage: '/imageJurisTech/backgroundImage.jpg'
    },
-
-
 ]
 
 
