@@ -1,26 +1,19 @@
-"use client"
-import React, { useState } from 'react';
-import { Carousel } from './Carrosel';
-import { useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/button';
-import { StaticImageData } from 'next/image';
+'use client'
+
 import Link from 'next/link';
-import { ArrowRightIcon } from 'lucide-react';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React, { useState } from 'react'
+import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
+import { ArrowLeftIcon } from 'lucide-react';
+import Header from '../Header/Header';
+//import { StaticImageData } from 'next/image';
+import { Carousel } from '@/components/ProjectList/Carrosel';
+import { projects } from '../page';
 
-interface ProjectProp {
-   id: number;
-   name: string;
-   description: string;
-   link?: string;
-   images: { id: number; image: StaticImageData | string }[];
-   backgroundImage: string
-}
 
-interface ProjectsProps {
-   project: ProjectProp[];
-}
 
-export default function ProjectList({ project }: ProjectsProps) {
+export default function AllProjects() {
 
    const [isLoading, setIsLoading] = useState(false)
 
@@ -48,32 +41,46 @@ export default function ProjectList({ project }: ProjectsProps) {
          setIsLoading(false)
       }, 5000);
    }
-
-   const topProjects = project.slice(0, 3)
-
-
    return (
+
       <>
-         <div className="flex-col w-full justify-center items-center bg-slate-950">
-            <h1 className="md:text-3xl text-2xl text-white font-mono font-bold pt-10 text-center ">Projetos Desenvolvidos</h1>
+         <Header
+            text={
+               <div className=''>
+                  <h1 className='text-white font-mono text-[20px]'>Mais Projetos</h1>
+               </div>
+            }
 
-            <div className="flex w-full justify-center item-center " style={{backgroundImage: `url(${project.map((image) => image.backgroundImage)})`}}>
+            icon={
+               <Link href={'/'}>
+                  <div className="text-white p-2 rounded-full hover:bg-white/10 transition">
+                     <ArrowLeftIcon size={24} />
+                  </div>
+               </Link>
+            }
 
-               <div className="border-white w-full relative z-10 pt-[50px] flex flex-col gap-20" >
-                  {topProjects.map((item) => (
+         />
+         <div className={`grid-cols-2 w-full justify-center h-full items-center bg-slate-950 p-10`} style={{ paddingTop: 120 }}>
 
-                     <div key={item.id} 
-                     className="md:flex relative md:w-full md:justify-between justify-center items-center text-white p-5 rounded-lg mb-5 border-l-neonGreen border-b-[#1e3a8a] shadow-neon" 
-                     style={
-                        { 
-                           borderBottomWidth: 4, 
-                           borderLeftWidth: 4, 
-                           backgroundImage: `url(${item.backgroundImage})`,
-                           backgroundSize: 'cover',
-                           backgroundPosition: 'center',
-                           backgroundRepeat: 'no-repeat', 
-                           boxShadow: '#1e3a8a', 
-                           gap: 15 }}>
+
+            <div className="flex w-full justify-center item-center ">
+
+               <div className="border-white w-full relative z-10 pt-[50px] flex flex-col gap-20 " >
+                  {projects.map((item) => (
+
+                     <div key={item.id}
+                        className="md:flex relative md:w-full md:justify-between justify-center items-center text-white p-5 rounded-lg mb-5 border-l-neonGreen border-b-[#1e3a8a] shadow-neon"
+                        style={
+                           {
+                              borderBottomWidth: 4,
+                              borderLeftWidth: 4,
+                              backgroundImage: `url(${item.backgroundImage})`,
+                              backgroundSize: 'cover',
+                              backgroundPosition: 'center',
+                              backgroundRepeat: 'no-repeat',
+                              boxShadow: '#1e3a8a',
+                              gap: 15
+                           }}>
 
                         <div
                            className='absolute z-0 -inset-0 md:w-[200px] md:h-[200px] h-[100px] w-[100px] left-9 top-[30px] rounded-full bg-gradient-to-br to-primary-light from-[#000] transition-all duration-300 blur-md'
@@ -111,7 +118,7 @@ export default function ProjectList({ project }: ProjectsProps) {
 
                            {/* </Link> */}
                         </div>
-                        <div className="w-[100%] md:w-[70%] flex justify-center rounded-lg overflow-hidden">
+                        <div className="w-[100%] md:w-[50%] flex justify-center rounded-lg overflow-hidden">
 
                            <Carousel images={item.images} key={item.id} />
                         </div>
@@ -121,20 +128,11 @@ export default function ProjectList({ project }: ProjectsProps) {
                      </div>
                   ))}
                </div>
+
             </div>
-
-
-            <Button className='bg-[#3b82f6] hover:bg-[#3b82f699]'>
-               <Link href={'/todos-os-projetos'} className='p-4 gap-4 flex items-center'>
-                  <h1 className='text-blue-50'>Mais Projetos</h1>
-                  <ArrowRightIcon size={24} />
-               </Link>
-            </Button>
-
-
-
 
          </div>
       </>
+
    );
 }

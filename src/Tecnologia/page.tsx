@@ -1,5 +1,5 @@
 'use client'
-import { Button } from '@/components/ui/button';
+//import { Button } from '@/components/ui/button';
 import Image, { StaticImageData } from 'next/image'
 import React, { useState } from 'react'
 
@@ -31,7 +31,7 @@ export default function Tecnologias({ tecnologyItem }: TecnologiasProp) {
                <span className='text-xl'>&quot;</span>
 
             </p>
-            <div className='text-white font-mono md:text-lg text-base md:p-5 p-8 mt-5 shadow-lg shadow-white' style={{ borderBottomWidth: 2, borderLeftWidth: 2, borderColor: '#1e3a8a', borderBottomLeftRadius: 30, }}>
+            <div className='text-white font-mono md:text-lg text-base md:p-5 p-8 mt-5 shadow-lg shadow-white' style={{ borderBottomWidth: 2, borderLeftWidth: 2, borderColor: '#1e3a8a', borderBottomLeftRadius: 30, backgroundColor: ''}}>
 
                No front-end, o<b className='text-primary-light font-mono italic '> JavaScript</b>  reina como a base para a criação de experiências ricas e interativas, em conjunto com <b className='text-primary-light font-mono'>React</b>  e <b className='text-primary-light font-mono'>Next.js</b>, que me permitem desenvolver interfaces modernas e de alta performance. Para aplicações mobile, combino a flexibilidade do <b className='text-primary-light font-mono'>React Native</b> com a eficiência do Expo, criando aplicativos que oferecem ótima usabilidade.
 
@@ -42,7 +42,13 @@ export default function Tecnologias({ tecnologyItem }: TecnologiasProp) {
                Estas são apenas algumas das ferramentas que fazem parte do meu dia a dia. Cada projeto é único, e minha prioridade é sempre encontrar as melhores combinações para atender às suas necessidades.
                <br className=''></br><br className='text-lg'></br>E então? Vamos transformar sua ideia em realidade com as tecnologias certas!
                <br></br>
-               <Button className='mt-10 bg-primary-light rounded-md hover:bg-white' style={{textTransform: 'uppercase'}}>Acesse aqui!</Button>
+              {/*  <Button 
+               size={'default'}
+               className='mt-10 rounded-md hover:bg-white'> 
+                  
+                  Acesse aqui!
+                 
+               </Button> */}
 
 
             </div>

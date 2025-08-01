@@ -1,6 +1,7 @@
 'use client'
 
 import Header from "@/app/Header/Header";
+import { projects } from "@/app/page";
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import WhatsProject from "@/whatsappContact/whatsProject";
@@ -8,186 +9,6 @@ import { ArrowLeftIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
-
-export const project = [
-   {
-      id: 1,
-      name: 'Security Key',
-      description: 'O Security Key é um aplicativo de gerenciamento de senhas projetado para oferecer segurança e simplicidade. Com ele, você precisa memorizar (guardar) apenas uma única senha mestra, e o app se encarrega de armazenar de maneira segura todas as suas senhas importantes, como as de redes sociais (Facebook, Instagram), cartões, contas de sites, aplicativos e muito mais. Esse sistema de armazenamento permite que você tenha fácil acesso a todas as suas senhas, mantendo-as protegidas com criptografia robusta e acessíveis apenas com a senha mestra. Com o Security Key, sua segurança e conveniência estão em primeiro lugar.',
-      link: 'sem endereco',
-      tecnololigas_usadas: [
-         {
-
-            framework: 'React Native Expo',
-            estilo: 'StyleSheet Inline',
-            linguagem: 'Javascript',
-            back_end: 'Não',
-            Ai: 'Não'
-         }
-      ],
-      images: [
-         {
-            id: 1,
-            image: '/imageSecurityKEy/security-1.jpg',
-         },
-         {
-            id: 2,
-            image: '/imageSecurityKEy/security-2.jpg',
-         },
-         {
-            id: 3,
-            image: '/imageSecurityKEy/security-3.jpg'
-         },
-         {
-            id: 4,
-            image: '/imageSecurityKEy/security-4.jpg'
-         },
-         {
-            id: 5,
-            image: '/imageSecurityKEy/security-5.jpg'
-         },
-         {
-            id: 6,
-            image: '/imageSecurityKEy/security-6.jpg'
-         }
-      ],
-      backgroundImage: '/imageSecurityKEy/bg-keystone.png'
-
-   },
-   {
-      id: 2,
-      name: 'The Burger Rock',
-      description: 'O The Burger Rock é uma hamburgueria que combina o estilo metaleiro com uma experiência gastronômica única. Localizada em Curitiba, oferece hambúrgueres artesanais variados, como o "Artesanal de Bacon" e o "Levíssimo Burger", além de bebidas e acompanhamentos. O ambiente e o atendimento remetem ao estilo rock, proporcionando uma experiência temática e descontraída para os fãs de boa música e hambúrgueres. Acesse o site para conferir o cardápio completo e fazer seu pedido: The Burger Rock.',
-      link: 'https://the-burger-rock.vercel.app/',
-      tecnololigas_usadas: [
-         {
-
-            framework: 'HTML',
-            estilo: 'CSS',
-            linguagem: 'Javascript',
-            back_end: 'Não',
-            Ai: 'Não'
-         }
-      ],
-      images: [
-         {
-            id: 1,
-            image: '/imageTheBurgerRock/burger-1.png'
-         },
-         {
-            id: 2,
-            image: '/imageTheBurgerRock/burger-2.png'
-         },
-         {
-            id: 3,
-            image: '/imageTheBurgerRock/burger-3.png'
-         },
-         {
-            id: 4,
-            image: '/imageTheBurgerRock/burger-4.png'
-         },
-         {
-            id: 5,
-            image: '/imageTheBurgerRock/burger-5.png'
-         },
-         {
-            id: 6,
-            image: '/imageTheBurgerRock/burger-6.png'
-         }
-      ],
-      backgroundImage: '/imageTheBurgerRock/bg-rock-burger.png'
-
-   },
-   {
-      id: 3,
-      name: 'The Dieta',
-      description: 'O The Dieta é um aplicativo de dicas de nutrição personalizado que ajuda os usuários a atingir seus objetivos de saúde, como emagrecimento, hipertrofia ou ganho de massa muscular. Ao fornecer dados como nome, peso, altura, idade e meta, a inteligência artificial gera uma dieta equilibrada para a semana, acompanhada de sugestões de exercícios. O app também apresenta gráficos de progresso para monitoramento de ganho ou perda de peso, além de recomendações de suplementos, tornando o processo de acompanhamento mais fácil e eficiente.',
-      link: 'url indisponível',
-      tecnololigas_usadas: [
-         {
-
-            framework: 'React Native Expo',
-            estilo: 'StyleSheet Inline',
-            linguagem: 'Javascript/typescript',
-            back_end: 'Sim',
-            Ai: 'Gemini'
-
-         }
-      ],
-      images: [
-         {
-            id: 1,
-            image: '/imageTheDieta/dieta-1.jpg'
-         },
-         {
-            id: 2,
-            image: '/imageTheDieta/dieta-2.jpg'
-         },
-         {
-            id: 3,
-            image: '/imageTheDieta/dieta-3.jpg'
-         },
-         {
-            id: 4,
-            image: '/imageTheDieta/dieta-4.jpg'
-         },
-         {
-            id: 5,
-            image: '/imageTheDieta/dieta-5.jpg'
-         },
-         {
-            id: 6,
-            image: '/imageTheDieta/dieta-6.jpg'
-         }
-      ],
-      backgroundImage: '/imageTheDieta/bg-the-dieta.png'
-
-   },
-   {
-      id: 4,
-      name: 'Love & Coffe',
-      description: 'O Love & Coffee é um aplicativo simples e prático para amantes de café. Com ele, você pode escolher entre uma variedade de cafés, como macchiato, expresso tradicional, americano e com leite. O processo é fácil: basta selecionar seu café preferido, personalizar sua escolha, e pagar diretamente pelo app. Ideal para quem busca rapidez, conveniência e um ótimo café, tudo na palma da mão.',
-      link: 'url indisponível',
-      tecnololigas_usadas: [
-         {
-
-            framework: 'React Native Expo',
-            estilo: 'StyleSheet Inline',
-            linguagem: 'Javascript',
-            back_end: 'Não',
-            Ai: 'Não'
-         }
-      ],
-      images: [
-         {
-            id: 1,
-            image: '/imageLoveCoffe/love-1.jpg'
-         },
-         {
-            id: 2,
-            image: '/imageLoveCoffe/love-2.jpg'
-         },
-         {
-            id: 3,
-            image: '/imageLoveCoffe/love-3.jpg'
-         },
-         {
-            id: 4,
-            image: '/imageLoveCoffe/love-4.jpg'
-         },
-         {
-            id: 5,
-            image: '/imageLoveCoffe/love-5.jpg'
-         },
-         {
-            id: 6,
-            image: '/imageLoveCoffe/love-6.jpg'
-         }
-      ],
-      backgroundImage: '/imageLoveCoffe/bg-love-coffe.png'
-   }
-]
 
 const ProjectId = ({ params }: { params: { id: string } }) => {
    // Resolver a Promise de params
@@ -199,7 +20,7 @@ const ProjectId = ({ params }: { params: { id: string } }) => {
 
    // Buscar os dados do projeto pelo ID
 
-   const projectData = (project.find((item) => item.id === Number(id)));
+   const projectData = projects.find((item) => item.id === Number(id));
 
    // Caso o projeto não exista
    if (!projectData) {
@@ -220,7 +41,8 @@ const ProjectId = ({ params }: { params: { id: string } }) => {
          <Header
             text={
                <div>
-                  <h1 className='text-white font-mono text-[20px] uppercase'>{projectData.name}</h1>
+                  <h1 className='text-white font-mono md:text-[20px] text-md uppercase'>{projectData.name}</h1>
+                  <p className='text-white font-mono md:text-[16px] text-[14px]'>detalhes deste projeto</p>
                </div>
             }
 
@@ -233,43 +55,38 @@ const ProjectId = ({ params }: { params: { id: string } }) => {
             }
 
          />
-         <div className="flex flex-col w-full bg-slate-950 md:h-full justify-between p-5">
-            <div className="flex-col pt-[120px]">
-              {/*  <div className="flex gap-10 items-center  text-center">
-                  <Link
-                     href={'/'}
-                     rel="noopener noreferrer"
-                     className="text-blue-400 underline"
-                  >
-                     <ArrowLeft color="#fff" className="md:w-[40px] w-6" />
-                  </Link>
-                  <h1 className="text-xl md:text-3xl font-bold text-white font-mono">{projectData.name}</h1>
-               </div> */}
+         <div className="flex flex-wrap bg-slate-950 w-full md:h-full "
+            style={{
+               backgroundImage: `url(${projectData?.backgroundImage})`,
+               backgroundSize: 'cover',
+               backgroundPosition: 'center',
+               backgroundRepeat: 'repeat'
+            }}
+         >
+            <div className="flex pt-[140px] md:px-16 p-4 text-center">
                <p className="mt-4 md:text-sm text-[16px] text-white font-mono">{projectData.description}</p>
             </div>
 
+            <div className="flex justify-around w-full bg-black">
 
-            <h1 className="text-white font-mono uppercase mb-4 text-center text-xl md:text-2xl mt-8">Tecnologias usadas neste projeto</h1>
-            <div className="flex justify-around ">
-
-               <div className="p-2 w-full flex-wrap md:grid md:grid-cols-2 gap-12 justify-center md:justify-center items-center mx-8">
+               <div className="md:p-10 p-0 flex-wrap md:grid md:grid-cols-2 gap-12 justify-center md:justify-center items-center mx-8 mb-2 ">
                   <Carousel
                      opts={{
                         align: "start",
-                        loop: true,
-                        
+                        loop: false,
+
                      }}
-                     className="relative lg:w-[550px] "
+                     className="flex relative items-center"
                   >
                      <CarouselContent
-                        className="md:w-[50%]"
+                        className=""
                      >
                         {projectData.images.map((image, index) => (
                            <CarouselItem key={index} onClick={() => setSelectedImage(image.image)}
                               className=""
                            >
-                              <div className="py-4">
-                                 <Card className="overflow-hidden">
+                              <div className="">
+                                 <Card className="overflow-hidden h-full">
                                     <div className="aspect-video relative bg-slate-200 group">
                                        <Image
                                           width={0}
@@ -280,10 +97,17 @@ const ProjectId = ({ params }: { params: { id: string } }) => {
                                           className="w-full h-[70vh] object-contain transition-transform duration-300 group-hover:scale-105"
 
                                        />
-                                       {image.id === 1 && <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                          <h3 className="flex absolute top-[10px] left-[10px] text-center bg-primary-dark bg-opacity-45 backdrop-blur-lg rounded-md p-2 px-4 text-white text-lg font-semibold items-center gap-2">
-                                             {projectData.name}
-                                          </h3>
+                                       {image.id === 1 && <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex ">
+
+                                          <div className="bg-white">
+                                             <div className="flex md:w-full relative bottom-[20px] text-center text-md font-semibold items-center z-10 justify-center">
+                                                {loading ?
+                                                   <p>Carregando...</p>
+
+                                                   : <WhatsProject projectName={projectData.name} text={projectData.name} />}
+                                             </div>
+
+                                          </div>
 
                                        </div>
 
@@ -297,29 +121,27 @@ const ProjectId = ({ params }: { params: { id: string } }) => {
                            </CarouselItem>
                         ))}
                      </CarouselContent>
-                     <CarouselPrevious className="absolute -left-12 top-1/2 -translate-y-1/2" />
-                     <CarouselNext className="absolute -right-12 top-1/2 -translate-y-1/2" />
-                     <div className="bg-white">
-                        <div className="flex h-16 w-full absolute bottom-[15px] text-center bg-black bg-opacity-45 backdrop-blur-sm rounded-md p-4 text-md font-semibold items-center gap-2 z-10 justify-center">
+                     <CarouselPrevious className="absolute left-4 -bootom-10 -translate-y-1/2 bg-primary-dark_opacity text-white p-6" size={'lg'} />
+                     <CarouselNext className="absolute right-4 -bootom-10 -translate-y-1/2 bg-primary-dark_opacity text-white p-6" size={'lg'} />
+
+                    {/*  <div className="bg-white">
+                        <div className="flex h-16 md:w-full absolute bottom-[15px] text-center text-md font-semibold items-center z-10 justify-center">
                            {loading ?
                               <p>Carregando...</p>
 
                               : <WhatsProject projectName={projectData.name} text={projectData.name} />}
                         </div>
 
-                     </div>
-                     <div className="flex relative w-45 h-45 bottom-0">
+                     </div> */}
 
-
-                     </div>
                   </Carousel>
 
                   <div
-                     className={`w-full flex flex-col justify-between items-center bg-primary-light rounded-lg`}
+                     className={`w-full flex flex-col justify-between items-center bg-primary-light rounded-lg mt-10 md:mt-0`}
 
                   >
 
-                     {projectData.tecnololigas_usadas.map((tec, index) => (
+                     {projectData.tecnololigas_usadas?.map((tec, index) => (
                         <div
                            key={index} // Sempre adicione uma chave única ao map para evitar erros
                            className="relative w-full flex-col justify-center items-center bg-gradient-to-br from-primary-dark backdrop-blur-md bg-opacity-45 md:px-6 px-2 py-4 rounded-lg h-[70vh] "
@@ -356,22 +178,6 @@ const ProjectId = ({ params }: { params: { id: string } }) => {
 
 
             </div>
-            {/*  {projectData.link && (
-            <div className="flex w-full mt-10 text-white">
-               <Link
-                  href={projectData.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-
-               >
-                  <h1 className="text-white font-mono text-lg md:text-xl">
-                     Acesse o projeto
-                  </h1>
-
-               </Link>
-
-            </div>
-         )} */}
 
             {/* Modal */}
             {selectedImage && (

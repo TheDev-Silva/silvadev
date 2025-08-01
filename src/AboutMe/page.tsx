@@ -1,7 +1,6 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-
 import Link from 'next/link'
 import React, { useState } from 'react'
 
@@ -72,8 +71,7 @@ const AboutMe: React.FC = () => {
                borderTopWidth: 1, borderRightWidth: .5, borderColor: '#ffff', borderTopRightRadius: 20, paddingTop: 20, paddingRight: 10, paddingLeft: 0, paddingBottom: 0,
             }}>
                <p className="backdrop-blur-sm text-white md:text-lg text-base font-mono tracking-tight capitalize md:text-[12px]">
-                  Bem-vindos ao meu site / portfólio! Eu sou um desenvolvedor front-end com uma ampla experiência em desenvolvimento web e pricipalmente mobile, utilizando tecnologias modernas e frameworks robustos e sempre se mantendo atualizado nas novidades que aparecem a melhorar as aplicações. Meu foco é criar aplicações
-                  eficientes, escaláveis e com uma excelente experiência do usuário, bastante fiel a layouts já prontos criando uma replica iniguálavel, além de sempre atualizado com as melhores práticas do mercado.
+                  Bem-vindos ao meu site / portfólio! Eu sou um desenvolvedor front-end com uma ampla experiência em desenvolvimento web e pricipalmente mobile, utilizando tecnologias modernas e frameworks robustos e sempre se mantendo atualizado nas novidades que aparecem a melhorar as aplicações. Meu foco é criar aplicações eficientes, escaláveis e com uma excelente experiência do usuário, bastante fiel a layouts já prontos criando uma replica iniguálavel, além de sempre atualizado com as melhores práticas do mercado.
                </p>
 
 
@@ -83,10 +81,11 @@ const AboutMe: React.FC = () => {
 
                   >
                      <Button
+                        size={'default'}
                         onClick={Isloading}
-                        className='text-white py-6 rounded-md text-center items-center justify-center gap-3 mt-5 bg-black px-8'
+                        
                      >
-                        {loading ? <p style={{textTransform: 'uppercase'}}>carregando...</p> : <p style={{textTransform: 'uppercase'}}>saiba mais</p>}
+                        {loading ? <p style={{textTransform: 'capitalize', letterSpacing: 1}}>carregando...</p> : <p style={{textTransform: 'capitalize'}}>saiba mais</p>}
                      </Button>
                   </Link>
 

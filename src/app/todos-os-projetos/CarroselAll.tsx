@@ -11,7 +11,7 @@ interface CarouselAllProps {
    images: imagePros[];
 }
 
-export const Carousel: React.FC<CarouselAllProps> = ({ images }) => {
+export const CarouselAll: React.FC<CarouselAllProps> = ({ images }) => {
    const [currentIndex, setCurrentIndex] = useState(0);
 
    const handleNext = () => {
@@ -29,19 +29,19 @@ export const Carousel: React.FC<CarouselAllProps> = ({ images }) => {
    return (
       <>
          {/* <Header /> */}
-         <div className="relative md:w-[100%] w-[100%] flex-col items-center overflow-hidden">
-            <div className="flex justify-center items-center">
-               {images.slice(currentIndex, currentIndex + 2).map((img, index) => (
+         <div className="relative md:w-[100%] w-[100%] h-full flex-col items-center overflow-hidden">
+            <div className="flex justify-center items-center h-full">
+               {images.slice(currentIndex, currentIndex + 1).map((img, index) => (
                   isValidImage(img.image) ? (
                      <div key={img.id} className='flex md:w-[70%] w-[100%] p-1 justify-center items-center'>
                         <Image
                            src={img.image}
-                           alt={`Image ${index + 1}`}
+                           alt={`Image ${index}`}
                            width={360}
                            height={360}
                            sizes={'100vw'}
                            quality={90}
-                           className="object-contain rounded-lg md:w-[50%] md:h-[50%] w-[100%] h-[100%]"
+                           className="object-contain rounded-lg md:w-[100%] md:h-[50%] w-[100%] h-[100%]"
                         />
                      </div>
                   ) : (
@@ -54,7 +54,7 @@ export const Carousel: React.FC<CarouselAllProps> = ({ images }) => {
                ))}
             </div>
 
-            <div className="flex mt-4 justify-around items-center p-1">
+            <div className="flex mt-4 justify-around items-center p-1 relative">
                <button onClick={handlePrev} className='p-2 rounded-xl'>
                   <FaArrowLeft color='#fff' />
                </button>
