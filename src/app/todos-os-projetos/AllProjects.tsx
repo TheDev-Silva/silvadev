@@ -9,8 +9,7 @@ import { ArrowLeftIcon } from 'lucide-react';
 import Header from '../Header/Header';
 //import { StaticImageData } from 'next/image';
 import { Carousel } from '@/components/ProjectList/Carrosel';
-import { projects } from '../page';
-
+import { projects } from '@/data/projectData';
 
 
 export default function AllProjects() {

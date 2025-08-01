@@ -1,8 +1,8 @@
 'use client'
 import Header from '@/app/Header/Header';
-import { projects } from '@/app/page';
 import { Card } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { projects } from '@/data/projectData';
 import WhatsProject from '@/whatsappContact/whatsProject';
 import { ArrowLeftIcon } from 'lucide-react';
 import Image from 'next/image';
