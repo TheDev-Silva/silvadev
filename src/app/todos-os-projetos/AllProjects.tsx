@@ -18,12 +18,13 @@ export default function AllProjects() {
 
    const router = useRouter();
 
-   const handleNavigate = (id: number) => {
+   const handleNavigate = (id: number, slug: string) => {
+
 
       setIsLoading(true)
       try {
          setTimeout(() => {
-            router.push(`/projectId/${id}`);
+            router.push(`/todos-os-projetos/${id}-${slug}`);
          }, 500);
 
       } catch (error) {
@@ -109,7 +110,12 @@ export default function AllProjects() {
                            <p className='font-mono md:text-base text-[14px]'>{item.description.slice(0, 100)}...</p>
 
                            {/* <Link key={item.id} href={`/ProjectId/${item.id}`}> */}
-                           <Button onClick={() => [handleNavigate(item.id), handleIsloading()]} size={'lg'}
+                           <Button
+                              onClick={() => {
+
+                                 handleNavigate(item.id, item.slug)
+                                 handleIsloading()
+                              }} size={'lg'}
                               className='flex w-full text-white hover:bg-primary-dark bg-primary-light transition-all duration-300 p-3 rounded-sm text-center items-center justify-center gap-3 mt-5'
                            >
                               {isLoading ? <p className='uppercase text-white'>carregando...</p> : <p className='uppercase text-white'>veja mais</p>}
